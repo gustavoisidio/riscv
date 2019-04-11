@@ -3,9 +3,13 @@ module controle (input logic clock, reset,
 				output logic IMemRead, LoadIR, PCWrite
 				);
 				
-enum logic [6:0] {busca = 7'b0, salvaInstrucao = 7'b1} state;
-logic [6:0] nextState;
-assing estado = state;
+enum logic [6:0] {
+	busca = 7'b0,
+	salvaInstrucao = 7'b1
+	} state, nextState;
+
+
+//assing estado = state;
 
 always_ff @(posedge clock, negedge reset) begin
 	if (!reset) begin
@@ -32,13 +36,6 @@ always_comb begin
 	endcase
 end
 				
-
-
-
-
-
-
-
 
 endmodule:controle
 

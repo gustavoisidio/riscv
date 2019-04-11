@@ -1,4 +1,4 @@
-Quartus II 64-Bit
+Quartus II
 Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
 11
 3700
@@ -31,7 +31,7 @@ ON
 # case_sensitive
 # source_file
 projeto.sv
-c25eeb79a148142a224b671bf1d79c7
+8c293b101bbfd0fdbba2f4af107faafe
 9
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -48,9 +48,6 @@ VERILOG_CONSTANT_LOOP_LIMIT
 5000
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
-}
-# hierarchies {
-|
 }
 # macro_sequence
 
@@ -85,9 +82,6 @@ VERILOG_CONSTANT_LOOP_LIMIT
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
-# hierarchies {
-register:PC
-}
 # macro_sequence
 
 # end
@@ -121,9 +115,6 @@ VERILOG_CONSTANT_LOOP_LIMIT
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
-# hierarchies {
-Memoria32:InstMem
-}
 # macro_sequence
 
 # end
@@ -150,9 +141,6 @@ AUTO_RAM_RECOGNITION
 ON
 AUTO_ROM_RECOGNITION
 ON
-}
-# hierarchies {
-Instr_Reg_RISC_V:InstReg
 }
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
@@ -184,12 +172,45 @@ ON
 AUTO_ROM_RECOGNITION
 ON
 }
-# hierarchies {
-Ula64:ULA
-}
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+controle
+# storage
+db|projeto.(5).cnf
+db|projeto.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+controle.sv
+9e165cc2c9b975733a11934446da66c6
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
+}
 # macro_sequence
 
 # end

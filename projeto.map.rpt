@@ -1,6 +1,6 @@
 Analysis & Synthesis report for projeto
-Mon Apr 01 14:48:36 2019
-Quartus II 64-Bit Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
+Tue Apr 02 11:09:49 2019
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
 
 
 ---------------------
@@ -10,7 +10,13 @@ Quartus II 64-Bit Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Versio
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |controle|state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -36,20 +42,20 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Mon Apr 01 14:48:36 2019             ;
-; Quartus II 64-Bit Version          ; 9.1 Build 350 03/24/2010 SP 2 SJ Full Version ;
+; Analysis & Synthesis Status        ; Successful - Tue Apr 02 11:09:49 2019         ;
+; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Full Version ;
 ; Revision Name                      ; projeto                                       ;
-; Top-level Entity Name              ; projeto                                       ;
+; Top-level Entity Name              ; controle                                      ;
 ; Family                             ; Cyclone II                                    ;
-; Total logic elements               ; N/A until Partition Merge                     ;
-;     Total combinational functions  ; N/A until Partition Merge                     ;
-;     Dedicated logic registers      ; N/A until Partition Merge                     ;
-; Total registers                    ; N/A until Partition Merge                     ;
-; Total pins                         ; N/A until Partition Merge                     ;
-; Total virtual pins                 ; N/A until Partition Merge                     ;
-; Total memory bits                  ; N/A until Partition Merge                     ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                     ;
-; Total PLLs                         ; N/A until Partition Merge                     ;
+; Total logic elements               ; 1                                             ;
+;     Total combinational functions  ; 1                                             ;
+;     Dedicated logic registers      ; 1                                             ;
+; Total registers                    ; 1                                             ;
+; Total pins                         ; 12                                            ;
+; Total virtual pins                 ; 0                                             ;
+; Total memory bits                  ; 0                                             ;
+; Embedded Multiplier 9-bit elements ; 0                                             ;
+; Total PLLs                         ; 0                                             ;
 +------------------------------------+-----------------------------------------------+
 
 
@@ -58,7 +64,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
-; Top-level entity name                                                      ; projeto            ; projeto            ;
+; Top-level entity name                                                      ; controle           ; projeto            ;
 ; Family name                                                                ; Cyclone II         ; Stratix II         ;
 ; Use Generated Physical Constraints File                                    ; Off                ;                    ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
@@ -148,13 +154,102 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------+
+; controle.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/gisf/Downloads/proj1-20190402T110711Z-001/proj1/controle.sv ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                        ;
++---------------------------------------------+----------------------+
+; Resource                                    ; Usage                ;
++---------------------------------------------+----------------------+
+; Estimated Total logic elements              ; 1                    ;
+;                                             ;                      ;
+; Total combinational functions               ; 1                    ;
+; Logic element usage by number of LUT inputs ;                      ;
+;     -- 4 input functions                    ; 0                    ;
+;     -- 3 input functions                    ; 0                    ;
+;     -- <=2 input functions                  ; 1                    ;
+;                                             ;                      ;
+; Logic elements by mode                      ;                      ;
+;     -- normal mode                          ; 1                    ;
+;     -- arithmetic mode                      ; 0                    ;
+;                                             ;                      ;
+; Total registers                             ; 1                    ;
+;     -- Dedicated logic registers            ; 1                    ;
+;     -- I/O registers                        ; 0                    ;
+;                                             ;                      ;
+; I/O pins                                    ; 12                   ;
+; Maximum fan-out node                        ; state.salvaInstrucao ;
+; Maximum fan-out                             ; 4                    ;
+; Total fan-out                               ; 7                    ;
+; Average fan-out                             ; 0.50                 ;
++---------------------------------------------+----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |controle                  ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 12   ; 0            ; |controle           ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------+
+; State Machine - |controle|state             ;
++----------------------+----------------------+
+; Name                 ; state.salvaInstrucao ;
++----------------------+----------------------+
+; state.busca          ; 0                    ;
+; state.salvaInstrucao ; 1                    ;
++----------------------+----------------------+
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; state~5                               ; Lost fanout        ;
+; state~6                               ; Lost fanout        ;
+; state~7                               ; Lost fanout        ;
+; state~8                               ; Lost fanout        ;
+; state~9                               ; Lost fanout        ;
+; state~10                              ; Lost fanout        ;
+; Total Number of Removed Registers = 6 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 1     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Analysis & Synthesis
+Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
-    Info: Processing started: Mon Apr 01 14:48:34 2019
+    Info: Processing started: Tue Apr 02 11:09:47 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off projeto -c projeto
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 1 design units, including 1 entities, in source file bancoreg.sv
@@ -179,29 +274,33 @@ Info: Found 2 design units, including 1 entities, in source file ula64.vhd
     Info: Found entity 1: Ula64
 Info: Found 1 design units, including 1 entities, in source file projeto.sv
     Info: Found entity 1: projeto
-Info: Elaborating entity "projeto" for the top level hierarchy
-Warning (10034): Output port "estado" at projeto.sv(2) has no driver
-Warning (10034): Output port "MemData" at projeto.sv(6) has no driver
-Info: Elaborating entity "register" for hierarchy "register:PC"
-Info: Elaborating entity "Memoria32" for hierarchy "Memoria32:InstMem"
-Warning (10230): Verilog HDL assignment warning at Memoria32.sv(37): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at Memoria32.sv(38): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at Memoria32.sv(39): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at Memoria32.sv(40): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at Memoria32.sv(45): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at Memoria32.sv(46): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at Memoria32.sv(47): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at Memoria32.sv(48): truncated value with size 32 to match size of target (16)
-Info: Elaborating entity "Instr_Reg_RISC_V" for hierarchy "Instr_Reg_RISC_V:InstReg"
-Info: Elaborating entity "Ula64" for hierarchy "Ula64:ULA"
-Error: Node instance "memBlock0" instantiates undefined entity "ramOnChip32" File: C:/Users/gisf/Desktop/proj1/Memoria32.sv Line: 72
-Error: Node instance "memBlock1" instantiates undefined entity "ramOnChip32" File: C:/Users/gisf/Desktop/proj1/Memoria32.sv Line: 74
-Error: Node instance "memBlock2" instantiates undefined entity "ramOnChip32" File: C:/Users/gisf/Desktop/proj1/Memoria32.sv Line: 76
-Error: Node instance "memBlock3" instantiates undefined entity "ramOnChip32" File: C:/Users/gisf/Desktop/proj1/Memoria32.sv Line: 78
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 4 errors, 10 warnings
-    Error: Peak virtual memory: 4475 megabytes
-    Error: Processing ended: Mon Apr 01 14:48:36 2019
-    Error: Elapsed time: 00:00:02
-    Error: Total CPU time (on all processors): 00:00:02
+Info: Found 1 design units, including 1 entities, in source file controle.sv
+    Info: Found entity 1: controle
+Info: Elaborating entity "controle" for the top level hierarchy
+Warning (10034): Output port "estado" at controle.sv(2) has no driver
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "estado[0]" is stuck at GND
+    Warning (13410): Pin "estado[1]" is stuck at GND
+    Warning (13410): Pin "estado[2]" is stuck at GND
+    Warning (13410): Pin "estado[3]" is stuck at GND
+    Warning (13410): Pin "estado[4]" is stuck at GND
+    Warning (13410): Pin "estado[5]" is stuck at GND
+    Warning (13410): Pin "estado[6]" is stuck at GND
+Info: 6 registers lost all their fanouts during netlist optimizations. The first 6 are displayed below.
+    Info: Register "state~5" lost all its fanouts during netlist optimizations.
+    Info: Register "state~6" lost all its fanouts during netlist optimizations.
+    Info: Register "state~7" lost all its fanouts during netlist optimizations.
+    Info: Register "state~8" lost all its fanouts during netlist optimizations.
+    Info: Register "state~9" lost all its fanouts during netlist optimizations.
+    Info: Register "state~10" lost all its fanouts during netlist optimizations.
+Info: Implemented 13 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 10 output pins
+    Info: Implemented 1 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 267 megabytes
+    Info: Processing ended: Tue Apr 02 11:09:49 2019
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

@@ -1,0 +1,5 @@
+
+State Machine - |controle|state
+Name state.salvaInstrucao 
+state.busca 0 
+state.salvaInstrucao 1 

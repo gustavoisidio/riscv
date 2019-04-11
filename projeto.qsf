@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone II"
 set_global_assignment -name DEVICE AUTO
-set_global_assignment -name TOP_LEVEL_ENTITY projeto
+set_global_assignment -name TOP_LEVEL_ENTITY controle
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.1 SP2"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:37:58  APRIL 01, 2019"
 set_global_assignment -name LAST_QUARTUS_VERSION "9.1 SP2"
@@ -47,8 +47,9 @@ set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
-set_global_assignment -name MIF_FILE dados.mif
+set_global_assignment -name SIMULATION_MODE TIMING
 set_global_assignment -name MIF_FILE instruction.mif
+set_global_assignment -name MIF_FILE dados.mif
 set_global_assignment -name SYSTEMVERILOG_FILE bancoReg.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Deslocamento.sv
 set_global_assignment -name VHDL_FILE Instr_Reg_RISC_V.vhd
@@ -59,5 +60,6 @@ set_global_assignment -name VERILOG_FILE ramOnChip64.v
 set_global_assignment -name SYSTEMVERILOG_FILE register.sv
 set_global_assignment -name VHDL_FILE ula64.vhd
 set_global_assignment -name SYSTEMVERILOG_FILE projeto.sv
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name SYSTEMVERILOG_FILE controle.sv
+set_global_assignment -name VECTOR_WAVEFORM_FILE projeto.vwf
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

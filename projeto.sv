@@ -14,11 +14,7 @@ Instr_Reg_RISC_V InstReg (.Clk(clock), .Reset(reset), .Load_ir(LoadIR), .Entrada
 
 ula64 ULA (.A(outPC), .B(64'd4), .Seletor(3'b001), .S(AluOut));
 
-
-
-
-// logic [63:0] aluTOPC;
-
+controle UC (.clock(clock), .reset(reset), .estado(estado), .IMemRead(IMemRead), .LoadIR(LoadIR), .PCWrite(PCWrite));
 
 
 endmodule:projeto
