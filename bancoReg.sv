@@ -24,7 +24,7 @@ begin
   		regs <= '{default:32'd0};
 	end
   	else begin
-		if(write)
+		if(write && regwriteaddress != 0)
 		begin  	   
 		    regs[regwriteaddress] <= datain;
 		end

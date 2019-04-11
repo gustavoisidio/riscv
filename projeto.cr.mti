@@ -1,0 +1,81 @@
+{//Mac/Home/Documents/proj v5/register.sv} {1 {vlog -work work -sv {//Mac/Home/Documents/proj v5/register.sv}
+Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+-- Compiling module register
+
+Top level modules:
+	register
+
+} {} {}} {//Mac/Home/Documents/proj v5/Memoria32.sv} {1 {vlog -work work -sv {//Mac/Home/Documents/proj v5/Memoria32.sv}
+Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+-- Compiling module Memoria32
+
+Top level modules:
+	Memoria32
+
+} {} {}} {//Mac/Home/Documents/proj v5/bancoReg.sv} {1 {vlog -work work -sv {//Mac/Home/Documents/proj v5/bancoReg.sv}
+Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+-- Compiling module bancoReg
+
+Top level modules:
+	bancoReg
+
+} {} {}} {//Mac/Home/Documents/proj v5/Instr_Reg_RISC_V.vhd} {1 {vcom -work work -2002 -explicit {//Mac/Home/Documents/proj v5/Instr_Reg_RISC_V.vhd}
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Instr_Reg_RISC_V
+-- Compiling architecture behavioral_arch of Instr_Reg_RISC_V
+
+} {} {}} {//Mac/Home/Documents/proj v5/Memoria64.sv} {1 {vlog -work work -sv {//Mac/Home/Documents/proj v5/Memoria64.sv}
+Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+-- Compiling module Memoria64
+
+Top level modules:
+	Memoria64
+
+} {} {}} {//Mac/Home/Documents/proj v5/ula64.vhd} {1 {vcom -work work -2002 -explicit {//Mac/Home/Documents/proj v5/ula64.vhd}
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Compiling entity Ula64
+-- Compiling architecture behavioral of Ula64
+
+} {} {}} {//Mac/Home/Documents/proj v5/Deslocamento.sv} {1 {vlog -work work -sv {//Mac/Home/Documents/proj v5/Deslocamento.sv}
+Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+-- Compiling module Deslocamento
+
+Top level modules:
+	Deslocamento
+
+} {} {}} {//Mac/Home/Documents/proj v5/ramOnChip64.v} {1 {vlog -work work {//Mac/Home/Documents/proj v5/ramOnChip64.v}
+Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+-- Compiling module ramOnChip64
+
+Top level modules:
+	ramOnChip64
+
+} {} {}} {//Mac/Home/Documents/proj v5/UC.sv} {1 {vlog -work work -sv {//Mac/Home/Documents/proj v5/UC.sv}
+Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+-- Compiling module UC
+
+Top level modules:
+	UC
+
+} {} {}} {//Mac/Home/Documents/proj v5/ramOnChip32.v} {1 {vlog -work work {//Mac/Home/Documents/proj v5/ramOnChip32.v}
+Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+-- Compiling module ramOnChip32
+
+Top level modules:
+	ramOnChip32
+
+} {} {}} {//Mac/Home/Documents/proj v5/simulacao32.sv} {1 {vlog -work work -sv {//Mac/Home/Documents/proj v5/simulacao32.sv}
+Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+-- Compiling module simulacao32
+
+Top level modules:
+	simulacao32
+
+} {} {}}
