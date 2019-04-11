@@ -5,13 +5,29 @@ module UC (input logic clock, reset,
            input logic [31:0] Instr31_0, // Instrucao inteira saida do Registrador de instrucoes
            output logic LoadIR, // Registrador de Instrucoes
                         PCWrite, // PC
-                        WriteReg, // Banco de Registradores
+                        WriteRegBanco, // Banco de Registradores
                         LoadRegA, // Registrador A
                         LoadRegB, // Registrador B
                         AluSrcA, // Mux1
                         AluSrcB, // Mux2
-                        InstrType // Seletor informando tipo da instrucao ao Signal Extend 
+                        InstrType, // Seletor informando tipo da instrucao ao Signal Extend 
+			AluFct, // Seletor da ALU
+                        LoadMDR, // Registrador MDR 
+                        MemToReg // Registrador do Mux3
            );
+
+//Inicializa todos os sinais
+//LoadIR = 0
+//PCWrite = 0
+//WriteRegBanco = 0
+//LoadRegA = 0
+//LoadRegB = 0
+//AluSrcA = 0
+//AluSrcB = 0
+//InstrType = 0
+//AluFct = 0
+//LoadMDR = 0
+//MemToReg = 0
 
 logic [6:0] funct7;
 assign funct7 = Instr31_0[31:25];
@@ -53,7 +69,7 @@ always_comb begin
 		rst: begin
 			PCWrite = 0; // Incrementa PC
 			LoadIR = 0; // So no proximo ciclo
-           		WriteReg = 0; // NAO SETADO AINDA
+           		WriteRegBanco = 0; // NAO SETADO AINDA
             		AluSrcA = 0; // NAO SETADO AINDA
             		AluSrcB = 0; // NAO SETADO AINDA
 			nextState = busca;	
@@ -61,7 +77,7 @@ always_comb begin
 		busca: begin
 			PCWrite = 1; // Incrementa PC
 			LoadIR = 0; // So no proximo ciclo
-			WriteReg = 0; // NAO SETADO AINDA
+			WriteRegBanco = 0; // NAO SETADO AINDA
             		AluSrcA = 0; // NAO SETADO AINDA
             		AluSrcB = 0; // NAO SETADO AINDA
 			nextState = salvaInstrucao;
@@ -69,7 +85,7 @@ always_comb begin
 		salvaInstrucao: begin
 			PCWrite = 0; // Incrementa PC
 			LoadIR = 1; // So no proximo ciclo
-			WriteReg = 0; // NAO SETADO AINDA
+			WriteRegBanco = 0; // NAO SETADO AINDA
             		AluSrcA = 0; // NAO SETADO AINDA
             		AluSrcB = 0; // NAO SETADO AINDA
 			nextState = decodInstrucao;
@@ -80,8 +96,8 @@ always_comb begin
                             case(funct3)
                                 3'b000: begin
                                     case(funct7)
-                                        7'b0000000: nextState <= add; // Chama add
-                                        7'b0100000: nextState <= sub; // Chama sub
+                                        7'b0000000: nextState = add; // Chama add
+                                        7'b0100000: nextState = sub; // Chama sub
                                     endcase //funct7
                                 end
                             endcase //funct3
@@ -89,7 +105,7 @@ always_comb begin
                         7'b0010011: begin //I
                             case(funct3)
                                 3'b000: begin
-                                    nextState <= addi; // Chama addi
+                                    nextState = addi; // Chama addi
                                 end
                             endcase //funct3
                         end
@@ -97,7 +113,7 @@ always_comb begin
                         7'b0000011: begin//I
                             case(funct3)
                                 3'b011: begin
-                                    nextState <= ld; // Chama ld
+                                    nextState = ld; // Chama ld
                                 end
                             endcase //funct3
                         end
@@ -105,7 +121,7 @@ always_comb begin
                         7'b0100011: begin//S
                             case(funct3)
                                 3'b111: begin
-                                    nextState <= sd; // Chama sd						
+                                    nextState = sd; // Chama sd						
                                 end
                             endcase
                         end
@@ -113,20 +129,20 @@ always_comb begin
                         7'b1100011: begin//SB
                             case(funct3)
                                 3'b000: begin
-                                        nextState <= beq; // Chama beq
+                                        nextState = beq; // Chama beq
                                 end
                             endcase
                             end
                         7'b1100111: begin
                             case(funct3)
                                 3'b001: begin
-                                    nextState <= bne; // Chama bne
+                                    nextState = bne; // Chama bne
                                 end
                             endcase
                         end
 
                         7'b0110111: begin //U
-                            nextState <= lui; // Chama lui
+                            nextState = lui; // Chama lui
                         end
 
                     endcase //opcode
@@ -134,6 +150,18 @@ always_comb begin
                 end // decod
 		// Instrucoes NAO SETADAS AINDA
 		add: begin
+			//Inicializa todos os sinais
+			LoadIR = 1;
+			//PCWrite = 0
+			WriteRegBanco = 1;
+			LoadRegA = 1;
+			LoadRegB = 1;
+			//AluSrcA = 0
+			//AluSrcB = 0
+			//InstrType = 0
+			AluFct = 3'b001;
+			//LoadMDR = 0
+			//MemToReg = 0
 		end
 		sub: begin
 		end

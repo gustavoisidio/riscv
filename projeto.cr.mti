@@ -1,26 +1,18 @@
-{C:/Users/gisf/Downloads/proj v7/Instr_Reg_RISC_V.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/gisf/Downloads/proj v7/Instr_Reg_RISC_V.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity Instr_Reg_RISC_V
--- Compiling architecture behavioral_arch of Instr_Reg_RISC_V
+{C:/Users/gisf/Downloads/proj v8/simulacao32.sv} {1 {vlog -work work -sv -stats=none {C:/Users/gisf/Downloads/proj v8/simulacao32.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module simulacao32
 
-} {} {}} {C:/Users/gisf/Downloads/proj v7/mux8to1.v} {1 {vlog -work work -stats=none {C:/Users/gisf/Downloads/proj v7/mux8to1.v}
+Top level modules:
+	simulacao32
+
+} {} {}} {C:/Users/gisf/Downloads/proj v8/mux8to1.v} {1 {vlog -work work -stats=none {C:/Users/gisf/Downloads/proj v8/mux8to1.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module mux8to1
 
 Top level modules:
 	mux8to1
 
-} {} {}} {C:/Users/gisf/Downloads/proj v7/Memoria64.sv} {1 {vlog -work work -sv -stats=none {C:/Users/gisf/Downloads/proj v7/Memoria64.sv}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module Memoria64
-
-Top level modules:
-	Memoria64
-
-} {} {}} {C:/Users/gisf/Downloads/proj v7/ula64.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/gisf/Downloads/proj v7/ula64.vhd}
+} {} {}} {C:/Users/gisf/Downloads/proj v8/ula64.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/gisf/Downloads/proj v8/ula64.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -29,63 +21,78 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity Ula64
 -- Compiling architecture behavioral of Ula64
 
-} {} {}} {C:/Users/gisf/Downloads/proj v7/Deslocamento.sv} {1 {vlog -work work -sv -stats=none {C:/Users/gisf/Downloads/proj v7/Deslocamento.sv}
+} {} {}} {C:/Users/gisf/Downloads/proj v8/Deslocamento.sv} {1 {vlog -work work -sv -stats=none {C:/Users/gisf/Downloads/proj v8/Deslocamento.sv}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module Deslocamento
 
 Top level modules:
 	Deslocamento
 
-} {} {}} {C:/Users/gisf/Downloads/proj v7/UC.sv} {1 {vlog -work work -sv -stats=none {C:/Users/gisf/Downloads/proj v7/UC.sv}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module UC
-
-Top level modules:
-	UC
-
-} {} {}} {C:/Users/gisf/Downloads/proj v7/ramOnChip64.v} {1 {vlog -work work -stats=none {C:/Users/gisf/Downloads/proj v7/ramOnChip64.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module ramOnChip64
-
-Top level modules:
-	ramOnChip64
-
-} {} {}} {C:/Users/gisf/Downloads/proj v7/ramOnChip32.v} {1 {vlog -work work -stats=none {C:/Users/gisf/Downloads/proj v7/ramOnChip32.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module ramOnChip32
-
-Top level modules:
-	ramOnChip32
-
-} {} {}} {C:/Users/gisf/Downloads/proj v7/simulacao32.sv} {1 {vlog -work work -sv -stats=none {C:/Users/gisf/Downloads/proj v7/simulacao32.sv}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module simulacao32
-
-Top level modules:
-	simulacao32
-
-} {} {}} {C:/Users/gisf/Downloads/proj v7/register.sv} {1 {vlog -work work -sv -stats=none {C:/Users/gisf/Downloads/proj v7/register.sv}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module register
-
-Top level modules:
-	register
-
-} {} {}} {C:/Users/gisf/Downloads/proj v7/UP.sv} {1 {vlog -work work -sv -stats=none {C:/Users/gisf/Downloads/proj v7/UP.sv}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module UP
-
-Top level modules:
-	UP
-
-} {} {}} {C:/Users/gisf/Downloads/proj v7/Memoria32.sv} {1 {vlog -work work -sv -stats=none {C:/Users/gisf/Downloads/proj v7/Memoria32.sv}
+} {} {}} {C:/Users/gisf/Downloads/proj v8/Memoria32.sv} {1 {vlog -work work -sv -stats=none {C:/Users/gisf/Downloads/proj v8/Memoria32.sv}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module Memoria32
 
 Top level modules:
 	Memoria32
 
-} {} {}} {C:/Users/gisf/Downloads/proj v7/bancoReg.sv} {1 {vlog -work work -sv -stats=none {C:/Users/gisf/Downloads/proj v7/bancoReg.sv}
+} {} {}} {C:/Users/gisf/Downloads/proj v8/UC.sv} {1 {vlog -work work -sv -stats=none {C:/Users/gisf/Downloads/proj v8/UC.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module UC
+
+Top level modules:
+	UC
+
+} {} {}} {C:/Users/gisf/Downloads/proj v8/ramOnChip64.v} {1 {vlog -work work -stats=none {C:/Users/gisf/Downloads/proj v8/ramOnChip64.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ramOnChip64
+
+Top level modules:
+	ramOnChip64
+
+} {} {}} {C:/Users/gisf/Downloads/proj v8/ramOnChip32.v} {1 {vlog -work work -stats=none {C:/Users/gisf/Downloads/proj v8/ramOnChip32.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ramOnChip32
+
+Top level modules:
+	ramOnChip32
+
+} {} {}} {C:/Users/gisf/Downloads/proj v8/Instr_Reg_RISC_V.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/gisf/Downloads/proj v8/Instr_Reg_RISC_V.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Instr_Reg_RISC_V
+-- Compiling architecture behavioral_arch of Instr_Reg_RISC_V
+
+} {} {}} {C:/Users/gisf/Downloads/proj v8/Memoria64.sv} {1 {vlog -work work -sv -stats=none {C:/Users/gisf/Downloads/proj v8/Memoria64.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Memoria64
+
+Top level modules:
+	Memoria64
+
+} {} {}} {C:/Users/gisf/Downloads/proj v8/UP.sv} {1 {vlog -work work -sv -stats=none {C:/Users/gisf/Downloads/proj v8/UP.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module UP
+
+Top level modules:
+	UP
+
+} {} {}} {C:/Users/gisf/Downloads/proj v8/register.sv} {1 {vlog -work work -sv -stats=none {C:/Users/gisf/Downloads/proj v8/register.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module register
+
+Top level modules:
+	register
+
+} {} {}} {C:/Users/gisf/Downloads/proj v8/signalExtend.sv} {1 {vlog -work work -sv -stats=none {C:/Users/gisf/Downloads/proj v8/signalExtend.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module signalExtend
+
+Top level modules:
+	signalExtend
+
+} {} {}} {C:/Users/gisf/Downloads/proj v8/bancoReg.sv} {1 {vlog -work work -sv -stats=none {C:/Users/gisf/Downloads/proj v8/bancoReg.sv}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module bancoReg
 
