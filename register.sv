@@ -2,8 +2,8 @@ module register(
             input clk,
             input reset,
             input regWrite,
-            input logic [64-1:0] DadoIn,
-            output logic [64-1:0] DadoOut
+            input logic [63:0] DadoIn,
+            output logic [63:0] DadoOut
         );
 
 always_ff @(posedge clk or posedge reset)

@@ -1,0 +1,87 @@
+# Reading C:/intelFPGA_pro/19.1/modelsim_ase/tcl/vsim/pref.tcl
+# OpenFile {//Mac/Home/Documents/proj v6/projeto.mpf}
+# Loading project projeto
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv failed with 2 errors.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# 13 compiles, 1 failed with 2 errors.
+#  Trace back: bad option "scan": must be annotate, bbox, cget, compare, configure, count, decreaseindent, delete, dump, edit, fold, get, index, increaseindent, insert, keywords, loadlexer, margin, mark, marker, property, scisearch, search, see, ssm, style, tag, textwidth, version, xview, yview, zoom, zoomin, or zoomout
+#     while executing
+# "$w scan mark $x $y"
+#     (procedure "::scintilla::TextScanMark" line 3)
+#     invoked from within
+# "::scintilla::TextScanMark .main_pane.source.interior.cs.body.srcobj.sci 210 364"
+#     invoked from within
+# "if {!$tk_strictMotif} {
+#         ::scintilla::TextScanMark .main_pane.source.interior.cs.body.srcobj.sci 210 364
+#     }"
+#     (command bound to event)
+#    <2:C:/intelFPGA_pro/19.1/modelsim_ase/win32aloem/tk8.6/bgerror.tcl:106: ::tkerror {bad option "scan": must be annotate, bbox, cget, compare, configure, count, decreaseindent, delete, dump, edit, fold, get, index, increaseindent, insert, keywords, loadlexer, margin, mark, marker, property, scisearch, search, see, ssm, style, tag, textwidth, version, xview, yview, zoom, zoomin, or zoomout}
+#    <1:eval:1: ::tk::dialog::error::bgerror {bad option "scan": must be annotate, bbox, cget, compare, configure, count, decreaseindent, delete, dump, edit, fold, get, index, increaseindent, insert, keywords, loadlexer, margin, mark, marker, property, scisearch, search, see, ssm, style, tag, textwidth, version, xview, yview, zoom, zoomin, or zoomout}
+#  Trace back: bad option "scan": must be annotate, bbox, cget, compare, configure, count, decreaseindent, delete, dump, edit, fold, get, index, increaseindent, insert, keywords, loadlexer, margin, mark, marker, property, scisearch, search, see, ssm, style, tag, textwidth, version, xview, yview, zoom, zoomin, or zoomout
+#     while executing
+# "$w scan mark $x $y"
+#     (procedure "::scintilla::TextScanMark" line 3)
+#     invoked from within
+# "::scintilla::TextScanMark .main_pane.source.interior.cs.body.srcobj.sci 474 304"
+#     invoked from within
+# "if {!$tk_strictMotif} {
+#         ::scintilla::TextScanMark .main_pane.source.interior.cs.body.srcobj.sci 474 304
+#     }"
+#     (command bound to event)
+#    <2:C:/intelFPGA_pro/19.1/modelsim_ase/win32aloem/tk8.6/bgerror.tcl:106: ::tkerror {bad option "scan": must be annotate, bbox, cget, compare, configure, count, decreaseindent, delete, dump, edit, fold, get, index, increaseindent, insert, keywords, loadlexer, margin, mark, marker, property, scisearch, search, see, ssm, style, tag, textwidth, version, xview, yview, zoom, zoomin, or zoomout}
+# Compile of UP.sv failed with 1 errors.
+# Error opening //Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv
+# Path name '//Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv' doesn't exist.
+# Compile of UP.sv failed with 1 errors.
+# Error opening //Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv
+# Path name '//Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv' doesn't exist.
+# Error opening //Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv
+# Path name '//Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv' doesn't exist.
+# Error opening //Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv
+# Path name '//Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv' doesn't exist.
+# Error opening //Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv
+# Path name '//Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv' doesn't exist.
+# Error opening //Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv
+# Path name '//Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv' doesn't exist.
+# Error opening //Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv
+# Path name '//Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv' doesn't exist.
+# Error opening //Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv
+# Path name '//Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv' doesn't exist.
+# Error opening //Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv
+# Path name '//Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv' doesn't exist.
+# Error opening //Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv
+# Path name '//Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv' doesn't exist.
+# Error opening //Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv
+# Path name '//Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv' doesn't exist.
+# Error opening //Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv
+# Path name '//Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv' doesn't exist.
+# Error opening //Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv
+# Path name '//Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv' doesn't exist.
+# Error opening //Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv
+# Path name '//Mac/Home/Documents/proj v6/(vlog-13069) /Mac/Home/Documents/proj v6/UP.sv' doesn't exist.
+# Compile of UP.sv was successful.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv failed with 18 errors.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# 13 compiles, 1 failed with 18 errors.

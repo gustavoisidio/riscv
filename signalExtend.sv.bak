@@ -1,0 +1,9 @@
+module UC (input logic clock, reset,
+	   input logic [31:0] Instr31_0,
+	   input logic InstrType,
+	   output logic [63:0] outExtend  
+           );
+
+	
+
+endmodule

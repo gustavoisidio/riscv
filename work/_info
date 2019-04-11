@@ -1,299 +1,349 @@
 m255
 K3
+z0
 13
 cModel Technology
-Z0 d\\Mac\Home\Desktop
+d\\Mac\Home\Desktop
 vbancoReg
-Z1 DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
-Z2 IX=HB<B@PCJNoncz?BR1iV2
-Z3 VJnzb3V>`zmXQ;cM4BcTV80
-S1
-Z4 d\\Mac\Home\Documents\proj v5
-Z5 w1554494382
-Z6 8//Mac/Home/Documents/proj v5/bancoReg.sv
-Z7 F//Mac/Home/Documents/proj v5/bancoReg.sv
-L0 1
-Z8 OV;L;10.1b;51
-r1
-31
-Z9 o-work work -sv -O0
-Z10 nbanco@reg
-Z11 !s100 <oB0H1bZYdHi`2^li`XI<2
-Z12 !s105 bancoReg_sv_unit
-Z13 !s90 -reportprogress|300|-work|work|-sv|//Mac/Home/Documents/proj v5/bancoReg.sv|
-Z14 !s108 1554495107.995000
-Z15 !s107 //Mac/Home/Documents/proj v5/bancoReg.sv|
+Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z1 !s110 1554817489
 !i10b 1
+!s100 a:<nhKC@mWB[nDSoijJPm3
+I:>gz>k>BDEEl6G`]HTD=k2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s105 bancoReg_sv_unit
+S1
+Z3 dC:/Users/gisf/Downloads/proj v7
+Z4 w1554808959
+8C:/Users/gisf/Downloads/proj v7/bancoReg.sv
+FC:/Users/gisf/Downloads/proj v7/bancoReg.sv
+L0 1
+Z5 OV;L;10.5b;63
+r1
 !s85 0
-!s101 -O0
+31
+Z6 !s108 1554817489.000000
+!s107 C:/Users/gisf/Downloads/proj v7/bancoReg.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Downloads/proj v7/bancoReg.sv|
+!i113 1
+Z7 o-work work -sv
+Z8 tCvgOpt 0
+nbanco@reg
 vDeslocamento
+R0
 R1
-Z16 IJhEkac1J@H0@loikz@;D[0
-Z17 VEYU2:3l^LF]N:CR`?aU6^2
-S1
-R4
-R5
-Z18 8//Mac/Home/Documents/proj v5/Deslocamento.sv
-Z19 F//Mac/Home/Documents/proj v5/Deslocamento.sv
-L0 1
-R8
-r1
-31
-R9
-Z20 n@deslocamento
-Z21 !s100 >Bilf8:eibM8Pf<NY2OGX1
-Z22 !s105 Deslocamento_sv_unit
-Z23 !s90 -reportprogress|300|-work|work|-sv|//Mac/Home/Documents/proj v5/Deslocamento.sv|
-Z24 !s108 1554495108.120000
-Z25 !s107 //Mac/Home/Documents/proj v5/Deslocamento.sv|
 !i10b 1
-!s85 0
-!s101 -O0
-Einstr_reg_risc_v
-R5
-Z26 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
-Z27 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+!s100 EMH`UB_G1bTeiVdfJ^^>l1
+IP@M@bQP>e>`88egR?WjYU2
+R2
+!s105 Deslocamento_sv_unit
+S1
+R3
 R4
-Z28 8//Mac/Home/Documents/proj v5/Instr_Reg_RISC_V.vhd
-Z29 F//Mac/Home/Documents/proj v5/Instr_Reg_RISC_V.vhd
+8C:/Users/gisf/Downloads/proj v7/Deslocamento.sv
+FC:/Users/gisf/Downloads/proj v7/Deslocamento.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/gisf/Downloads/proj v7/Deslocamento.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Downloads/proj v7/Deslocamento.sv|
+!i113 1
+R7
+R8
+n@deslocamento
+Einstr_reg_risc_v
+R4
+Z9 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z10 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R3
+Z11 8C:/Users/gisf/Downloads/proj v7/Instr_Reg_RISC_V.vhd
+Z12 FC:/Users/gisf/Downloads/proj v7/Instr_Reg_RISC_V.vhd
 l0
 L49
-Z30 VAM`FnRo7IOz;SQaA3fo180
-Z31 OV;C;10.1b;51
+V7TD3cNADG8G:ODlTSzz?c1
+!s100 HF;HEc4<o>]o3`Jjc=WPJ2
+Z13 OV;C;10.5b;63
 32
-Z32 !s108 1554495108.308000
-Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|//Mac/Home/Documents/proj v5/Instr_Reg_RISC_V.vhd|
-Z34 !s107 //Mac/Home/Documents/proj v5/Instr_Reg_RISC_V.vhd|
-Z35 o-work work -2002 -explicit -O0
-Z36 tExplicit 1
-Z37 !s100 zzSOE=ebk98>ZXBKnBPHW3
+R1
 !i10b 1
+R6
+Z14 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/gisf/Downloads/proj v7/Instr_Reg_RISC_V.vhd|
+Z15 !s107 C:/Users/gisf/Downloads/proj v7/Instr_Reg_RISC_V.vhd|
+!i113 1
+Z16 o-work work -2002 -explicit
+Z17 tExplicit 1 CvgOpt 0
 Abehavioral_arch
-R26
-R27
-Z38 DEx4 work 16 instr_reg_risc_v 0 22 AM`FnRo7IOz;SQaA3fo180
+R9
+R10
+DEx4 work 16 instr_reg_risc_v 0 22 7TD3cNADG8G:ODlTSzz?c1
 l68
 L65
-Z39 VeG^Q`oPAP:Q@Eae?2N9N^0
-R31
+Vo8SZoo^`iHF7`CU3CnhD`1
+!s100 e?bWG@:SnkVC476;`5UQ[1
+R13
 32
-R32
-R33
-R34
-R35
-R36
-Z40 !s100 ?J=CCWTLYA5o_`Khc4A;83
+R1
 !i10b 1
+R6
+R14
+R15
+!i113 1
+R16
+R17
 vMemoria32
+R0
 R1
-Z41 IF`25n2k1Z>^?P]OlD50ba1
-Z42 VOKmRZSIGU7oP:>2GBFEaf1
-S1
-R4
-R5
-Z43 8//Mac/Home/Documents/proj v5/Memoria32.sv
-Z44 F//Mac/Home/Documents/proj v5/Memoria32.sv
-L0 26
-R8
-r1
-31
-R9
-Z45 n@memoria32
-Z46 !s100 J5a7V@2ffHC]EeFfT8gT81
-Z47 !s105 Memoria32_sv_unit
-Z48 !s90 -reportprogress|300|-work|work|-sv|//Mac/Home/Documents/proj v5/Memoria32.sv|
-Z49 !s108 1554495108.433000
-Z50 !s107 //Mac/Home/Documents/proj v5/Memoria32.sv|
 !i10b 1
+!s100 Q2gmKA>Pd1H;3=f[e^lb[3
+I]NE7DX]?H5SmzWI64K8XY0
+R2
+!s105 Memoria32_sv_unit
+S1
+R3
+R4
+8C:/Users/gisf/Downloads/proj v7/Memoria32.sv
+FC:/Users/gisf/Downloads/proj v7/Memoria32.sv
+Z18 L0 26
+R5
+r1
 !s85 0
-!s101 -O0
+31
+R6
+!s107 C:/Users/gisf/Downloads/proj v7/Memoria32.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Downloads/proj v7/Memoria32.sv|
+!i113 1
+R7
+R8
+n@memoria32
 vMemoria64
+R0
 R1
-Z51 IGemoPdQi:<C1_kmne[=5V1
-Z52 V[[Hn436FoEEQ4Ei3501G<3
+!i10b 1
+!s100 1fz3Mgbi`W1QjWk]9CgUO3
+ISGY_0;mGYc]@iG<=7b`NX3
+R2
+!s105 Memoria64_sv_unit
 S1
+R3
 R4
+8C:/Users/gisf/Downloads/proj v7/Memoria64.sv
+FC:/Users/gisf/Downloads/proj v7/Memoria64.sv
+R18
 R5
-Z53 8//Mac/Home/Documents/proj v5/Memoria64.sv
-Z54 F//Mac/Home/Documents/proj v5/Memoria64.sv
-L0 26
-R8
 r1
-31
-R9
-Z55 n@memoria64
-Z56 !s100 W>]h5geV^@i9L^fBL`=zd0
-Z57 !s105 Memoria64_sv_unit
-Z58 !s90 -reportprogress|300|-work|work|-sv|//Mac/Home/Documents/proj v5/Memoria64.sv|
-Z59 !s108 1554495108.558000
-Z60 !s107 //Mac/Home/Documents/proj v5/Memoria64.sv|
-!i10b 1
 !s85 0
-!s101 -O0
-vramOnChip32
-Z61 IRH8AO?PZ?Zgd<K<KQBHoz3
-Z62 VK]iULzeAPkoA=BFhmLM]91
-R4
-R5
-Z63 8//Mac/Home/Documents/proj v5/ramOnChip32.v
-Z64 F//Mac/Home/Documents/proj v5/ramOnChip32.v
-L0 40
+31
+R6
+!s107 C:/Users/gisf/Downloads/proj v7/Memoria64.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Downloads/proj v7/Memoria64.sv|
+!i113 1
+R7
 R8
-r1
-31
-Z65 o-work work -O0
-Z66 nram@on@chip32
-Z67 !s100 ;DM`Z0RK3lJO[;@iO:HI@2
-Z68 !s90 -reportprogress|300|-work|work|//Mac/Home/Documents/proj v5/ramOnChip32.v|
-Z69 !s108 1554495108.745000
-Z70 !s107 //Mac/Home/Documents/proj v5/ramOnChip32.v|
-!i10b 1
-!s85 0
-!s101 -O0
-vramOnChip64
-Z71 IlfY_8^b^<F?Tn<EDKaHQR3
-Z72 ViKEKRWGFgcX8z3l@5;oiW3
-R4
-R5
-Z73 8//Mac/Home/Documents/proj v5/ramOnChip64.v
-Z74 F//Mac/Home/Documents/proj v5/ramOnChip64.v
-L0 40
-R8
-r1
-31
-R65
-Z75 nram@on@chip64
-Z76 !s100 WjbIR6VK8=faZOM8JNKnN2
-Z77 !s90 -reportprogress|300|-work|work|//Mac/Home/Documents/proj v5/ramOnChip64.v|
-Z78 !s108 1554495108.886000
-Z79 !s107 //Mac/Home/Documents/proj v5/ramOnChip64.v|
-!i10b 1
-!s85 0
-!s101 -O0
-vregister
+n@memoria64
+vmux8to1
 R1
-Z80 IO?<PV]E8=0[kTWK1aFJ;`2
-Z81 VgI5g^zE2HYK9JW7MX4W4Z0
-S1
+!i10b 1
+!s100 ^2SJCmHeU_9=mU:bbMmf@1
+InKJe7E84Tm0UlH8BLI=5]2
+R2
+R3
 R4
-R5
-Z82 8//Mac/Home/Documents/proj v5/register.sv
-Z83 F//Mac/Home/Documents/proj v5/register.sv
+8C:/Users/gisf/Downloads/proj v7/mux8to1.v
+FC:/Users/gisf/Downloads/proj v7/mux8to1.v
 L0 1
-R8
-r1
-31
-R9
-Z84 !s100 2GMX<5]WP3S`fd@h6iRKM3
-Z85 !s105 register_sv_unit
-Z86 !s90 -reportprogress|300|-work|work|-sv|//Mac/Home/Documents/proj v5/register.sv|
-Z87 !s108 1554495108.995000
-Z88 !s107 //Mac/Home/Documents/proj v5/register.sv|
-!i10b 1
-!s85 0
-!s101 -O0
-vsimulacao32
-R1
-Z89 Ih^_mL]bISeaSZZTYIJ@Zh2
-Z90 VmmWS<JJME9:V9j<YnPJ?K1
-S1
-R4
-Z91 w1554377980
-Z92 8//Mac/Home/Documents/proj v5/simulacao32.sv
-Z93 F//Mac/Home/Documents/proj v5/simulacao32.sv
-L0 3
-R8
-r1
-31
-R9
-Z94 !s100 geo=^SQQ24immiAH3DlhZ2
-Z95 !s105 simulacao32_sv_unit
-Z96 !s90 -reportprogress|300|-work|work|-sv|//Mac/Home/Documents/proj v5/simulacao32.sv|
-Z97 !s108 1554495109.089000
-Z98 !s107 //Mac/Home/Documents/proj v5/simulacao32.sv|
-!i10b 1
-!s85 0
-!s101 -O0
-vUC
-R1
-Z99 IYeT`hHeX[CSIB5BbTgX3Z0
-Z100 V`e0V4C?c6:?KK<[FeBgD<2
-S1
-R4
-Z101 w1554380746
-Z102 8//Mac/Home/Documents/proj v5/UC.sv
-Z103 F//Mac/Home/Documents/proj v5/UC.sv
-L0 2
-R8
-r1
-31
-R9
-n@u@c
-Z104 !s100 KXU:a1ea4PEKZRfz5ZH243
-Z105 !s105 UC_sv_unit
-Z106 !s90 -reportprogress|300|-work|work|-sv|//Mac/Home/Documents/proj v5/UC.sv|
-!i10b 1
-!s85 0
-Z107 !s108 1554495109.199000
-Z108 !s107 //Mac/Home/Documents/proj v5/UC.sv|
-!s101 -O0
-Eula64
 R5
-Z109 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
-R26
-R27
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/gisf/Downloads/proj v7/mux8to1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gisf/Downloads/proj v7/mux8to1.v|
+!i113 1
+Z19 o-work work
+R8
+vramOnChip32
+R1
+!i10b 1
+!s100 ?cVfgbFYaCB@4255f4cUf3
+I[X_SoT5^X7V6:j<PeS:F[0
+R2
+R3
 R4
-Z110 8//Mac/Home/Documents/proj v5/ula64.vhd
-Z111 F//Mac/Home/Documents/proj v5/ula64.vhd
+8C:/Users/gisf/Downloads/proj v7/ramOnChip32.v
+FC:/Users/gisf/Downloads/proj v7/ramOnChip32.v
+Z20 L0 40
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/gisf/Downloads/proj v7/ramOnChip32.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gisf/Downloads/proj v7/ramOnChip32.v|
+!i113 1
+R19
+R8
+nram@on@chip32
+vramOnChip64
+R1
+!i10b 1
+!s100 cocMaFKEzGMH4F3EWeV]X1
+I>CDK=3j^2T2K=lNMWP;Z83
+R2
+R3
+R4
+8C:/Users/gisf/Downloads/proj v7/ramOnChip64.v
+FC:/Users/gisf/Downloads/proj v7/ramOnChip64.v
+R20
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/gisf/Downloads/proj v7/ramOnChip64.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gisf/Downloads/proj v7/ramOnChip64.v|
+!i113 1
+R19
+R8
+nram@on@chip64
+vregister
+R0
+Z21 !s110 1554817490
+!i10b 1
+!s100 Gjjc1O?eX;I>UcKl1X;1V3
+Io9P_;Aij3F7R2nGnbUWZ;1
+R2
+!s105 register_sv_unit
+S1
+R3
+w1554817409
+8C:/Users/gisf/Downloads/proj v7/register.sv
+FC:/Users/gisf/Downloads/proj v7/register.sv
+L0 1
+R5
+r1
+!s85 0
+31
+Z22 !s108 1554817490.000000
+!s107 C:/Users/gisf/Downloads/proj v7/register.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Downloads/proj v7/register.sv|
+!i113 1
+R7
+R8
+vsimulacao32
+R0
+R21
+!i10b 1
+!s100 A9:2o93XLhZGR0EbzZf8T3
+I3=C<?8YaAUFkRKz@QHh_j1
+R2
+!s105 simulacao32_sv_unit
+S1
+R3
+R4
+8C:/Users/gisf/Downloads/proj v7/simulacao32.sv
+FC:/Users/gisf/Downloads/proj v7/simulacao32.sv
+L0 3
+R5
+r1
+!s85 0
+31
+R22
+!s107 C:/Users/gisf/Downloads/proj v7/simulacao32.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Downloads/proj v7/simulacao32.sv|
+!i113 1
+R7
+R8
+vUC
+R0
+R21
+!i10b 1
+!s100 D[W2CdIoEcKY^IUf`>>Ug1
+I3?4]W=[^SFzB_<KE^PFji1
+R2
+!s105 signalExtend_sv_unit
+S1
+R3
+w1554817312
+8C:/Users/gisf/Downloads/proj v7/signalExtend.sv
+FC:/Users/gisf/Downloads/proj v7/signalExtend.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R22
+!s107 C:/Users/gisf/Downloads/proj v7/signalExtend.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Downloads/proj v7/signalExtend.sv|
+!i113 1
+R7
+R8
+n@u@c
+Eula64
+R4
+Z23 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+R9
+R10
+R3
+Z24 8C:/Users/gisf/Downloads/proj v7/ula64.vhd
+Z25 FC:/Users/gisf/Downloads/proj v7/ula64.vhd
 l0
 L54
-Z112 VXRoa<Xz2eZUdJ[jkCaOz^1
-R31
+VNKCl_dCU9VZRibAm_Jh<Y0
+!s100 gXP0QOjWED7GdgGCHP44]0
+R13
 32
-Z113 !s108 1554495109.355000
-Z114 !s90 -reportprogress|300|-work|work|-2002|-explicit|//Mac/Home/Documents/proj v5/ula64.vhd|
-Z115 !s107 //Mac/Home/Documents/proj v5/ula64.vhd|
-R35
-R36
-Z116 !s100 ZFh4d3obkBcDzkNJV[gd>1
+R21
 !i10b 1
+R22
+Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/gisf/Downloads/proj v7/ula64.vhd|
+Z27 !s107 C:/Users/gisf/Downloads/proj v7/ula64.vhd|
+!i113 1
+R16
+R17
 Abehavioral
-R109
-R26
-R27
-Z117 DEx4 work 5 ula64 0 22 XRoa<Xz2eZUdJ[jkCaOz^1
+R23
+R9
+R10
+DEx4 work 5 ula64 0 22 NKCl_dCU9VZRibAm_Jh<Y0
 l80
 L70
-Z118 VMPEBOle5>f]gBEkWNC^hf0
-Z119 !s100 _VkeeLJVNT>WLbcLCJiRn2
-R31
+V0bJGE`7Xojm<X>7FGncTL1
+!s100 DoJmkJ?1Y9Zk;7@A7oGLb2
+R13
 32
-R113
-R114
-R115
-R35
-R36
+R21
 !i10b 1
+R22
+R26
+R27
+!i113 1
+R16
+R17
 vUP
+R0
 R1
 !i10b 1
-Z120 !s100 KmY8cOOl;M>Og]3alg7zd3
-Z121 IQiBNSh9ZCVHXa[U?7zhiG3
-Z122 VRjB3`cQ6SAoW^nYJKhG?P2
-Z123 !s105 UP_sv_unit
+!s100 9]chbAnTaWU<NLOK2USnl3
+I0igaMLHiOd?bediEa3jbV1
+R2
+!s105 UP_sv_unit
 S1
-R4
-w1554495105
-Z124 8//Mac/Home/Documents/proj v5/UP.sv
-Z125 F//Mac/Home/Documents/proj v5/UP.sv
+R3
+w1554817486
+8C:/Users/gisf/Downloads/proj v7/UP.sv
+FC:/Users/gisf/Downloads/proj v7/UP.sv
 L0 1
-R8
+R5
 r1
 !s85 0
 31
-!s108 1554495109.495000
-!s107 //Mac/Home/Documents/proj v5/UP.sv|
-Z126 !s90 -reportprogress|300|-work|work|-sv|//Mac/Home/Documents/proj v5/UP.sv|
-!s101 -O0
-R9
+R6
+!s107 C:/Users/gisf/Downloads/proj v7/UP.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Downloads/proj v7/UP.sv|
+!i113 1
+R7
+R8
 n@u@p
