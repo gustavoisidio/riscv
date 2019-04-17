@@ -1,19 +1,21 @@
 
 module UC (input logic clock, reset,
            input logic [6:0] opcode, // Opcode (Instr6_0) saido do Registrador de Instrucoes
-                             estado,
            input logic [31:0] Instr31_0, // Instrucao inteira saida do Registrador de instrucoes
            output logic LoadIR, // Registrador de Instrucoes
                         PCWrite, // PC
                         WriteRegBanco, // Banco de Registradores
                         LoadRegA, // Registrador A
                         LoadRegB, // Registrador B
-                        AluSrcA, // Mux1
-                        AluSrcB, // Mux2
                         InstrType, // Seletor informando tipo da instrucao ao Signal Extend 
-			AluFct, // Seletor da ALU
+			 // Seletor da ALU
                         LoadMDR, // Registrador MDR 
-                        MemToReg // Registrador do Mux3
+			LoadAluout, // Registrador da AluOut
+			DMemWR, // Seletor de da Memoria de Dados
+	   output logic [2:0] MemToReg, // Registrador do Mux3
+                       	      AluSrcA, // Mux1
+			      AluFct,
+                              AluSrcB // Mux2
            );
 
 //Inicializa todos os sinais
@@ -49,12 +51,11 @@ enum logic [6:0] {
 	sd = 7'd7,
 	beq = 7'd8,
 	bne = 7'd9,
-	lui = 7'd10
+	lui = 7'd10,
+	loadRD = 7'd12
 
 	} state, nextState;
 
-
-assign estado = state;
 
 always_ff @(posedge clock, posedge reset) begin
 	if (reset) begin
@@ -64,33 +65,50 @@ always_ff @(posedge clock, posedge reset) begin
     end
 end
 
+
 always_comb begin
 	case (state)
 		rst: begin
 			PCWrite = 0; // Incrementa PC
 			LoadIR = 0; // So no proximo ciclo
            		WriteRegBanco = 0; // NAO SETADO AINDA
-            		AluSrcA = 0; // NAO SETADO AINDA
-            		AluSrcB = 0; // NAO SETADO AINDA
+			LoadAluout = 0; 
+			LoadRegA = 0;
+			LoadRegB = 0;
 			nextState = busca;	
 		end
 		busca: begin
 			PCWrite = 1; // Incrementa PC
+			AluFct = 3'b001; // SETANDO ALU PARA SOMA
 			LoadIR = 0; // So no proximo ciclo
 			WriteRegBanco = 0; // NAO SETADO AINDA
-            		AluSrcA = 0; // NAO SETADO AINDA
-            		AluSrcB = 0; // NAO SETADO AINDA
+            		AluSrcA = 3'd0; // É ZERO MESMO
+            		AluSrcB = 3'd1; // INCREMENTAR PC
+			LoadAluout = 0; 
+			LoadRegA = 0;
+			LoadRegB = 0;
 			nextState = salvaInstrucao;
 		end
 		salvaInstrucao: begin
 			PCWrite = 0; // Incrementa PC
 			LoadIR = 1; // So no proximo ciclo
 			WriteRegBanco = 0; // NAO SETADO AINDA
-            		AluSrcA = 0; // NAO SETADO AINDA
-            		AluSrcB = 0; // NAO SETADO AINDA
+            		AluSrcA = 3'd0; // NAO SETADO AINDA
+            		AluSrcB = 3'd0; // NAO SETADO AINDA
+			LoadAluout = 0; 
+			LoadRegA = 0;
+			LoadRegB = 0;
 			nextState = decodInstrucao;
 		end
                 decodInstrucao: begin
+			PCWrite = 0; // Incrementa PC
+			LoadIR = 1; // So no proximo ciclo
+            		AluSrcA = 3'd0; // NAO SETADO AINDA
+            		AluSrcB = 3'd0; // NAO SETADO AINDA
+			LoadAluout = 0; 
+			WriteRegBanco = 0; // SETA LEITURA DO BANCO DE REGISTRADORES #
+			LoadRegA = 1; // CARREGO EM A #
+			LoadRegB = 1; // CARREGO EM B #
                     case(opcode)
                         7'b0110011: begin //R
                             case(funct3)
@@ -150,18 +168,29 @@ always_comb begin
                 end // decod
 		// Instrucoes NAO SETADAS AINDA
 		add: begin
-			//Inicializa todos os sinais
-			LoadIR = 1;
-			//PCWrite = 0
-			WriteRegBanco = 1;
-			LoadRegA = 1;
-			LoadRegB = 1;
-			//AluSrcA = 0
-			//AluSrcB = 0
-			//InstrType = 0
-			AluFct = 3'b001;
-			//LoadMDR = 0
-			//MemToReg = 0
+
+			PCWrite = 0; 
+			LoadIR = 1; 
+            		AluSrcA = 3'd1; // PEGA SAIDA DO REG A #
+            		AluSrcB = 3'd0; // PEGA SAIDA DO REG B #
+			WriteRegBanco = 0; 
+			LoadRegA = 0; 
+			LoadRegB = 0;  
+			AluFct = 3'b001; // SETANDO ALU PARA SOMA
+			LoadAluout = 1;
+			nextState = loadRD;
+		end
+		loadRD: begin
+			PCWrite = 0; 
+			LoadIR = 0; 
+            		AluSrcA = 3'd0; // PEGA SAIDA DO REG A 
+            		AluSrcB = 3'd0; // PEGA SAIDA DO REG B 
+			LoadRegA = 0; 
+			LoadRegB = 0;  
+			LoadAluout = 0; 
+			MemToReg = 3'd1; // Mux escolhe saida da ALU
+			WriteRegBanco = 1;  // Escrever em RD 
+			nextState = busca;
 		end
 		sub: begin
 		end

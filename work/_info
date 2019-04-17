@@ -6,25 +6,25 @@ cModel Technology
 d\\Mac\Home\Desktop
 vbancoReg
 Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z1 !s110 1554834291
+Z1 !s110 1555525922
 !i10b 1
 !s100 a:<nhKC@mWB[nDSoijJPm3
-IzoJcdH[GX`7dSiT8hf[zX1
+IW:3l83G^d4HI;?J8I0:af1
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 !s105 bancoReg_sv_unit
 S1
-Z3 dC:/Users/gisf/Downloads/proj v8
-Z4 w1554825999
-8C:/Users/gisf/Downloads/proj v8/bancoReg.sv
-FC:/Users/gisf/Downloads/proj v8/bancoReg.sv
+Z3 dC:/Users/gisf/Desktop/riscv
+Z4 w1555518912
+8C:/Users/gisf/Desktop/riscv/bancoReg.sv
+FC:/Users/gisf/Desktop/riscv/bancoReg.sv
 L0 1
 Z5 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z6 !s108 1554834291.000000
-!s107 C:/Users/gisf/Downloads/proj v8/bancoReg.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Downloads/proj v8/bancoReg.sv|
+Z6 !s108 1555525922.000000
+!s107 C:/Users/gisf/Desktop/riscv/bancoReg.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Desktop/riscv/bancoReg.sv|
 !i113 1
 Z7 o-work work -sv
 Z8 tCvgOpt 0
@@ -34,22 +34,22 @@ R0
 R1
 !i10b 1
 !s100 EMH`UB_G1bTeiVdfJ^^>l1
-I_ga7:EnRmKW10moZl^84K3
+In=0Vlf:WdUI^@_SHi]D<]0
 R2
 !s105 Deslocamento_sv_unit
 S1
 R3
 R4
-8C:/Users/gisf/Downloads/proj v8/Deslocamento.sv
-FC:/Users/gisf/Downloads/proj v8/Deslocamento.sv
+8C:/Users/gisf/Desktop/riscv/Deslocamento.sv
+FC:/Users/gisf/Desktop/riscv/Deslocamento.sv
 L0 1
 R5
 r1
 !s85 0
 31
 R6
-!s107 C:/Users/gisf/Downloads/proj v8/Deslocamento.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Downloads/proj v8/Deslocamento.sv|
+!s107 C:/Users/gisf/Desktop/riscv/Deslocamento.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Desktop/riscv/Deslocamento.sv|
 !i113 1
 R7
 R8
@@ -59,8 +59,8 @@ R4
 Z9 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z10 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 R3
-Z11 8C:/Users/gisf/Downloads/proj v8/Instr_Reg_RISC_V.vhd
-Z12 FC:/Users/gisf/Downloads/proj v8/Instr_Reg_RISC_V.vhd
+Z11 8C:/Users/gisf/Desktop/riscv/Instr_Reg_RISC_V.vhd
+Z12 FC:/Users/gisf/Desktop/riscv/Instr_Reg_RISC_V.vhd
 l0
 L49
 V7TD3cNADG8G:ODlTSzz?c1
@@ -70,8 +70,8 @@ Z13 OV;C;10.5b;63
 R1
 !i10b 1
 R6
-Z14 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/gisf/Downloads/proj v8/Instr_Reg_RISC_V.vhd|
-Z15 !s107 C:/Users/gisf/Downloads/proj v8/Instr_Reg_RISC_V.vhd|
+Z14 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/gisf/Desktop/riscv/Instr_Reg_RISC_V.vhd|
+Z15 !s107 C:/Users/gisf/Desktop/riscv/Instr_Reg_RISC_V.vhd|
 !i113 1
 Z16 o-work work -2002 -explicit
 Z17 tExplicit 1 CvgOpt 0
@@ -95,279 +95,279 @@ R16
 R17
 vMemoria32
 R0
-Z18 !s110 1554834292
+R1
 !i10b 1
 !s100 Q2gmKA>Pd1H;3=f[e^lb[3
-Ig^j8HKTKd:YSNfG<DXDD`1
+If`YVCPP^LjzBz`]8Z]@b11
 R2
 !s105 Memoria32_sv_unit
 S1
 R3
 R4
-8C:/Users/gisf/Downloads/proj v8/Memoria32.sv
-FC:/Users/gisf/Downloads/proj v8/Memoria32.sv
-Z19 L0 26
+8C:/Users/gisf/Desktop/riscv/Memoria32.sv
+FC:/Users/gisf/Desktop/riscv/Memoria32.sv
+Z18 L0 26
 R5
 r1
 !s85 0
 31
-Z20 !s108 1554834292.000000
-!s107 C:/Users/gisf/Downloads/proj v8/Memoria32.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Downloads/proj v8/Memoria32.sv|
+R6
+!s107 C:/Users/gisf/Desktop/riscv/Memoria32.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Desktop/riscv/Memoria32.sv|
 !i113 1
 R7
 R8
 n@memoria32
 vMemoria64
 R0
-R18
+R1
 !i10b 1
 !s100 1fz3Mgbi`W1QjWk]9CgUO3
-IVZjI8XLb2zlBEji>`ZE;=2
+I5`KigT3c;hid2]ck?0VQo2
 R2
 !s105 Memoria64_sv_unit
 S1
 R3
 R4
-8C:/Users/gisf/Downloads/proj v8/Memoria64.sv
-FC:/Users/gisf/Downloads/proj v8/Memoria64.sv
-R19
+8C:/Users/gisf/Desktop/riscv/Memoria64.sv
+FC:/Users/gisf/Desktop/riscv/Memoria64.sv
+R18
 R5
 r1
 !s85 0
 31
-R20
-!s107 C:/Users/gisf/Downloads/proj v8/Memoria64.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Downloads/proj v8/Memoria64.sv|
+R6
+!s107 C:/Users/gisf/Desktop/riscv/Memoria64.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Desktop/riscv/Memoria64.sv|
 !i113 1
 R7
 R8
 n@memoria64
 vmux8to1
-R18
+R1
 !i10b 1
-!s100 ^2SJCmHeU_9=mU:bbMmf@1
-IJnffTzC>LPACP`;jUhc?A2
+!s100 hJYk;5fT7B_Ha@Aod89CH1
+IjFXfkaNC42?>g3kLH28Zh3
 R2
 R3
-R4
-8C:/Users/gisf/Downloads/proj v8/mux8to1.v
-FC:/Users/gisf/Downloads/proj v8/mux8to1.v
+w1555523634
+8C:/Users/gisf/Desktop/riscv/mux8to1.v
+FC:/Users/gisf/Desktop/riscv/mux8to1.v
 L0 1
 R5
 r1
 !s85 0
 31
-R20
-!s107 C:/Users/gisf/Downloads/proj v8/mux8to1.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gisf/Downloads/proj v8/mux8to1.v|
+R6
+!s107 C:/Users/gisf/Desktop/riscv/mux8to1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gisf/Desktop/riscv/mux8to1.v|
 !i113 1
-Z21 o-work work
+Z19 o-work work
 R8
 vramOnChip32
-R18
+Z20 !s110 1555525923
 !i10b 1
 !s100 ?cVfgbFYaCB@4255f4cUf3
-IGTDmRjn<T]VX5h;?n:MHD1
+Im=;m7b?9?:T;h[=GJdE=d2
 R2
 R3
-Z22 w1554826000
-8C:/Users/gisf/Downloads/proj v8/ramOnChip32.v
-FC:/Users/gisf/Downloads/proj v8/ramOnChip32.v
-Z23 L0 40
+R4
+8C:/Users/gisf/Desktop/riscv/ramOnChip32.v
+FC:/Users/gisf/Desktop/riscv/ramOnChip32.v
+Z21 L0 40
 R5
 r1
 !s85 0
 31
-R20
-!s107 C:/Users/gisf/Downloads/proj v8/ramOnChip32.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gisf/Downloads/proj v8/ramOnChip32.v|
+R6
+!s107 C:/Users/gisf/Desktop/riscv/ramOnChip32.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gisf/Desktop/riscv/ramOnChip32.v|
 !i113 1
-R21
+R19
 R8
 nram@on@chip32
 vramOnChip64
-R18
+R20
 !i10b 1
 !s100 cocMaFKEzGMH4F3EWeV]X1
-ICBH;e3<Z<EYSAI_h0Pj<=1
+Iic1LEeE5AhJWAbnja@T3U1
 R2
 R3
-R22
-8C:/Users/gisf/Downloads/proj v8/ramOnChip64.v
-FC:/Users/gisf/Downloads/proj v8/ramOnChip64.v
-R23
+R4
+8C:/Users/gisf/Desktop/riscv/ramOnChip64.v
+FC:/Users/gisf/Desktop/riscv/ramOnChip64.v
+R21
 R5
 r1
 !s85 0
 31
-R20
-!s107 C:/Users/gisf/Downloads/proj v8/ramOnChip64.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gisf/Downloads/proj v8/ramOnChip64.v|
+Z22 !s108 1555525923.000000
+!s107 C:/Users/gisf/Desktop/riscv/ramOnChip64.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gisf/Desktop/riscv/ramOnChip64.v|
 !i113 1
-R21
+R19
 R8
 nram@on@chip64
 vregister
 R0
-R18
+R20
 !i10b 1
 !s100 Gjjc1O?eX;I>UcKl1X;1V3
-I1Bo^ig]8eDmTRZ88f_4S63
+I_9Ub`?1:`l7Bk2LLJ1=4k1
 R2
 !s105 register_sv_unit
 S1
 R3
-R22
-8C:/Users/gisf/Downloads/proj v8/register.sv
-FC:/Users/gisf/Downloads/proj v8/register.sv
+R4
+8C:/Users/gisf/Desktop/riscv/register.sv
+FC:/Users/gisf/Desktop/riscv/register.sv
 L0 1
 R5
 r1
 !s85 0
 31
-R20
-!s107 C:/Users/gisf/Downloads/proj v8/register.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Downloads/proj v8/register.sv|
+R22
+!s107 C:/Users/gisf/Desktop/riscv/register.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Desktop/riscv/register.sv|
 !i113 1
 R7
 R8
 vsignalExtend
 R0
-R18
+R20
 !i10b 1
 !s100 NjF15VkV^4=]EdlK<Ch@n3
-IPX47<an7Y53g7fOE6m50D0
+IFkDIfJf@G6>k[Zd14hLF93
 R2
 !s105 signalExtend_sv_unit
 S1
 R3
-w1554830968
-8C:/Users/gisf/Downloads/proj v8/signalExtend.sv
-FC:/Users/gisf/Downloads/proj v8/signalExtend.sv
+R4
+8C:/Users/gisf/Desktop/riscv/signalExtend.sv
+FC:/Users/gisf/Desktop/riscv/signalExtend.sv
 L0 1
 R5
 r1
 !s85 0
 31
-R20
-!s107 C:/Users/gisf/Downloads/proj v8/signalExtend.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Downloads/proj v8/signalExtend.sv|
+R22
+!s107 C:/Users/gisf/Desktop/riscv/signalExtend.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Desktop/riscv/signalExtend.sv|
 !i113 1
 R7
 R8
 nsignal@extend
 vsimulacao32
 R0
-R18
+R20
 !i10b 1
 !s100 A9:2o93XLhZGR0EbzZf8T3
-InbhjMfk^fWi3g;;eQ[:GC1
+I2MC`C5;>QLG7MkSQ<QobW0
 R2
 !s105 simulacao32_sv_unit
 S1
 R3
-R22
-8C:/Users/gisf/Downloads/proj v8/simulacao32.sv
-FC:/Users/gisf/Downloads/proj v8/simulacao32.sv
+R4
+8C:/Users/gisf/Desktop/riscv/simulacao32.sv
+FC:/Users/gisf/Desktop/riscv/simulacao32.sv
 L0 3
 R5
 r1
 !s85 0
 31
-R20
-!s107 C:/Users/gisf/Downloads/proj v8/simulacao32.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Downloads/proj v8/simulacao32.sv|
+R22
+!s107 C:/Users/gisf/Desktop/riscv/simulacao32.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Desktop/riscv/simulacao32.sv|
 !i113 1
 R7
 R8
 vUC
 R0
-Z24 !s110 1554834293
+R20
 !i10b 1
-!s100 FH1d<>07QH]XeZlCmYllz0
-IAYX=UImj`Ei4;[H2Zl]jo1
+!s100 `^ZQ]k21[ZkK_O^5JSfNZ1
+I>YU6lWQ<JE:6cI_X<Ii5W2
 R2
 !s105 UC_sv_unit
 S1
 R3
-w1554834286
-8C:/Users/gisf/Downloads/proj v8/UC.sv
-FC:/Users/gisf/Downloads/proj v8/UC.sv
+w1555525914
+8C:/Users/gisf/Desktop/riscv/UC.sv
+FC:/Users/gisf/Desktop/riscv/UC.sv
 L0 2
 R5
 r1
 !s85 0
 31
-Z25 !s108 1554834293.000000
-!s107 C:/Users/gisf/Downloads/proj v8/UC.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Downloads/proj v8/UC.sv|
+R22
+!s107 C:/Users/gisf/Desktop/riscv/UC.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Desktop/riscv/UC.sv|
 !i113 1
 R7
 R8
 n@u@c
 Eula64
-R22
-Z26 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+R4
+Z23 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 R9
 R10
 R3
-Z27 8C:/Users/gisf/Downloads/proj v8/ula64.vhd
-Z28 FC:/Users/gisf/Downloads/proj v8/ula64.vhd
+Z24 8C:/Users/gisf/Desktop/riscv/ula64.vhd
+Z25 FC:/Users/gisf/Desktop/riscv/ula64.vhd
 l0
 L54
 VNKCl_dCU9VZRibAm_Jh<Y0
 !s100 gXP0QOjWED7GdgGCHP44]0
 R13
 32
-R24
+R20
 !i10b 1
-R25
-Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/gisf/Downloads/proj v8/ula64.vhd|
-Z30 !s107 C:/Users/gisf/Downloads/proj v8/ula64.vhd|
+R22
+Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/gisf/Desktop/riscv/ula64.vhd|
+Z27 !s107 C:/Users/gisf/Desktop/riscv/ula64.vhd|
 !i113 1
 R16
 R17
 Abehavioral
-R26
+R23
 R9
 R10
-DEx4 work 5 ula64 0 22 NKCl_dCU9VZRibAm_Jh<Y0
+Z28 DEx4 work 5 ula64 0 22 NKCl_dCU9VZRibAm_Jh<Y0
 l80
 L70
-V0bJGE`7Xojm<X>7FGncTL1
-!s100 DoJmkJ?1Y9Zk;7@A7oGLb2
+Z29 V0bJGE`7Xojm<X>7FGncTL1
+Z30 !s100 DoJmkJ?1Y9Zk;7@A7oGLb2
 R13
 32
-R24
+R20
 !i10b 1
-R25
-R29
-R30
+R22
+R26
+R27
 !i113 1
 R16
 R17
 vUP
 R0
-R24
+R1
 !i10b 1
-!s100 R[Yc5ziT16bBUEjZJacC12
-Ii[m>3Ok7=NDU?PgGO20;A2
+!s100 4iF:c4_ki=eCXD`UmmUTL0
+IUU8AalnUS=bS_jO@06m7a2
 R2
 !s105 UP_sv_unit
 S1
 R3
-w1554833237
-8C:/Users/gisf/Downloads/proj v8/UP.sv
-FC:/Users/gisf/Downloads/proj v8/UP.sv
+w1555525909
+8C:/Users/gisf/Desktop/riscv/UP.sv
+FC:/Users/gisf/Desktop/riscv/UP.sv
 L0 1
 R5
 r1
 !s85 0
 31
-R25
-!s107 C:/Users/gisf/Downloads/proj v8/UP.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Downloads/proj v8/UP.sv|
+R6
+!s107 C:/Users/gisf/Desktop/riscv/UP.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Desktop/riscv/UP.sv|
 !i113 1
 R7
 R8
