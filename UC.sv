@@ -1,35 +1,31 @@
 
-module UC (input logic clock, reset,
-           input logic [6:0] opcode, // Opcode (Instr6_0) saido do Registrador de Instrucoes
-           input logic [31:0] Instr31_0, // Instrucao inteira saida do Registrador de instrucoes
-           output logic LoadIR, // Registrador de Instrucoes
+module UC (	input logic clock, reset,
+           	input logic [6:0] opcode, // Opcode (Instr6_0) saido do Registrador de Instrucoes
+           	input logic [31:0] Instr31_0, // Instrucao inteira saida do Registrador de instrucoes
+           	output logic LoadIR, // Registrador de Instrucoes
                         PCWrite, // PC
                         WriteRegBanco, // Banco de Registradores
                         LoadRegA, // Registrador A
                         LoadRegB, // Registrador B
-                        InstrType, // Seletor informando tipo da instrucao ao Signal Extend 
-			 // Seletor da ALU
                         LoadMDR, // Registrador MDR 
-			LoadAluout, // Registrador da AluOut
-			DMemWR, // Seletor de da Memoria de Dados
-	   output logic [2:0] MemToReg, // Registrador do Mux3
-                       	      AluSrcA, // Mux1
-			      AluFct,
-                              AluSrcB // Mux2
+						LoadAluout, // Registrador da AluOut
+						DMemWR, // Seletor de da Memoria de Dados
+	   		output logic [2:0] 	MemToReg, // Registrador do Mux3
+								AluSrcA, // Mux1
+				  				AluFct, 
+				  				InstrType, // Seletor informando tipo da instrucao ao Signal Extend 
+                             	AluSrcB // Mux2
            );
 
-//Inicializa todos os sinais
-//LoadIR = 0
-//PCWrite = 0
-//WriteRegBanco = 0
-//LoadRegA = 0
-//LoadRegB = 0
-//AluSrcA = 0
-//AluSrcB = 0
-//InstrType = 0
-//AluFct = 0
-//LoadMDR = 0
-//MemToReg = 0
+// LoadIR = 0; // Registrador de Instrucoes
+// PCWrite = 0; // PC
+// WriteRegBanco = 0; // Banco de Registradores
+// LoadRegA = 0; // Registrador A
+// LoadRegB = 0; // Registrador B
+// LoadMDR = 0; // Registrador MDR 
+// LoadAluout = 0; // Registrador da AluOut
+// DMemWR = 0; // Seletor de da Memoria de Dados
+
 
 logic [6:0] funct7;
 assign funct7 = Instr31_0[31:25];
@@ -82,8 +78,8 @@ always_comb begin
 			AluFct = 3'b001; // SETANDO ALU PARA SOMA
 			LoadIR = 0; // So no proximo ciclo
 			WriteRegBanco = 0; // NAO SETADO AINDA
-            		AluSrcA = 3'd0; // É ZERO MESMO
-            		AluSrcB = 3'd1; // INCREMENTAR PC
+			AluSrcA = 3'd0; // ï¿½ ZERO MESMO
+			AluSrcB = 3'd1; // INCREMENTAR PC
 			LoadAluout = 0; 
 			LoadRegA = 0;
 			LoadRegB = 0;
@@ -93,24 +89,24 @@ always_comb begin
 			PCWrite = 0; // Incrementa PC
 			LoadIR = 1; // So no proximo ciclo
 			WriteRegBanco = 0; // NAO SETADO AINDA
-            		AluSrcA = 3'd0; // NAO SETADO AINDA
-            		AluSrcB = 3'd0; // NAO SETADO AINDA
+			AluSrcA = 3'd0; // NAO SETADO AINDA
+			AluSrcB = 3'd0; // NAO SETADO AINDA
 			LoadAluout = 0; 
 			LoadRegA = 0;
 			LoadRegB = 0;
 			nextState = decodInstrucao;
 		end
                 decodInstrucao: begin
-			PCWrite = 0; // Incrementa PC
-			LoadIR = 1; // So no proximo ciclo
-            		AluSrcA = 3'd0; // NAO SETADO AINDA
-            		AluSrcB = 3'd0; // NAO SETADO AINDA
-			LoadAluout = 0; 
-			WriteRegBanco = 0; // SETA LEITURA DO BANCO DE REGISTRADORES #
-			LoadRegA = 1; // CARREGO EM A #
-			LoadRegB = 1; // CARREGO EM B #
+					PCWrite = 0; 
+					LoadIR = 1; 
+					AluSrcA = 3'd0; 
+					AluSrcB = 3'd0; 
+					LoadAluout = 0; 
+					WriteRegBanco = 0; // SETA LEITURA DO BANCO DE REGISTRADORES #
+					LoadRegA = 1; // CARREGO EM A #
+					LoadRegB = 1; // CARREGO EM B #
                     case(opcode)
-                        7'b0110011: begin //R
+						7'b0110011: begin //R
                             case(funct3)
                                 3'b000: begin
                                     case(funct7)
@@ -120,7 +116,8 @@ always_comb begin
                                 end
                             endcase //funct3
                         end
-                        7'b0010011: begin //I
+						7'b0010011: begin //I
+							InstrType = 3'b000;
                             case(funct3)
                                 3'b000: begin
                                     nextState = addi; // Chama addi
@@ -128,7 +125,8 @@ always_comb begin
                             endcase //funct3
                         end
 
-                        7'b0000011: begin//I
+						7'b0000011: begin//I
+							InstrType = 3'b000;
                             case(funct3)
                                 3'b011: begin
                                     nextState = ld; // Chama ld
@@ -136,7 +134,8 @@ always_comb begin
                             endcase //funct3
                         end
 
-                        7'b0100011: begin//S
+						7'b0100011: begin//S
+							InstrType = 3'b001;
                             case(funct3)
                                 3'b111: begin
                                     nextState = sd; // Chama sd						
@@ -144,14 +143,16 @@ always_comb begin
                             endcase
                         end
 
-                        7'b1100011: begin//SB
+						7'b1100011: begin//SB
+							InstrType = 3'b010;
                             case(funct3)
                                 3'b000: begin
                                         nextState = beq; // Chama beq
                                 end
                             endcase
                             end
-                        7'b1100111: begin
+						7'b1100111: begin // SB
+							InstrType = 3'b010;
                             case(funct3)
                                 3'b001: begin
                                     nextState = bne; // Chama bne
@@ -159,20 +160,21 @@ always_comb begin
                             endcase
                         end
 
-                        7'b0110111: begin //U
+						7'b0110111: begin //U
+							InstrType = 3'b100;
                             nextState = lui; // Chama lui
                         end
 
                     endcase //opcode
 
-                end // decod
-		// Instrucoes NAO SETADAS AINDA
+				end // decod
+				
+		// Instrucoes 
 		add: begin
-
 			PCWrite = 0; 
-			LoadIR = 1; 
-            		AluSrcA = 3'd1; // PEGA SAIDA DO REG A #
-            		AluSrcB = 3'd0; // PEGA SAIDA DO REG B #
+			LoadIR = 1;
+			AluSrcA = 3'd1; // PEGA SAIDA DO REG A #
+			AluSrcB = 3'd0; // PEGA SAIDA DO REG B #
 			WriteRegBanco = 0; 
 			LoadRegA = 0; 
 			LoadRegB = 0;  
@@ -180,11 +182,11 @@ always_comb begin
 			LoadAluout = 1;
 			nextState = loadRD;
 		end
-		loadRD: begin
+		loadRD: begin // Carrega saÃ­da da ALU em RD
 			PCWrite = 0; 
-			LoadIR = 0; 
-            		AluSrcA = 3'd0; // PEGA SAIDA DO REG A 
-            		AluSrcB = 3'd0; // PEGA SAIDA DO REG B 
+			LoadIR = 0;
+			AluSrcA = 3'd0; 
+			AluSrcB = 3'd0; 
 			LoadRegA = 0; 
 			LoadRegB = 0;  
 			LoadAluout = 0; 
@@ -193,10 +195,33 @@ always_comb begin
 			nextState = busca;
 		end
 		sub: begin
+			PCWrite = 0; 
+			LoadIR = 1;
+			AluSrcA = 3'd1; // PEGA SAIDA DO REG A #
+			AluSrcB = 3'd0; // PEGA SAIDA DO REG B #
+			WriteRegBanco = 0; 
+			LoadRegA = 0; 
+			LoadRegB = 0;  
+			AluFct = 3'b010; // SETANDO ALU PARA SUBTRACAO
+			LoadAluout = 1;
+			nextState = loadRD;
 		end
 		addi: begin
+			LoadIR = 0; // Registrador de Instrucoes
+			PCWrite = 0; // PC
+			WriteRegBanco = 0; // Banco de Registradores
+			LoadRegA = 0; // Registrador A
+			LoadRegB = 0; // Registrador B
+			LoadMDR = 0; // Registrador MDR 
+			LoadAluout = 0; // Registrador da AluOut
+			DMemWR = 0; // Seletor de da Memoria de Dados
+
+			AluSrcA = 3'd1; // Libera rs1 pra ALU #
+			AluSrcB = 3'd2; // Libera imm extendido pra ALU #
+			nextState = add; // Faz a adicao normal com o sinal estendido #
 		end
 		ld: begin
+
 		end
 		sd: begin
 		end

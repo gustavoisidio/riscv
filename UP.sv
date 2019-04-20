@@ -3,14 +3,14 @@ module UP(input logic clock, reset);
 logic [63:0] AluOut, outPC, outRegAlu;
 logic [31:0] InstMemOut, Instr31_0; // 1 - Saida da Memoria de Instrucoes, 2 - Saida do registrador de Instrucoes para extensao de sinal e/ou shift
 logic [64-1:0] bancoRegistradoresOut1, bancoRegistradoresOut2; // Saidas do Banco de Registradores
-logic LoadIR, PCWrite, WriteRegBanco, LoadRegA, InstrType, DMemWR, LoadAluout; // Sinais de controle / Saida da Unidade de Controle
+logic LoadIR, PCWrite, WriteRegBanco, LoadRegA, DMemWR, LoadAluout; // Sinais de controle / Saida da Unidade de Controle
 logic [4:0] Instr19_15, Instr24_20, Instr11_7; // Segmentacao da Instrucao / Saida do Registrador de Instrucoes
 logic [6:0] Instr6_0;
 logic [63:0] regAOut, regBOut; // Saida dos registradores A e B
 logic [63:0] outExtend; // Saida da extensao de sinal
 logic [63:0] outMux1, outMux2, outMux3; // Saida dos Mux
 logic [63:0] DataMemOut, outMDR; // Saida da Memoria de Dados e do Registrador MDR
-logic [2:0] AluSrcB, AluSrcA, AluFct, MemToReg;
+logic [2:0] AluSrcB, AluSrcA, AluFct, MemToReg, InstrType;
 
 // Instanciando PC
 register PC (.clk(clock), .reset(reset), .regWrite(PCWrite), .DadoIn(AluOut), .DadoOut(outPC));

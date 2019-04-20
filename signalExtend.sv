@@ -1,8 +1,8 @@
-module signalExtend (input logic clock, reset,
-	   input logic [31:0] Instr31_0,
-	   input logic InstrType,
-	   output logic [63:0] outExtend  
-           );
+module signalExtend (	input logic clock, reset,
+						input logic [31:0] Instr31_0,
+						input logic [2:0] InstrType,
+						output logic [63:0] outExtend  
+					);
 
 logic [11:0] immI, immS, immSB;
 logic [20:0] immUJ, immU;
@@ -16,49 +16,49 @@ assign immU = Instr31_0[31:12];
 
 always_comb begin 
 
-            case (InstrType)
+		case (InstrType)
 
-		3'b000 : begin
-			if(immI[11] == 1'b1) begin
-			 	//outExtend  = {52'b1111111111111111111111111111111111111111111111111111,Instr31_0[31],Instr[7],Instr[30:25],Instr[11:8]}  // SB Extended
-				outExtend  = {52'b1111111111111111111111111111111111111111111111111111,immI};  // immI Extended
+			3'b000 : begin
+				if(immI[11] == 1'b1) begin
+					//outExtend  = {52'b1111111111111111111111111111111111111111111111111111,Instr31_0[31],Instr[7],Instr[30:25],Instr[11:8]}  // SB Extended
+					outExtend  = {52'b1111111111111111111111111111111111111111111111111111,immI};  // I Extended
+				end
+				else begin
+					outExtend  = {52'b0000000000000000000000000000000000000000000000000000,immI};  // I Extended
+				end
 			end
-			else begin
-				outExtend  = {52'b0000000000000000000000000000000000000000000000000000,immI};  // immI Extended
+			3'b001 : begin
+				if(immI[11] == 1'b1) begin
+					outExtend  = {52'b1111111111111111111111111111111111111111111111111111,immS};  // S Extended
+				end
+				else begin
+					outExtend  = {52'b0000000000000000000000000000000000000000000000000000,immS};  // S Extended
+				end
 			end
-		end
-                3'b001 : begin
-			if(immI[11] == 1'b1) begin
-			 	outExtend  = {52'b1111111111111111111111111111111111111111111111111111,immS};  // S Extended
+			3'b010 : begin
+				if(immI[11] == 1'b1) begin
+					outExtend  = {52'b1111111111111111111111111111111111111111111111111111,immSB};  // SB Extended
+				end
+				else begin
+					outExtend  = {52'b0000000000000000000000000000000000000000000000000000,immSB};  // SB Extended
+				end
 			end
-			else begin
-				outExtend  = {52'b0000000000000000000000000000000000000000000000000000,immS};  // S Extended
+			3'b011 : begin
+				if(immI[11] == 1'b1) begin
+					outExtend  = {43'b1111111111111111111111111111111111111111111,immUJ};  // UJ Extended
+				end
+				else begin
+					outExtend  = {43'b0000000000000000000000000000000000000000000,immUJ};  // UJ Extended
+				end
 			end
-		end
-                3'b010 : begin
-			if(immI[11] == 1'b1) begin
-			 	outExtend  = {52'b1111111111111111111111111111111111111111111111111111,immSB};  // SB Extended
+			3'b100 : begin
+				if(immI[11] == 1'b1) begin
+					outExtend  = {43'b1111111111111111111111111111111111111111111,immU};  // U Extended
+				end
+				else begin
+					outExtend  = {43'b0000000000000000000000000000000000000000000,immU};  // U Extended
+				end
 			end
-			else begin
-				outExtend  = {52'b0000000000000000000000000000000000000000000000000000,immSB};  // SB Extended
-			end
-		end
-                3'b011 : begin
-			if(immI[11] == 1'b1) begin
-			 	outExtend  = {43'b1111111111111111111111111111111111111111111,immUJ};  // UJ Extended
-			end
-			else begin
-				outExtend  = {43'b0000000000000000000000000000000000000000000,immUJ};  // UJ Extended
-			end
-		end
-                3'b100 : begin
-			if(immI[11] == 1'b1) begin
-			 	outExtend  = {43'b1111111111111111111111111111111111111111111,immU};  // U Extended
-			end
-			else begin
-				outExtend  = {43'b0000000000000000000000000000000000000000000,immU};  // U Extended
-			end
-		end
 
 	    endcase
 
