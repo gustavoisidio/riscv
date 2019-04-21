@@ -70,7 +70,7 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 2
 Top level modules:
 	Memoria32
 
-} {} {}} //Mac/Home/Documents/riscv/UC.sv {1 {vlog -work work -sv -stats=none //Mac/Home/Documents/riscv/UC.sv
+} {} {}} //Mac/Home/Documents/riscv/UC.sv {1 {vlog -work work -sv -stats=none {\\Mac\Home\Documents\riscv\UC.sv}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
 -- Compiling module UC
 

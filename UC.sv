@@ -10,6 +10,7 @@ module UC (	input logic clock, reset,
                         LoadMDR, // Registrador MDR 
 						LoadAluout, // Registrador da AluOut
 						DMemWR, // Seletor de da Memoria de Dados
+						ET, // Sinal do comparador de igualdade da ula 
 	   		output logic [2:0] 	MemToReg, // Registrador do Mux3
 								AluSrcA, // Mux1
 				  				AluFct, 
@@ -27,10 +28,10 @@ module UC (	input logic clock, reset,
 // DMemWR = 0; // Seletor de da Memoria de Dados
 
 
-logic [6:0] funct7;
+wire logic [6:0] funct7;
 assign funct7 = Instr31_0[31:25];
 
-logic [2:0] funct3;
+wire logic [2:0] funct3;
 assign funct3 = Instr31_0[14:12];
 				
 enum logic [6:0] {
@@ -48,9 +49,12 @@ enum logic [6:0] {
 	beq = 7'd8,
 	bne = 7'd9,
 	lui = 7'd10,
-	loadRD = 7'd12
+	loadRD = 7'd12,
+	ld_estado1 = 7'd13,
+	ld_estado2 = 7'd14,
+	ld_estado3 = 7'd15
 
-	} state, nextState;
+} state, nextState;
 
 
 always_ff @(posedge clock, posedge reset) begin
@@ -65,20 +69,24 @@ end
 always_comb begin
 	case (state)
 		rst: begin
+			LoadMDR = 0; // Registrador MDR 
+			DMemWR = 0; // Seletor de da Memoria de Dados
 			PCWrite = 0; // Incrementa PC
 			LoadIR = 0; // So no proximo ciclo
-           		WriteRegBanco = 0; // NAO SETADO AINDA
+           	WriteRegBanco = 0; // NAO SETADO AINDA
 			LoadAluout = 0; 
 			LoadRegA = 0;
 			LoadRegB = 0;
 			nextState = busca;	
 		end
 		busca: begin
+			LoadMDR = 0; // Registrador MDR 
+			DMemWR = 0; // Seletor de da Memoria de Dados
 			PCWrite = 1; // Incrementa PC
 			AluFct = 3'b001; // SETANDO ALU PARA SOMA
 			LoadIR = 0; // So no proximo ciclo
 			WriteRegBanco = 0; // NAO SETADO AINDA
-			AluSrcA = 3'd0; // � ZERO MESMO
+			AluSrcA = 3'd0; // EH ZERO MESMO
 			AluSrcB = 3'd1; // INCREMENTAR PC
 			LoadAluout = 0; 
 			LoadRegA = 0;
@@ -86,6 +94,8 @@ always_comb begin
 			nextState = salvaInstrucao;
 		end
 		salvaInstrucao: begin
+			LoadMDR = 0; // Registrador MDR 
+			DMemWR = 0; // Seletor de da Memoria de Dados
 			PCWrite = 0; // Incrementa PC
 			LoadIR = 1; // So no proximo ciclo
 			WriteRegBanco = 0; // NAO SETADO AINDA
@@ -96,80 +106,81 @@ always_comb begin
 			LoadRegB = 0;
 			nextState = decodInstrucao;
 		end
-                decodInstrucao: begin
-					PCWrite = 0; 
-					LoadIR = 1; 
-					AluSrcA = 3'd0; 
-					AluSrcB = 3'd0; 
-					LoadAluout = 0; 
-					WriteRegBanco = 0; // SETA LEITURA DO BANCO DE REGISTRADORES #
-					LoadRegA = 1; // CARREGO EM A #
-					LoadRegB = 1; // CARREGO EM B #
-                    case(opcode)
-						7'b0110011: begin //R
-                            case(funct3)
-                                3'b000: begin
-                                    case(funct7)
-                                        7'b0000000: nextState = add; // Chama add
-                                        7'b0100000: nextState = sub; // Chama sub
-                                    endcase //funct7
-                                end
-                            endcase //funct3
-                        end
-						7'b0010011: begin //I
-							InstrType = 3'b000;
-                            case(funct3)
-                                3'b000: begin
-                                    nextState = addi; // Chama addi
-                                end
-                            endcase //funct3
-                        end
+		decodInstrucao: begin
+			LoadMDR = 0; // Registrador MDR 
+			DMemWR = 0; // Seletor de da Memoria de Dados
+			PCWrite = 0; 
+			LoadIR = 1; 
+			AluSrcA = 3'd0; 
+			AluSrcB = 3'd0; 
+			LoadAluout = 0; 
+			WriteRegBanco = 0; // SETA LEITURA DO BANCO DE REGISTRADORES #
+			LoadRegA = 1; // CARREGO EM A #
+			LoadRegB = 1; // CARREGO EM B #
+			case(opcode)
+				7'b0110011: begin //R
+					case(Instr31_0[14:12])
+						3'b000: begin
+							case(Instr31_0[31:25])
+								7'b0000000: nextState = add; // Chama add
+								7'b0100000: nextState = sub; // Chama sub
+							endcase //funct7
+						end
+					endcase //funct3
+				end
+				7'b0010011: begin //I
+					InstrType = 3'b000;
+					case(Instr31_0[14:12])
+						3'b000: begin
+							nextState = addi; // Chama addi
+						end
+					endcase //funct3
+				end
 
-						7'b0000011: begin//I
-							InstrType = 3'b000;
-                            case(funct3)
-                                3'b011: begin
-                                    nextState = ld; // Chama ld
-                                end
-                            endcase //funct3
-                        end
+				7'b0000011: begin//I
+					InstrType = 3'b000;
+					case(Instr31_0[14:12])
+						3'b011: begin
+							nextState = ld_estado1; // Chama ld
+						end
+					endcase //funct3
+				end
 
-						7'b0100011: begin//S
-							InstrType = 3'b001;
-                            case(funct3)
-                                3'b111: begin
-                                    nextState = sd; // Chama sd						
-                                end
-                            endcase
-                        end
+				7'b0100011: begin//S
+					InstrType = 3'b001;
+					case(Instr31_0[14:12])
+						3'b111: begin
+							nextState = sd; // Chama sd						
+						end
+					endcase
+				end
 
-						7'b1100011: begin//SB
-							InstrType = 3'b010;
-                            case(funct3)
-                                3'b000: begin
-                                        nextState = beq; // Chama beq
-                                end
-                            endcase
-                            end
-						7'b1100111: begin // SB
-							InstrType = 3'b010;
-                            case(funct3)
-                                3'b001: begin
-                                    nextState = bne; // Chama bne
-                                end
-                            endcase
-                        end
+				7'b1100011: begin//SB
+					InstrType = 3'b010;
+					case(Instr31_0[14:12])
+						3'b000: begin
+								nextState = beq; // Chama beq
+						end
+					endcase
+					end
+				7'b1100111: begin // SB
+					InstrType = 3'b010;
+					case(Instr31_0[14:12])
+						3'b001: begin
+							nextState = bne; // Chama bne
+						end
+					endcase
+				end
 
-						7'b0110111: begin //U
-							InstrType = 3'b100;
-                            nextState = lui; // Chama lui
-                        end
+				7'b0110111: begin //U
+					InstrType = 3'b100;
+					nextState = lui; // Chama lui
+				end
 
-                    endcase //opcode
+			endcase //opcode
 
-				end // decod
+		end // decod
 				
-		// Instrucoes 
 		add: begin
 			PCWrite = 0; 
 			LoadIR = 1;
@@ -220,8 +231,47 @@ always_comb begin
 			AluSrcB = 3'd2; // Libera imm extendido pra ALU #
 			nextState = add; // Faz a adicao normal com o sinal estendido #
 		end
-		ld: begin
+		ld_estado1: begin
+			LoadIR = 0; // Registrador de Instrucoes
+			PCWrite = 0; // PC
+			WriteRegBanco = 0; // Banco de Registradores
+			LoadRegA = 0; // Registrador A
+			LoadRegB = 0; // Registrador B
+			LoadMDR = 0; // Registrador MDR 
+			LoadAluout = 0; // Registrador da AluOut
+			DMemWR = 0; // Seletor de da Memoria de Dados
 
+			AluSrcA = 1; // Libera rs1 pra ALU #
+			AluSrcB = 2; // Libera imm estendido pra ALU #
+			AluFct =  3'b001; // Seta a função de somar (+) #
+			LoadAluout = 1; // Libera a saída da ALU #
+			nextState = ld_estado2;
+		end
+		ld_estado2: begin // Vamos buscar na memória agora
+			LoadIR = 0; // Registrador de Instrucoes
+			PCWrite = 0; // PC
+			LoadRegA = 0; // Registrador A
+			LoadRegB = 0; // Registrador B
+			LoadMDR = 0; // Registrador MDR 
+			LoadAluout = 0; // Registrador da AluOut
+
+			DMemWR = 0; // Mem 64 lê (endereço) a saída da ALU #
+			LoadMDR = 1; // MDR salva leitura da memória #
+			nextState = ld_estado3;
+		end
+		ld_estado3: begin
+			LoadIR = 0; // Registrador de Instrucoes
+			PCWrite = 0; // PC
+			WriteRegBanco = 0; // Banco de Registradores
+			LoadRegA = 0; // Registrador A
+			LoadRegB = 0; // Registrador B
+			LoadMDR = 0; // Registrador MDR 
+			LoadAluout = 0; // Registrador da AluOut
+			DMemWR = 0; // Seletor de da Memoria de Dados
+
+			MemToReg = 0; // Se adianta e seleciona a saída da memória pro banco #
+			WriteRegBanco = 1;  // Escrever em RD #
+			nextState = busca;
 		end
 		sd: begin
 		end

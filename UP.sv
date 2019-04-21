@@ -11,36 +11,97 @@ logic [63:0] outExtend; // Saida da extensao de sinal
 logic [63:0] outMux1, outMux2, outMux3; // Saida dos Mux
 logic [63:0] DataMemOut, outMDR; // Saida da Memoria de Dados e do Registrador MDR
 logic [2:0] AluSrcB, AluSrcA, AluFct, MemToReg, InstrType;
+logic ET; // Sinal do comparador de igualdade da ula 
 
 // Instanciando PC
-register PC (.clk(clock), .reset(reset), .regWrite(PCWrite), .DadoIn(AluOut), .DadoOut(outPC));
+register PC (   .clk(clock),
+                .reset(reset),
+                .regWrite(PCWrite),
+                .DadoIn(AluOut),
+                .DadoOut(outPC)
+);
 
 // Instanciando Memoria de Instrucoes
-Memoria32 InstMem (.raddress(outPC[31:0]), .waddress(), .Clk(clock), .Datain(), .Dataout(InstMemOut), .Wr(1'b0));
+Memoria32 InstMem (     .raddress(outPC[31:0]),
+                        .waddress(),
+                        .Clk(clock),
+                        .Datain(),
+                        .Dataout(InstMemOut),
+                        .Wr(1'b0)
+);
 
 // Instanciando Memoria de Dados
-Memoria64 DataMem (.raddress(outRegAlu), .waddress(outRegAlu), .Clk(clock), .Datain(regBOut), .Dataout(DataMemOut), .Wr(DMemWR));
+Memoria64 DataMem (     .raddress(outRegAlu),
+                        .waddress(outRegAlu),
+                        .Clk(clock),
+                        .Datain(regBOut),
+                        .Dataout(DataMemOut),
+                        .Wr(DMemWR)
+);
 
 // Instanciando o Registrador de Instrucoes
-Instr_Reg_RISC_V InstReg (.Clk(clock), .Reset(reset), .Load_ir(LoadIR), .Entrada(InstMemOut), .Instr19_15(Instr19_15), .Instr24_20(Instr24_20), .Instr11_7(Instr11_7), .Instr6_0(Instr6_0), .Instr31_0(Instr31_0));
+Instr_Reg_RISC_V InstReg (      .Clk(clock),
+                                .Reset(reset),
+                                .Load_ir(LoadIR),
+                                .Entrada(InstMemOut),
+                                .Instr19_15(Instr19_15),
+                                .Instr24_20(Instr24_20),
+                                .Instr11_7(Instr11_7),
+                                .Instr6_0(Instr6_0),
+                                .Instr31_0(Instr31_0)
+);
 
 // Instanciando a ULA
-ula64 ULA (.A(outMux1), .B(outMux2), .Seletor(AluFct), .S(AluOut), .Overflow(), .Negativo(), .z(), .Igual(), .Maior(), .Menor());
+ula64 ULA (     .A(outMux1),
+                .B(outMux2),
+                .Seletor(AluFct),
+                .S(AluOut),
+                .Overflow(), .Negativo(), .z(), .Igual(ET), .Maior(), .Menor()
+);
 
 // Instanciando o Banco de Registradores
-bancoReg bancoRegistradores(.write(WriteRegBanco), .clock(clock), .reset(reset), .regreader1(Instr19_15), .regreader2(Instr24_20), .regwriteaddress(Instr11_7), .datain(outMux3), .dataout1(bancoRegistradoresOut1), .dataout2(bancoRegistradoresOut2));
+bancoReg bancoRegistradores(    .write(WriteRegBanco),
+                                .clock(clock),
+                                .reset(reset),
+                                .regreader1(Instr19_15),
+                                .regreader2(Instr24_20),
+                                .regwriteaddress(Instr11_7),
+                                .datain(outMux3),
+                                .dataout1(bancoRegistradoresOut1),
+                                .dataout2(bancoRegistradoresOut2)
+);
 
 // Instanciando Registrador A
-register regA (.clk(clock), .reset(reset), .regWrite(LoadRegA), .DadoIn(bancoRegistradoresOut1), .DadoOut(regAOut));
+register regA ( .clk(clock),
+                .reset(reset),
+                .regWrite(LoadRegA),
+                .DadoIn(bancoRegistradoresOut1),
+                .DadoOut(regAOut)
+);
 
 // Instanciando Registrador B
-register regB (.clk(clock), .reset(reset), .regWrite(LoadRegB), .DadoIn(bancoRegistradoresOut2), .DadoOut(regBOut));
+register regB ( .clk(clock),
+                .reset(reset),
+                .regWrite(LoadRegB),
+                .DadoIn(bancoRegistradoresOut2),
+                .DadoOut(regBOut)
+);
 
 // Instanciando a Extensao de sinal
-signalExtend signalExt (.clock(clock), .reset(reset), .Instr31_0(Instr31_0), .InstrType(InstrType), .outExtend(outExtend));
+signalExtend signalExt (.clock(clock),
+                        .reset(reset),
+                        .Instr31_0(Instr31_0),
+                        .InstrType(InstrType),
+                        .outExtend(outExtend)
+);
 
 // Instanciando Registrador da Alu
-register regAlu (.clk(clock), .reset(reset), .regWrite(LoadAluout), .DadoIn(AluOut), .DadoOut(outRegAlu));
+register regAlu (       .clk(clock),
+                        .reset(reset),
+                        .regWrite(LoadAluout),
+                        .DadoIn(AluOut),
+                        .DadoOut(outRegAlu)
+);
 
 // Instanciando Mux 1
 mux8to1 Mux1 ( .Out(outMux1),
@@ -53,7 +114,7 @@ mux8to1 Mux1 ( .Out(outMux1),
                .In5(),
                .In6(),
                .In7()
-            );
+);
 
 // Instanciando Mux 2
 mux8to1 Mux2 ( .Out(outMux2),
@@ -66,20 +127,20 @@ mux8to1 Mux2 ( .Out(outMux2),
                .In5(),
                .In6(),
                .In7()
-             );
+);
 
 // Instanciando Mux 3
 mux8to1 Mux3 ( .Out(outMux3),
                .Sel(MemToReg), 
                .In0(outMDR), // Saida do Registrador MDR 
                .In1(outRegAlu), // Saida da ALU
-               .In2(), // 
+               .In2(), 
                .In3(), 
                .In4(),
                .In5(),
                .In6(),
                .In7()
-             );              
+);              
 
 // Instanciando Registrador MDR
 register MDR (.clk(clock), .reset(reset), .regWrite(LoadMDR), .DadoIn(DataMemOut), .DadoOut(outMDR));
@@ -101,7 +162,8 @@ UC uc ( .clock(clock),
         .AluSrcA(AluSrcA), // Mux1
 	.AluFct(AluFct), // Seletor de Funcao da ALU
         .AluSrcB(AluSrcB), // Mux2
-        .DMemWR(DMemWR) // Seletor de da Memoria de Dados
-      );
+        .DMemWR(DMemWR), // Seletor de da Memoria de Dados
+        .ET(ET) // Sinal do comparador de igualdade da ula 
+);
 
 endmodule:UP
