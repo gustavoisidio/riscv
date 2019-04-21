@@ -149,7 +149,7 @@ register MDR (.clk(clock), .reset(reset), .regWrite(LoadMDR), .DadoIn(DataMemOut
 UC uc ( .clock(clock),
         .reset(reset),
         .opcode(Instr6_0), // Opcode da instrucao
-        .Instr31_0(), // Entrada [31:0] com a instrucao
+        .Instr31_0(Instr31_0), // Entrada [31:0] com a instrucao
         .LoadIR(LoadIR), // Seletor do Registrador de Instrucoes
         .PCWrite(PCWrite), // Seletor de escrita em PC
         .WriteRegBanco(WriteRegBanco), // Seletor do Banco de Registradores

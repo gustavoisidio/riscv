@@ -1,4 +1,3 @@
-
 module UC (	input logic clock, reset,
            	input logic [6:0] opcode, // Opcode (Instr6_0) saido do Registrador de Instrucoes
            	input logic [31:0] Instr31_0, // Instrucao inteira saida do Registrador de instrucoes
@@ -52,7 +51,11 @@ enum logic [6:0] {
 	loadRD = 7'd12,
 	ld_estado1 = 7'd13,
 	ld_estado2 = 7'd14,
-	ld_estado3 = 7'd15
+	ld_estado3 = 7'd15,
+	sd_estado1 = 7'd16,
+	sd_estado2 = 7'd17,
+	beqOrbne_estado1 = 7'd18,
+	beqOrbne_estado2 = 7'd19
 
 } state, nextState;
 
@@ -73,7 +76,7 @@ always_comb begin
 			DMemWR = 0; // Seletor de da Memoria de Dados
 			PCWrite = 0; // Incrementa PC
 			LoadIR = 0; // So no proximo ciclo
-           	WriteRegBanco = 0; // NAO SETADO AINDA
+			WriteRegBanco = 0; // NAO SETADO AINDA
 			LoadAluout = 0; 
 			LoadRegA = 0;
 			LoadRegB = 0;
@@ -119,9 +122,9 @@ always_comb begin
 			LoadRegB = 1; // CARREGO EM B #
 			case(opcode)
 				7'b0110011: begin //R
-					case(Instr31_0[14:12])
+					case(funct3)
 						3'b000: begin
-							case(Instr31_0[31:25])
+							case(funct7)
 								7'b0000000: nextState = add; // Chama add
 								7'b0100000: nextState = sub; // Chama sub
 							endcase //funct7
@@ -130,7 +133,7 @@ always_comb begin
 				end
 				7'b0010011: begin //I
 					InstrType = 3'b000;
-					case(Instr31_0[14:12])
+					case(funct3)
 						3'b000: begin
 							nextState = addi; // Chama addi
 						end
@@ -139,7 +142,7 @@ always_comb begin
 
 				7'b0000011: begin//I
 					InstrType = 3'b000;
-					case(Instr31_0[14:12])
+					case(funct3)
 						3'b011: begin
 							nextState = ld_estado1; // Chama ld
 						end
@@ -148,16 +151,16 @@ always_comb begin
 
 				7'b0100011: begin//S
 					InstrType = 3'b001;
-					case(Instr31_0[14:12])
+					case(funct3)
 						3'b111: begin
-							nextState = sd; // Chama sd						
+							nextState = sd_estado1; // Chama sd						
 						end
 					endcase
 				end
 
 				7'b1100011: begin//SB
 					InstrType = 3'b010;
-					case(Instr31_0[14:12])
+					case(funct3)
 						3'b000: begin
 								nextState = beq; // Chama beq
 						end
@@ -165,7 +168,7 @@ always_comb begin
 					end
 				7'b1100111: begin // SB
 					InstrType = 3'b010;
-					case(Instr31_0[14:12])
+					case(funct3)
 						3'b001: begin
 							nextState = bne; // Chama bne
 						end
@@ -273,11 +276,59 @@ always_comb begin
 			WriteRegBanco = 1;  // Escrever em RD #
 			nextState = busca;
 		end
-		sd: begin
+		sd_estado1: begin
+			// FALTA SETAR OS OUTROS SINAIS
+
+			AluSrcA = 1; // Libera rs1 pra ALU #
+			AluSrcB = 2; // Libera imm estendido pra ALU #
+			AluFct =  3'b001; // Seta a função de somar (+) #
+			LoadAluout = 1; // Libera a saída da ALU #
+			nextState = sd_estado2;
+		end
+		sd_estado2: begin
+			// FALTA SETAR OS OUTROS SINAIS
+
+			// Vamos escrever na memória agora #
+			//Escreve no endereço saído da ALU o conteúdo de rs2 #
+			DMemWR = 1; // Mem 64 escreve DataIn no End de saída da ALU # 
+			nextState = busca;
 		end
 		beq: begin
+			// FALTA SETAR OS OUTROS SINAIS
+
+			if (ET == 1) begin
+				nextState = beqOrbne_estado1;
+			end
+			else begin
+				nextState = busca;
+			end
 		end
 		bne: begin
+			// FALTA SETAR OS OUTROS SINAIS
+
+			if (ET == 0) begin
+				nextState = beqOrbne_estado1;
+			end
+			else begin
+				nextState = busca;
+			end
+		end
+		beqOrbne_estado1: begin
+			// FALTA SETAR OS OUTROS SINAIS
+
+			// Concatena um zero à direita de imm #
+			// Estende o sinal de imm #
+			// Shift de 1 em imm #
+			nextState = beqOrbne_estado2;
+		end
+		beqOrbne_estado2: begin
+			// FALTA SETAR OS OUTROS SINAIS
+
+			AluSrcA = 0; // Libera PC pra ALU #
+			// AluSrcB = (3 ou 2); // Imm com ++ [0], sinal est. e shift<-2 pra ALU #
+			AluFct =  3'b001; // Seta a função de somar (+) #
+			PCWrite = 1; // Escreve o resultado (Aluresult) em PC #
+			nextState = busca;
 		end
 		lui: begin
 		end
