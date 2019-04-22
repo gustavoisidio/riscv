@@ -18,7 +18,7 @@
 # 14 compiles, 0 failed with no errors.
 vsim -gui work.simulacao32 -Lf altera_mf_ver
 # vsim -gui work.simulacao32 -Lf altera_mf_ver 
-# Start time: 00:14:58 on Apr 22,2019
+# Start time: 10:07:32 on Apr 22,2019
 # Loading sv_std.std
 # Loading work.simulacao32
 # Loading work.UP
@@ -49,250 +49,10 @@ add wave -position end  sim:/simulacao32/up/uc/state
 add wave -position end  sim:/simulacao32/up/uc/nextState
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: gustavoisidio  Hostname: GUSTAVOISID657F  ProcessID: 3432
-#           Attempting to use alternate WLF file "./wlft4iidfb".
+#           Attempting to use alternate WLF file "./wlft8iw8q9".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft4iidfb
+#           Using alternate file: ./wlft8iw8q9
 add wave -position end sim:/simulacao32/up/*
-run -all
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.up.InstMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.up.InstMem.memBlock1.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.up.InstMem.memBlock2.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.up.InstMem.memBlock3.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.up.DataMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.up.DataMem.memBlock1.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.up.DataMem.memBlock2.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.up.DataMem.memBlock3.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.up.DataMem.memBlock4.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.up.DataMem.memBlock5.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.up.DataMem.memBlock6.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.up.DataMem.memBlock7.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.meminst.memBlock0.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.meminst.memBlock1.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.meminst.memBlock2.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.meminst.memBlock3.altsyncram_component.m_default.altsyncram_inst
-# ** Note: $stop    : //Mac/Home/Documents/riscv/simulacao32.sv(47)
-#    Time: 190 ns  Iteration: 1  Instance: /simulacao32
-# Break in Module simulacao32 at //Mac/Home/Documents/riscv/simulacao32.sv line 47
-# Compile of UC.sv failed with 6 errors.
-# Compile of bancoReg.sv was successful.
-# Compile of Deslocamento.sv was successful.
-# Compile of Instr_Reg_RISC_V.vhd was successful.
-# Compile of Memoria32.sv was successful.
-# Compile of Memoria64.sv was successful.
-# Compile of mux8to1.v was successful.
-# Compile of ramOnChip32.v was successful.
-# Compile of ramOnChip64.v was successful.
-# Compile of register.sv was successful.
-# Compile of signalExtend.sv was successful.
-# Compile of simulacao32.sv was successful.
-# Compile of UC.sv failed with 6 errors.
-# Compile of ula64.vhd was successful.
-# Compile of UP.sv was successful.
-# 14 compiles, 1 failed with 6 errors.
-# Compile of bancoReg.sv was successful.
-# Compile of Deslocamento.sv was successful.
-# Compile of Instr_Reg_RISC_V.vhd was successful.
-# Compile of Memoria32.sv was successful.
-# Compile of Memoria64.sv was successful.
-# Compile of mux8to1.v was successful.
-# Compile of ramOnChip32.v was successful.
-# Compile of ramOnChip64.v was successful.
-# Compile of register.sv was successful.
-# Compile of signalExtend.sv was successful.
-# Compile of simulacao32.sv was successful.
-# Compile of UC.sv was successful.
-# Compile of ula64.vhd was successful.
-# Compile of UP.sv was successful.
-# 14 compiles, 0 failed with no errors.
-vsim -gui -Lf altera_mf_ver work.simulacao32
-# End time: 00:19:37 on Apr 22,2019, Elapsed time: 0:04:39
-# Errors: 0, Warnings: 3
-# vsim -gui -Lf altera_mf_ver work.simulacao32 
-# Start time: 00:19:37 on Apr 22,2019
-# Loading sv_std.std
-# Loading work.simulacao32
-# Loading work.UP
-# Loading work.register
-# Loading work.Memoria32
-# Loading work.ramOnChip32
-# Loading altera_mf_ver.altsyncram
-# Loading work.Memoria64
-# Loading work.ramOnChip64
-# Loading work.bancoReg
-# Loading work.signalExtend
-# Loading work.mux8to1
-# Loading work.UC
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.instr_reg_risc_v(behavioral_arch)
-# Loading ieee.std_logic_arith(body)
-# Loading work.ula64(behavioral)
-# ** Warning: (vsim-3839) //Mac/Home/Documents/riscv/UP.sv(149): Variable '/simulacao32/up/ET', driven via a port connection, is multiply driven. See //Mac/Home/Documents/riscv/UP.sv(55).
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/uc File: //Mac/Home/Documents/riscv/UC.sv
-add wave -position end  sim:/simulacao32/up/uc/funct7
-add wave -position end  sim:/simulacao32/up/uc/funct3
-add wave -position end  sim:/simulacao32/up/uc/state
-add wave -position end  sim:/simulacao32/up/uc/nextState
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: gustavoisidio  Hostname: GUSTAVOISID657F  ProcessID: 3432
-#           Attempting to use alternate WLF file "./wlft8ri2dz".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft8ri2dz
-add wave -position end sim:/simulacao32/up/*
-run -all
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.up.InstMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.up.InstMem.memBlock1.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.up.InstMem.memBlock2.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.up.InstMem.memBlock3.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.up.DataMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.up.DataMem.memBlock1.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.up.DataMem.memBlock2.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.up.DataMem.memBlock3.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.up.DataMem.memBlock4.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.up.DataMem.memBlock5.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.up.DataMem.memBlock6.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.up.DataMem.memBlock7.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.meminst.memBlock0.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.meminst.memBlock1.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.meminst.memBlock2.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: simulacao32.meminst.memBlock3.altsyncram_component.m_default.altsyncram_inst
-# ** Note: $stop    : //Mac/Home/Documents/riscv/simulacao32.sv(47)
-#    Time: 190 ns  Iteration: 1  Instance: /simulacao32
-# Break in Module simulacao32 at //Mac/Home/Documents/riscv/simulacao32.sv line 47
-run -all
-# ** Note: $stop    : //Mac/Home/Documents/riscv/simulacao32.sv(47)
-#    Time: 360 ns  Iteration: 1  Instance: /simulacao32
-# Break in Module simulacao32 at //Mac/Home/Documents/riscv/simulacao32.sv line 47
-# Compile of bancoReg.sv was successful.
-# Compile of Deslocamento.sv was successful.
-# Compile of Instr_Reg_RISC_V.vhd was successful.
-# Compile of Memoria32.sv was successful.
-# Compile of Memoria64.sv was successful.
-# Compile of mux8to1.v was successful.
-# Compile of ramOnChip32.v was successful.
-# Compile of ramOnChip64.v was successful.
-# Compile of register.sv was successful.
-# Compile of signalExtend.sv was successful.
-# Compile of simulacao32.sv was successful.
-# Compile of UC.sv was successful.
-# Compile of ula64.vhd was successful.
-# Compile of UP.sv was successful.
-# 14 compiles, 0 failed with no errors.
-vsim -gui -Lf altera_mf_ver work.simulacao32
-# End time: 00:23:17 on Apr 22,2019, Elapsed time: 0:03:40
-# Errors: 0, Warnings: 3
-# vsim -gui -Lf altera_mf_ver work.simulacao32 
-# Start time: 00:23:17 on Apr 22,2019
-# Loading sv_std.std
-# Loading work.simulacao32
-# Loading work.UP
-# Loading work.register
-# Loading work.Memoria32
-# Loading work.ramOnChip32
-# Loading altera_mf_ver.altsyncram
-# Loading work.Memoria64
-# Loading work.ramOnChip64
-# Loading work.bancoReg
-# Loading work.signalExtend
-# Loading work.mux8to1
-# Loading work.UC
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.instr_reg_risc_v(behavioral_arch)
-# Loading ieee.std_logic_arith(body)
-# Loading work.ula64(behavioral)
-# ** Warning: (vsim-3839) //Mac/Home/Documents/riscv/UP.sv(149): Variable '/simulacao32/up/ET', driven via a port connection, is multiply driven. See //Mac/Home/Documents/riscv/UP.sv(55).
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/uc File: //Mac/Home/Documents/riscv/UC.sv
-add wave -position end  sim:/simulacao32/up/uc/funct7
-add wave -position end  sim:/simulacao32/up/uc/funct3
-add wave -position end  sim:/simulacao32/up/uc/state
-add wave -position end  sim:/simulacao32/up/uc/nextState
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: gustavoisidio  Hostname: GUSTAVOISID657F  ProcessID: 3432
-#           Attempting to use alternate WLF file "./wlftwnt95v".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftwnt95v
-add wave -position end sim:/simulacao32/up/*
-add wave -position 1 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
-# Missing signal name or pattern.
-add wave -position 1 -format Literal -height 17 -radix unsigned -format Literal -height 17 -radix unsigned
-# Missing signal name or pattern.
-add wave -position 1 -format Logic -height 17 -radix unsigned -format Logic -height 17 -radix unsigned
-# Missing signal name or pattern.
-add wave -position 1 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
-# Missing signal name or pattern.
-add wave -position 1 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
-# Missing signal name or pattern.
-add wave -position 1 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
-# Missing signal name or pattern.
-add wave -position 1 -format Logic -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
-# Missing signal name or pattern.
-add wave -position 1 -format Logic -height 17 -radix unsigned -format Logic -height 17 -radix unsigned
-# Missing signal name or pattern.
-add wave -position 1 -format Logic -height 17 -radix unsigned -format Logic -height 17 -radix unsigned
-# Missing signal name or pattern.
-add wave -position 1 -autoscale 1 -format Literal -height 17 -radix unsigned -format Logic -height 17 -radix unsigned
-# Missing signal name or pattern.
-add wave -position 1 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
-# Missing signal name or pattern.
-add wave -position 1 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
-# Missing signal name or pattern.
-add wave -position 1 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
-# Missing signal name or pattern.
-add wave -position 1 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
-# Missing signal name or pattern.
-add wave -position 1 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
-# Missing signal name or pattern.
-add wave -position 1 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
-# Missing signal name or pattern.
-add wave -position 1 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
-# Missing signal name or pattern.
-add wave -position 1 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
-# Missing signal name or pattern.
-add wave -position 1 -format Logic -height 17 -radix unsigned -format Logic -height 17 -radix unsigned
-# Missing signal name or pattern.
-add wave -position 1  -format Logic -height 17 -radix unsigned
-# Missing signal name or pattern.
 run -all
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: simulacao32.up.InstMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
@@ -344,11 +104,26 @@ run -all
 # Compile of ula64.vhd was successful.
 # Compile of UP.sv was successful.
 # 14 compiles, 0 failed with no errors.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv was successful.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# 14 compiles, 0 failed with no errors.
 vsim -gui -Lf altera_mf_ver work.simulacao32
-# End time: 00:25:16 on Apr 22,2019, Elapsed time: 0:01:59
-# Errors: 20, Warnings: 3
+# End time: 10:11:48 on Apr 22,2019, Elapsed time: 0:04:16
+# Errors: 0, Warnings: 3
 # vsim -gui -Lf altera_mf_ver work.simulacao32 
-# Start time: 00:25:16 on Apr 22,2019
+# Start time: 10:11:48 on Apr 22,2019
 # Loading sv_std.std
 # Loading work.simulacao32
 # Loading work.UP
@@ -379,10 +154,12 @@ add wave -position end  sim:/simulacao32/up/uc/state
 add wave -position end  sim:/simulacao32/up/uc/nextState
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: gustavoisidio  Hostname: GUSTAVOISID657F  ProcessID: 3432
-#           Attempting to use alternate WLF file "./wlft5xbd7g".
+#           Attempting to use alternate WLF file "./wlftqzb0fa".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft5xbd7g
+#           Using alternate file: ./wlftqzb0fa
 add wave -position end sim:/simulacao32/up/*
+add wave -position 10  -autoscale 1 -format Literal -height 17
+# Missing signal name or pattern.
 run -all
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: simulacao32.up.InstMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
@@ -416,8 +193,762 @@ run -all
 # Time: 0  Instance: simulacao32.meminst.memBlock2.altsyncram_component.m_default.altsyncram_inst
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: simulacao32.meminst.memBlock3.altsyncram_component.m_default.altsyncram_inst
-# ** Note: $stop    : //Mac/Home/Documents/riscv/simulacao32.sv(47)
-#    Time: 190 ns  Iteration: 1  Instance: /simulacao32
-# Break in Module simulacao32 at //Mac/Home/Documents/riscv/simulacao32.sv line 47
-# End time: 00:27:42 on Apr 22,2019, Elapsed time: 0:02:26
+add wave -position insertpoint  \
+sim:/simulacao32/up/bancoRegistradores/regs
+restart
+# ** Warning: (vsim-3839) //Mac/Home/Documents/riscv/UP.sv(149): Variable '/simulacao32/up/ET', driven via a port connection, is multiply driven. See //Mac/Home/Documents/riscv/UP.sv(55).
+#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/uc File: //Mac/Home/Documents/riscv/UC.sv
+run -all
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock4.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock5.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock6.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock7.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv was successful.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# 14 compiles, 0 failed with no errors.
+vsim -gui -Lf altera_mf_ver work.simulacao32
+# End time: 10:31:17 on Apr 22,2019, Elapsed time: 0:19:29
+# Errors: 1, Warnings: 0
+# vsim -gui -Lf altera_mf_ver work.simulacao32 
+# Start time: 10:31:17 on Apr 22,2019
+# Loading sv_std.std
+# Loading work.simulacao32
+# Loading work.UP
+# Loading work.register
+# Loading work.Memoria32
+# Loading work.ramOnChip32
+# Loading altera_mf_ver.altsyncram
+# Loading work.Memoria64
+# Loading work.ramOnChip64
+# Loading work.bancoReg
+# Loading work.signalExtend
+# Loading work.mux8to1
+# Loading work.UC
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.instr_reg_risc_v(behavioral_arch)
+# Loading ieee.std_logic_arith(body)
+# Loading work.ula64(behavioral)
+# ** Warning: (vsim-3839) //Mac/Home/Documents/riscv/UP.sv(149): Variable '/simulacao32/up/ET', driven via a port connection, is multiply driven. See //Mac/Home/Documents/riscv/UP.sv(55).
+#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/uc File: //Mac/Home/Documents/riscv/UC.sv
+add wave -position end  sim:/simulacao32/up/uc/funct7
+add wave -position end  sim:/simulacao32/up/uc/funct3
+add wave -position end  sim:/simulacao32/up/uc/state
+add wave -position end  sim:/simulacao32/up/uc/nextState
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gustavoisidio  Hostname: GUSTAVOISID657F  ProcessID: 3432
+#           Attempting to use alternate WLF file "./wlfteb3gyx".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfteb3gyx
+add wave -position end sim:/simulacao32/up/*
+add wave -position end  sim:/simulacao32/up/bancoRegistradores/regs
+run -all
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock4.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock5.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock6.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock7.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv was successful.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# 14 compiles, 0 failed with no errors.
+vsim -gui -Lf altera_mf_ver work.simulacao32
+# End time: 10:48:55 on Apr 22,2019, Elapsed time: 0:17:38
 # Errors: 0, Warnings: 3
+# vsim -gui -Lf altera_mf_ver work.simulacao32 
+# Start time: 10:48:55 on Apr 22,2019
+# Loading sv_std.std
+# Loading work.simulacao32
+# Loading work.UP
+# Loading work.register
+# Loading work.Memoria32
+# Loading work.ramOnChip32
+# Loading altera_mf_ver.altsyncram
+# Loading work.Memoria64
+# Loading work.ramOnChip64
+# Loading work.bancoReg
+# Loading work.signalExtend
+# Loading work.mux8to1
+# Loading work.UC
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.instr_reg_risc_v(behavioral_arch)
+# Loading ieee.std_logic_arith(body)
+# Loading work.ula64(behavioral)
+# ** Warning: (vsim-3839) //Mac/Home/Documents/riscv/UP.sv(149): Variable '/simulacao32/up/ET', driven via a port connection, is multiply driven. See //Mac/Home/Documents/riscv/UP.sv(55).
+#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/uc File: //Mac/Home/Documents/riscv/UC.sv
+add wave -position end  sim:/simulacao32/up/uc/funct7
+add wave -position end  sim:/simulacao32/up/uc/funct3
+add wave -position end  sim:/simulacao32/up/uc/state
+add wave -position end  sim:/simulacao32/up/uc/nextState
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gustavoisidio  Hostname: GUSTAVOISID657F  ProcessID: 3432
+#           Attempting to use alternate WLF file "./wlftgjy533".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftgjy533
+add wave -position end sim:/simulacao32/up/*
+add wave -position 4  sim:/simulacao32/up/bancoRegistradores/regs
+run -all
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock4.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock5.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock6.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock7.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful with warnings.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv failed with 4 errors.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# 14 compiles, 1 failed with 4 errors.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful with warnings.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv failed with 4 errors.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# 14 compiles, 1 failed with 4 errors.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful with warnings.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv failed with 1 errors.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# 14 compiles, 1 failed with 1 error.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful with warnings.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv was successful.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# 14 compiles, 0 failed with no errors.
+vsim -gui -Lf altera_mf_ver work.simulacao32
+# End time: 11:24:17 on Apr 22,2019, Elapsed time: 0:35:22
+# Errors: 0, Warnings: 3
+# vsim -gui -Lf altera_mf_ver work.simulacao32 
+# Start time: 11:24:17 on Apr 22,2019
+# Loading sv_std.std
+# Loading work.simulacao32
+# Loading work.UP
+# Loading work.register
+# Loading work.Memoria32
+# Loading work.ramOnChip32
+# Loading altera_mf_ver.altsyncram
+# Loading work.Memoria64
+# Loading work.ramOnChip64
+# Loading work.bancoReg
+# Loading work.signalExtend
+# Loading work.mux8to1
+# Loading work.UC
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.instr_reg_risc_v(behavioral_arch)
+# Loading ieee.std_logic_arith(body)
+# Loading work.ula64(behavioral)
+# ** Warning: (vsim-3839) //Mac/Home/Documents/riscv/UP.sv(149): Variable '/simulacao32/up/ET', driven via a port connection, is multiply driven. See //Mac/Home/Documents/riscv/UP.sv(55).
+#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/uc File: //Mac/Home/Documents/riscv/UC.sv
+add wave -position end  sim:/simulacao32/up/uc/funct7
+add wave -position end  sim:/simulacao32/up/uc/funct3
+add wave -position end  sim:/simulacao32/up/uc/state
+add wave -position end  sim:/simulacao32/up/uc/nextState
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gustavoisidio  Hostname: GUSTAVOISID657F  ProcessID: 3432
+#           Attempting to use alternate WLF file "./wlftjiydhz".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftjiydhz
+add wave -position end  sim:/simulacao32/up/bancoRegistradores/regs
+add wave -position end sim:/simulacao32/up/*
+add wave -position 26  -autoscale 1 -format Literal -height 17
+# Missing signal name or pattern.
+run -all
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock4.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock5.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock6.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock7.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful with warnings.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv failed with 2 errors.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# 14 compiles, 1 failed with 2 errors.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful with warnings.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv failed with 2 errors.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# 14 compiles, 1 failed with 2 errors.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful with warnings.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv failed with 2 errors.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# 14 compiles, 1 failed with 2 errors.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful with warnings.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv was successful.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# 14 compiles, 0 failed with no errors.
+run -all
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful with warnings.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv was successful.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# 14 compiles, 0 failed with no errors.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful with warnings.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv was successful.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# 14 compiles, 0 failed with no errors.
+vsim -gui -Lf altera_mf_ver work.simulacao32
+# End time: 11:47:01 on Apr 22,2019, Elapsed time: 0:22:44
+# Errors: 1, Warnings: 3
+# vsim -gui -Lf altera_mf_ver work.simulacao32 
+# Start time: 11:47:01 on Apr 22,2019
+# Loading sv_std.std
+# Loading work.simulacao32
+# Loading work.UP
+# Loading work.register
+# Loading work.Memoria32
+# Loading work.ramOnChip32
+# Loading altera_mf_ver.altsyncram
+# Loading work.Memoria64
+# Loading work.ramOnChip64
+# Loading work.bancoReg
+# Loading work.signalExtend
+# Loading work.mux8to1
+# Loading work.UC
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.instr_reg_risc_v(behavioral_arch)
+# Loading ieee.std_logic_arith(body)
+# Loading work.ula64(behavioral)
+add wave -position end  sim:/simulacao32/up/uc/funct7
+add wave -position end  sim:/simulacao32/up/uc/funct3
+add wave -position end  sim:/simulacao32/up/uc/state
+add wave -position end  sim:/simulacao32/up/uc/nextState
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gustavoisidio  Hostname: GUSTAVOISID657F  ProcessID: 3432
+#           Attempting to use alternate WLF file "./wlftxr0vd6".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftxr0vd6
+add wave -position end sim:/simulacao32/up/*
+add wave -position 4  sim:/simulacao32/up/bancoRegistradores/regs
+add wave -position 17 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 17 -format Literal -height 17 -radix unsigned -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 17 -format Logic -height 17 -radix unsigned -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 17 -autoscale 1 -format Literal -height 17 -radix unsigned -format Logic -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 17 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 17 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 17 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 17 -format Logic -height 17 -radix unsigned -format Logic -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 17 -format Logic -height 17 -radix unsigned -format Logic -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 17 -format Logic -height 17 -radix unsigned -format Logic -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 17 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 17 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 17 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 17 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 17 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 17 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 17 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 17 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 17 -format Logic -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 17 -format Logic -height 17 -radix unsigned -format Logic -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 9 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 9 -format Literal -height 17 -radix unsigned -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 9 -format Logic -height 17 -radix unsigned -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 9 -autoscale 1 -format Literal -height 17 -radix unsigned -format Logic -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 9 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 9 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 9 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 9 -format Logic -height 17 -radix unsigned -format Logic -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 9 -format Logic -height 17 -radix unsigned -format Logic -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 9 -format Logic -height 17 -radix unsigned -format Logic -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 9 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 9 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 9 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 9 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 9 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 9 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 9 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 9 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 9 -format Logic -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 9 -format Logic -height 17 -radix unsigned -format Logic -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 6  -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+run -all
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock4.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock5.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock6.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock7.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# WARNING: No extended dataflow license exists
+# WARNING: No extended dataflow license exists
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+add wave -position 27  sim:/simulacao32/up/signalExt/immI
+add wave -position 28  sim:/simulacao32/up/signalExt/immS
+add wave -position 29  sim:/simulacao32/up/signalExt/immSB
+add wave -position 30  sim:/simulacao32/up/signalExt/immUJ
+add wave -position 31  sim:/simulacao32/up/signalExt/immU
+run -all
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+restart
+run -all
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock4.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock5.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock6.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock7.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv failed with 2 errors.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv was successful.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# 14 compiles, 1 failed with 2 errors.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv failed with 1 errors.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv was successful.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# 14 compiles, 1 failed with 1 error.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv was successful.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# 14 compiles, 0 failed with no errors.
+vsim -gui -Lf altera_mf_ver work.simulacao32
+# End time: 12:09:01 on Apr 22,2019, Elapsed time: 0:22:00
+# Errors: 43, Warnings: 2
+# vsim -gui -Lf altera_mf_ver work.simulacao32 
+# Start time: 12:09:01 on Apr 22,2019
+# Loading sv_std.std
+# Loading work.simulacao32
+# Loading work.UP
+# Loading work.register
+# Loading work.Memoria32
+# Loading work.ramOnChip32
+# Loading altera_mf_ver.altsyncram
+# Loading work.Memoria64
+# Loading work.ramOnChip64
+# Loading work.bancoReg
+# Loading work.signalExtend
+# Loading work.mux8to1
+# Loading work.UC
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.instr_reg_risc_v(behavioral_arch)
+# Loading ieee.std_logic_arith(body)
+# Loading work.ula64(behavioral)
+add wave -position end  sim:/simulacao32/up/uc/funct7
+add wave -position end  sim:/simulacao32/up/uc/funct3
+add wave -position end  sim:/simulacao32/up/uc/state
+add wave -position end  sim:/simulacao32/up/uc/nextState
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gustavoisidio  Hostname: GUSTAVOISID657F  ProcessID: 3432
+#           Attempting to use alternate WLF file "./wlft1sm9xb".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft1sm9xb
+add wave -position end sim:/simulacao32/up/*
+add wave -position 26  sim:/simulacao32/up/signalExt/immI
+add wave -position 27  sim:/simulacao32/up/signalExt/immS
+add wave -position 28  sim:/simulacao32/up/signalExt/immSB
+add wave -position 29  sim:/simulacao32/up/signalExt/immUJ
+add wave -position 30  sim:/simulacao32/up/signalExt/immU
+run -all
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock4.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock5.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock6.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock7.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# End time: 12:14:36 on Apr 22,2019, Elapsed time: 0:05:35
+# Errors: 0, Warnings: 2

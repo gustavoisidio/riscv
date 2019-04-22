@@ -37,10 +37,12 @@ always_comb begin
 			end
 			3'b010 : begin
 				if(immI[11] == 1'b1) begin
-					outExtend  = {52'b1111111111111111111111111111111111111111111111111111,immSB};  // SB Extended
+					outExtend[63:14]  = 52'b11111111111111111111111111111111111111111111111111;
+					outExtend[13:2]  = immSB;  // SB Extended
+					outExtend[1:0]  = 2'b00;  // SB Extended
 				end
 				else begin
-					outExtend  = {52'b0000000000000000000000000000000000000000000000000000,immSB};  // SB Extended
+					outExtend  = {52'b00000000000000000000000000000000000000000000000000,immSB,2'b00};  // SB Extended
 				end
 			end
 			3'b011 : begin
@@ -58,9 +60,6 @@ always_comb begin
 				else begin
 					outExtend  = {43'b0000000000000000000000000000000000000000000,immU};  // U Extended
 				end
-			end
-			3'b101 : begin // Beq ou Bne
-				
 			end
 
 	    endcase

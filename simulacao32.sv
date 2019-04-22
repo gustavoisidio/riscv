@@ -44,7 +44,7 @@ always_ff @(posedge clk or posedge nrst) begin
 		if(rdaddress < 64) rdaddress <= rdaddress + 4;
 		else begin
 			rdaddress <= 0;
-			$stop;
+			// $stop;
 		end
 	end
 end

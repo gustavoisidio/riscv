@@ -1,4 +1,4 @@
-module UC (	input logic clock, reset,
+module UC (	input logic clock, reset, ET,
            	input logic [6:0] opcode, // Opcode (Instr6_0) saido do Registrador de Instrucoes
            	input logic [31:0] Instr31_0, // Instrucao inteira saida do Registrador de instrucoes
            	output logic LoadIR, // Registrador de Instrucoes
@@ -9,7 +9,7 @@ module UC (	input logic clock, reset,
                         LoadMDR, // Registrador MDR 
 						LoadAluout, // Registrador da AluOut
 						DMemWR, // Seletor de da Memoria de Dados
-						ET, // Sinal do comparador de igualdade da ula 
+						// ET, // Sinal do comparador de igualdade da ula 
 	   		output logic [2:0] 	MemToReg, // Registrador do Mux3
 								AluSrcA, // Mux1
 				  				AluFct, 
@@ -54,8 +54,10 @@ enum logic [6:0] {
 	ld_estado3 = 7'd15,
 	sd_estado1 = 7'd16,
 	sd_estado2 = 7'd17,
-	beqOrbne_estado1 = 7'd18,
-	beqOrbne_estado2 = 7'd19
+	// beqOrbne_estado1 = 7'd18,
+	// beqOrbne_estado2 = 7'd19,
+	ld_estado4 = 7'd20,
+	beqOrbne = 7'd21
 
 } state, nextState;
 
@@ -166,7 +168,6 @@ always_comb begin
 					InstrType = 3'b010;
 					case(funct3)
 						3'b000: begin
-							InstrType = 3'b101;
 							nextState = beq; // Chama beq
 						end
 					endcase
@@ -175,7 +176,6 @@ always_comb begin
 					InstrType = 3'b010;
 					case(funct3)
 						3'b001: begin
-							InstrType = 3'b101;
 							nextState = bne; // Chama bne
 						end
 					endcase
@@ -240,7 +240,9 @@ always_comb begin
 
 			AluSrcA = 3'd1; // Libera rs1 pra ALU #
 			AluSrcB = 3'd2; // Libera imm extendido pra ALU #
-			nextState = add; // Faz a adicao normal com o sinal estendido #
+			AluFct = 3'b001; // SETANDO ALU PARA SOMA #
+			LoadAluout = 1; // LIBERANDO SAIDA DA ALU #
+			nextState = loadRD;
 		end
 		ld_estado1: begin
 			LoadIR = 0; // Registrador de Instrucoes
@@ -267,10 +269,20 @@ always_comb begin
 			LoadAluout = 0; // Registrador da AluOut
 
 			DMemWR = 0; // Mem 64 lê (endereço) a saída da ALU #
-			LoadMDR = 1; // MDR salva leitura da memória #
 			nextState = ld_estado3;
 		end
-		ld_estado3: begin
+		ld_estado3: begin // Vamos buscar na memória agora
+			LoadIR = 0; // Registrador de Instrucoes
+			PCWrite = 0; // PC
+			LoadRegA = 0; // Registrador A
+			LoadRegB = 0; // Registrador B
+			LoadMDR = 0; // Registrador MDR 
+			LoadAluout = 0; // Registrador da AluOut
+
+			LoadMDR = 1; // MDR salva leitura da memória #
+			nextState = ld_estado4;
+		end
+		ld_estado4: begin
 			LoadIR = 0; // Registrador de Instrucoes
 			PCWrite = 0; // PC
 			WriteRegBanco = 0; // Banco de Registradores
@@ -302,42 +314,80 @@ always_comb begin
 			nextState = busca;
 		end
 		beq: begin
-			// FALTA SETAR OS OUTROS SINAIS
+			LoadIR = 0; // Registrador de Instrucoes
+			PCWrite = 0; // PC
+			WriteRegBanco = 0; // Banco de Registradores
+			LoadRegA = 0; // Registrador A
+			LoadRegB = 0; // Registrador B
+			LoadMDR = 0; // Registrador MDR 
+			LoadAluout = 0; // Registrador da AluOut
+			DMemWR = 0; // Seletor de da Memoria de Dados
 
+			AluSrcA = 1; // Libera conteúdo de A (rs1) para ALU #
+			AluSrcB = 0; // Libera conteúdo de B (rs2) para ALU #
+			AluFct = 111; // Para checar Igualdade #
+		
 			if (ET == 1) begin
-				nextState = beqOrbne_estado1;
+				nextState = beqOrbne;
 			end
 			else begin
 				nextState = busca;
 			end
 		end
 		bne: begin
-			// FALTA SETAR OS OUTROS SINAIS
+			LoadIR = 0; // Registrador de Instrucoes
+			PCWrite = 0; // PC
+			WriteRegBanco = 0; // Banco de Registradores
+			LoadRegA = 0; // Registrador A
+			LoadRegB = 0; // Registrador B
+			LoadMDR = 0; // Registrador MDR 
+			LoadAluout = 0; // Registrador da AluOut
+			DMemWR = 0; // Seletor de da Memoria de Dados
+
+			AluSrcA = 1; // Libera conteúdo de A (rs1) para ALU #
+			AluSrcB = 0; // Libera conteúdo de B (rs2) para ALU #
+			AluFct = 111; // Para checar Igualdade #
 
 			if (ET == 0) begin
-				nextState = beqOrbne_estado1;
+				nextState = beqOrbne;
 			end
 			else begin
 				nextState = busca;
 			end
 		end
-		beqOrbne_estado1: begin
-			// FALTA SETAR OS OUTROS SINAIS
+		beqOrbne: begin
+			LoadIR = 0; // Registrador de Instrucoes
+			WriteRegBanco = 0; // Banco de Registradores
+			LoadRegA = 0; // Registrador A
+			LoadRegB = 0; // Registrador B
+			LoadMDR = 0; // Registrador MDR 
+			LoadAluout = 0; // Registrador da AluOut
+			DMemWR = 0; // Seletor de da Memoria de Dados
 
-			// Concatena um zero à direita de imm #
-			// Estende o sinal de imm #
-			// Shift de 1 em imm #
-			nextState = beqOrbne_estado2;
-		end
-		beqOrbne_estado2: begin
-			// FALTA SETAR OS OUTROS SINAIS
-
-			AluSrcA = 0; // Libera PC pra ALU #
-			// AluSrcB = (3 ou 2); // Imm com ++ [0], sinal est. e shift<-2 pra ALU #
-			AluFct =  3'b001; // Seta a função de somar (+) #
-			PCWrite = 1; // Escreve o resultado (Aluresult) em PC #
+			AluSrcA = 0; // Libera PC pra ALU
+			AluSrcB = 2; // Imm com ++ [0], sinal est. e shift<-2 pra ALU
+			AluFct =  3'b001; // Seta a função de somar (+)
+			PCWrite = 1; // Escreve o resultado (Aluresult) em PC
 			nextState = busca;
 		end
+
+		// beqOrbne_estado1: begin
+		// 	// FALTA SETAR OS OUTROS SINAIS
+
+		// 	// Concatena um zero à direita de imm #
+		// 	// Estende o sinal de imm #
+		// 	// Shift de 1 em imm #
+		// 	nextState = beqOrbne_estado2;
+		// end
+		// beqOrbne_estado2: begin
+		// 	// FALTA SETAR OS OUTROS SINAIS
+
+		// 	AluSrcA = 0; // Libera PC pra ALU #
+		// 	// AluSrcB = (3 ou 2); // Imm com ++ [0], sinal est. e shift<-2 pra ALU #
+		// 	AluFct =  3'b001; // Seta a função de somar (+) #
+		// 	PCWrite = 1; // Escreve o resultado (Aluresult) em PC #
+		// 	nextState = busca;
+		// end
 		lui: begin
 		end
 	endcase

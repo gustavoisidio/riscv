@@ -1,62 +1,54 @@
-C:/Users/gisf/Desktop/riscv/register.sv {1 {vlog -work work -sv -stats=none C:/Users/gisf/Desktop/riscv/register.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module register
-
-Top level modules:
-	register
-
-} {} {}} C:/Users/gisf/Desktop/riscv/UP.sv {1 {vlog -work work -sv -stats=none C:/Users/gisf/Desktop/riscv/UP.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module UP
-
-Top level modules:
-	UP
-
-} {} {}} C:/Users/gisf/Desktop/riscv/signalExtend.sv {1 {vlog -work work -sv -stats=none C:/Users/gisf/Desktop/riscv/signalExtend.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module signalExtend
-
-Top level modules:
-	signalExtend
-
-} {} {}} C:/Users/gisf/Desktop/riscv/Memoria32.sv {1 {vlog -work work -sv -stats=none C:/Users/gisf/Desktop/riscv/Memoria32.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module Memoria32
-
-Top level modules:
-	Memoria32
-
-} {} {}} C:/Users/gisf/Desktop/riscv/bancoReg.sv {1 {vlog -work work -sv -stats=none C:/Users/gisf/Desktop/riscv/bancoReg.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module bancoReg
-
-Top level modules:
-	bancoReg
-
-} {} {}} C:/Users/gisf/Desktop/riscv/mux8to1.v {1 {vlog -work work -stats=none C:/Users/gisf/Desktop/riscv/mux8to1.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module mux8to1
-
-Top level modules:
-	mux8to1
-
-} {} {}} C:/Users/gisf/Desktop/riscv/Instr_Reg_RISC_V.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/gisf/Desktop/riscv/Instr_Reg_RISC_V.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity Instr_Reg_RISC_V
--- Compiling architecture behavioral_arch of Instr_Reg_RISC_V
-
-} {} {}} C:/Users/gisf/Desktop/riscv/Memoria64.sv {1 {vlog -work work -sv -stats=none C:/Users/gisf/Desktop/riscv/Memoria64.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+//Mac/Home/Documents/riscv/Memoria64.sv {1 {vlog -work work -sv -stats=none //Mac/Home/Documents/riscv/Memoria64.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
 -- Compiling module Memoria64
 
 Top level modules:
 	Memoria64
 
-} {} {}} C:/Users/gisf/Desktop/riscv/ula64.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/gisf/Desktop/riscv/ula64.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+} {} {}} //Mac/Home/Documents/riscv/UP.sv {1 {vlog -work work -sv -stats=none //Mac/Home/Documents/riscv/UP.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module UP
+
+Top level modules:
+	UP
+
+} {} {}} //Mac/Home/Documents/riscv/register.sv {1 {vlog -work work -sv -stats=none //Mac/Home/Documents/riscv/register.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module register
+
+Top level modules:
+	register
+
+} {} {}} //Mac/Home/Documents/riscv/signalExtend.sv {1 {vlog -work work -sv -stats=none //Mac/Home/Documents/riscv/signalExtend.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module signalExtend
+
+Top level modules:
+	signalExtend
+
+} {} {}} //Mac/Home/Documents/riscv/bancoReg.sv {1 {vlog -work work -sv -stats=none //Mac/Home/Documents/riscv/bancoReg.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module bancoReg
+
+Top level modules:
+	bancoReg
+
+} {} {}} //Mac/Home/Documents/riscv/simulacao32.sv {1 {vlog -work work -sv -stats=none {\\Mac\Home\Documents\riscv\simulacao32.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module simulacao32
+
+Top level modules:
+	simulacao32
+
+} {} {}} //Mac/Home/Documents/riscv/mux8to1.v {1 {vlog -work work -stats=none //Mac/Home/Documents/riscv/mux8to1.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module mux8to1
+
+Top level modules:
+	mux8to1
+
+} {} {}} //Mac/Home/Documents/riscv/ula64.vhd {1 {vcom -work work -2002 -explicit -stats=none //Mac/Home/Documents/riscv/ula64.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.6d Compiler 2018.02 Feb 24 2018
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
@@ -64,39 +56,47 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity Ula64
 -- Compiling architecture behavioral of Ula64
 
-} {} {}} C:/Users/gisf/Desktop/riscv/Deslocamento.sv {1 {vlog -work work -sv -stats=none C:/Users/gisf/Desktop/riscv/Deslocamento.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+} {} {}} //Mac/Home/Documents/riscv/Deslocamento.sv {1 {vlog -work work -sv -stats=none //Mac/Home/Documents/riscv/Deslocamento.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
 -- Compiling module Deslocamento
 
 Top level modules:
 	Deslocamento
 
-} {} {}} C:/Users/gisf/Desktop/riscv/UC.sv {1 {vlog -work work -sv -stats=none C:/Users/gisf/Desktop/riscv/UC.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+} {} {}} //Mac/Home/Documents/riscv/Memoria32.sv {1 {vlog -work work -sv -stats=none //Mac/Home/Documents/riscv/Memoria32.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module Memoria32
+
+Top level modules:
+	Memoria32
+
+} {} {}} //Mac/Home/Documents/riscv/UC.sv {1 {vlog -work work -sv -stats=none //Mac/Home/Documents/riscv/UC.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
 -- Compiling module UC
 
 Top level modules:
 	UC
 
-} {} {}} C:/Users/gisf/Desktop/riscv/ramOnChip64.v {1 {vlog -work work -stats=none C:/Users/gisf/Desktop/riscv/ramOnChip64.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+} {} {}} //Mac/Home/Documents/riscv/ramOnChip64.v {1 {vlog -work work -stats=none //Mac/Home/Documents/riscv/ramOnChip64.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
 -- Compiling module ramOnChip64
 
 Top level modules:
 	ramOnChip64
 
-} {} {}} C:/Users/gisf/Desktop/riscv/simulacao32.sv {1 {vlog -work work -sv -stats=none C:/Users/gisf/Desktop/riscv/simulacao32.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module simulacao32
-
-Top level modules:
-	simulacao32
-
-} {} {}} C:/Users/gisf/Desktop/riscv/ramOnChip32.v {1 {vlog -work work -stats=none C:/Users/gisf/Desktop/riscv/ramOnChip32.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+} {} {}} //Mac/Home/Documents/riscv/ramOnChip32.v {1 {vlog -work work -stats=none //Mac/Home/Documents/riscv/ramOnChip32.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
 -- Compiling module ramOnChip32
 
 Top level modules:
 	ramOnChip32
+
+} {} {}} //Mac/Home/Documents/riscv/Instr_Reg_RISC_V.vhd {1 {vcom -work work -2002 -explicit -stats=none //Mac/Home/Documents/riscv/Instr_Reg_RISC_V.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.6d Compiler 2018.02 Feb 24 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Instr_Reg_RISC_V
+-- Compiling architecture behavioral_arch of Instr_Reg_RISC_V
 
 } {} {}}
