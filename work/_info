@@ -5,76 +5,76 @@ z0
 cModel Technology
 d\\Mac\Home\Desktop
 vbancoReg
-Z0 DXx6 sv_std 3 std 0 22 ;edk3;YfCLjCm[Hd=`UGQ2
-!s110 1555903501
+Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z1 !s110 1555934595
 !i10b 1
 !s100 a:<nhKC@mWB[nDSoijJPm3
-IS`z??m7J]YQLB28Td1_Cl1
-Z1 VDg1SIo80bB@j0V0VzS_@n1
+IW:3l83G^d4HI;?J8I0:af1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
 !s105 bancoReg_sv_unit
 S1
-Z2 d//Mac/Home/Documents/riscv
-Z3 w1555710398
-8//Mac/Home/Documents/riscv/bancoReg.sv
-F//Mac/Home/Documents/riscv/bancoReg.sv
+Z3 dC:/Users/gisf/Desktop/riscv
+Z4 w1555932184
+8C:/Users/gisf/Desktop/riscv/bancoReg.sv
+FC:/Users/gisf/Desktop/riscv/bancoReg.sv
 L0 1
-Z4 OV;L;10.6d;65
+Z5 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1555903501.000000
-!s107 //Mac/Home/Documents/riscv/bancoReg.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|//Mac/Home/Documents/riscv/bancoReg.sv|
+Z6 !s108 1555934595.000000
+!s107 C:/Users/gisf/Desktop/riscv/bancoReg.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Desktop/riscv/bancoReg.sv|
 !i113 1
-Z6 o-work work -sv
-Z7 tCvgOpt 0
+Z7 o-work work -sv
+Z8 tCvgOpt 0
 nbanco@reg
 vDeslocamento
 R0
-Z8 !s110 1555903502
+R1
 !i10b 1
 !s100 EMH`UB_G1bTeiVdfJ^^>l1
-I3B[JLCaZ]@kiU>XooNG3Q3
-R1
+In=0Vlf:WdUI^@_SHi]D<]0
+R2
 !s105 Deslocamento_sv_unit
 S1
-R2
 R3
-8//Mac/Home/Documents/riscv/Deslocamento.sv
-F//Mac/Home/Documents/riscv/Deslocamento.sv
-L0 1
 R4
+8C:/Users/gisf/Desktop/riscv/Deslocamento.sv
+FC:/Users/gisf/Desktop/riscv/Deslocamento.sv
+L0 1
+R5
 r1
 !s85 0
 31
-R5
-!s107 //Mac/Home/Documents/riscv/Deslocamento.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|//Mac/Home/Documents/riscv/Deslocamento.sv|
-!i113 1
 R6
+!s107 C:/Users/gisf/Desktop/riscv/Deslocamento.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Desktop/riscv/Deslocamento.sv|
+!i113 1
 R7
+R8
 n@deslocamento
 Einstr_reg_risc_v
-R3
+R4
 Z9 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z10 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
-R2
-Z11 8//Mac/Home/Documents/riscv/Instr_Reg_RISC_V.vhd
-Z12 F//Mac/Home/Documents/riscv/Instr_Reg_RISC_V.vhd
+R3
+Z11 8C:/Users/gisf/Desktop/riscv/Instr_Reg_RISC_V.vhd
+Z12 FC:/Users/gisf/Desktop/riscv/Instr_Reg_RISC_V.vhd
 l0
 L49
 V7TD3cNADG8G:ODlTSzz?c1
 !s100 HF;HEc4<o>]o3`Jjc=WPJ2
-Z13 OV;C;10.6d;65
+Z13 OV;C;10.5b;63
 32
-R8
+R1
 !i10b 1
-Z14 !s108 1555903502.000000
-Z15 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//Mac/Home/Documents/riscv/Instr_Reg_RISC_V.vhd|
-Z16 !s107 //Mac/Home/Documents/riscv/Instr_Reg_RISC_V.vhd|
+R6
+Z14 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/gisf/Desktop/riscv/Instr_Reg_RISC_V.vhd|
+Z15 !s107 C:/Users/gisf/Desktop/riscv/Instr_Reg_RISC_V.vhd|
 !i113 1
-Z17 o-work work -2002 -explicit
-Z18 tExplicit 1 CvgOpt 0
+Z16 o-work work -2002 -explicit
+Z17 tExplicit 1 CvgOpt 0
 Abehavioral_arch
 R9
 R10
@@ -85,290 +85,290 @@ Vo8SZoo^`iHF7`CU3CnhD`1
 !s100 e?bWG@:SnkVC476;`5UQ[1
 R13
 32
-R8
+R1
 !i10b 1
+R6
 R14
 R15
-R16
 !i113 1
+R16
 R17
-R18
 vMemoria32
 R0
-R8
+R1
 !i10b 1
 !s100 Q2gmKA>Pd1H;3=f[e^lb[3
-IRRf?O9VMJFN8?I;iGkF;h1
-R1
+If`YVCPP^LjzBz`]8Z]@b11
+R2
 !s105 Memoria32_sv_unit
 S1
-R2
 R3
-8//Mac/Home/Documents/riscv/Memoria32.sv
-F//Mac/Home/Documents/riscv/Memoria32.sv
-Z19 L0 26
 R4
+8C:/Users/gisf/Desktop/riscv/Memoria32.sv
+FC:/Users/gisf/Desktop/riscv/Memoria32.sv
+Z18 L0 26
+R5
 r1
 !s85 0
 31
-R14
-!s107 //Mac/Home/Documents/riscv/Memoria32.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|//Mac/Home/Documents/riscv/Memoria32.sv|
-!i113 1
 R6
+!s107 C:/Users/gisf/Desktop/riscv/Memoria32.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Desktop/riscv/Memoria32.sv|
+!i113 1
 R7
+R8
 n@memoria32
 vMemoria64
 R0
-R8
+R1
 !i10b 1
 !s100 1fz3Mgbi`W1QjWk]9CgUO3
-IG:=?ilmNYdbfWj48>oJzH2
-R1
+I5`KigT3c;hid2]ck?0VQo2
+R2
 !s105 Memoria64_sv_unit
 S1
-R2
 R3
-8//Mac/Home/Documents/riscv/Memoria64.sv
-F//Mac/Home/Documents/riscv/Memoria64.sv
-R19
 R4
+8C:/Users/gisf/Desktop/riscv/Memoria64.sv
+FC:/Users/gisf/Desktop/riscv/Memoria64.sv
+R18
+R5
 r1
 !s85 0
 31
-R14
-!s107 //Mac/Home/Documents/riscv/Memoria64.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|//Mac/Home/Documents/riscv/Memoria64.sv|
-!i113 1
 R6
+!s107 C:/Users/gisf/Desktop/riscv/Memoria64.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Desktop/riscv/Memoria64.sv|
+!i113 1
 R7
+R8
 n@memoria64
 vmux8to1
-R8
+Z19 !s110 1555934596
 !i10b 1
 !s100 hJYk;5fT7B_Ha@Aod89CH1
-IRC4Bm[neQ6gR;fW6Zn3WU3
-R1
+IjFXfkaNC42?>g3kLH28Zh3
 R2
 R3
-8//Mac/Home/Documents/riscv/mux8to1.v
-F//Mac/Home/Documents/riscv/mux8to1.v
-L0 1
 R4
+8C:/Users/gisf/Desktop/riscv/mux8to1.v
+FC:/Users/gisf/Desktop/riscv/mux8to1.v
+L0 1
+R5
 r1
 !s85 0
 31
-R14
-!s107 //Mac/Home/Documents/riscv/mux8to1.v|
-!s90 -reportprogress|300|-work|work|-stats=none|//Mac/Home/Documents/riscv/mux8to1.v|
+R6
+!s107 C:/Users/gisf/Desktop/riscv/mux8to1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gisf/Desktop/riscv/mux8to1.v|
 !i113 1
 Z20 o-work work
-R7
-vramOnChip32
 R8
+vramOnChip32
+R19
 !i10b 1
 !s100 ?cVfgbFYaCB@4255f4cUf3
-Ij7oiU]PiQ2`iIQ1cLIZdd0
-R1
+Im=;m7b?9?:T;h[=GJdE=d2
 R2
 R3
-8//Mac/Home/Documents/riscv/ramOnChip32.v
-F//Mac/Home/Documents/riscv/ramOnChip32.v
-Z21 L0 40
 R4
+8C:/Users/gisf/Desktop/riscv/ramOnChip32.v
+FC:/Users/gisf/Desktop/riscv/ramOnChip32.v
+Z21 L0 40
+R5
 r1
 !s85 0
 31
-R14
-!s107 //Mac/Home/Documents/riscv/ramOnChip32.v|
-!s90 -reportprogress|300|-work|work|-stats=none|//Mac/Home/Documents/riscv/ramOnChip32.v|
+Z22 !s108 1555934596.000000
+!s107 C:/Users/gisf/Desktop/riscv/ramOnChip32.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gisf/Desktop/riscv/ramOnChip32.v|
 !i113 1
 R20
-R7
+R8
 nram@on@chip32
 vramOnChip64
-R8
+R19
 !i10b 1
 !s100 cocMaFKEzGMH4F3EWeV]X1
-I[@E<jcV9JSFJ4ENNG9oN71
-R1
+Iic1LEeE5AhJWAbnja@T3U1
 R2
 R3
-8//Mac/Home/Documents/riscv/ramOnChip64.v
-F//Mac/Home/Documents/riscv/ramOnChip64.v
-R21
 R4
+8C:/Users/gisf/Desktop/riscv/ramOnChip64.v
+FC:/Users/gisf/Desktop/riscv/ramOnChip64.v
+R21
+R5
 r1
 !s85 0
 31
-R14
-!s107 //Mac/Home/Documents/riscv/ramOnChip64.v|
-!s90 -reportprogress|300|-work|work|-stats=none|//Mac/Home/Documents/riscv/ramOnChip64.v|
+R22
+!s107 C:/Users/gisf/Desktop/riscv/ramOnChip64.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gisf/Desktop/riscv/ramOnChip64.v|
 !i113 1
 R20
-R7
+R8
 nram@on@chip64
 vregister
 R0
-R8
+R19
 !i10b 1
 !s100 Gjjc1O?eX;I>UcKl1X;1V3
-I>ZDfX17d_Dh94daCcO>;J0
-R1
+I_9Ub`?1:`l7Bk2LLJ1=4k1
+R2
 !s105 register_sv_unit
 S1
-R2
 R3
-8//Mac/Home/Documents/riscv/register.sv
-F//Mac/Home/Documents/riscv/register.sv
-L0 1
 R4
+8C:/Users/gisf/Desktop/riscv/register.sv
+FC:/Users/gisf/Desktop/riscv/register.sv
+L0 1
+R5
 r1
 !s85 0
 31
-R14
-!s107 //Mac/Home/Documents/riscv/register.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|//Mac/Home/Documents/riscv/register.sv|
+R22
+!s107 C:/Users/gisf/Desktop/riscv/register.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Desktop/riscv/register.sv|
 !i113 1
-R6
 R7
+R8
 vsignalExtend
 R0
-R8
+R19
 !i10b 1
-!s100 W68;WAmo_;W<oP^YJHnja3
-IRWo?fOMI^gD[BOMEjY?5<3
-R1
+!s100 iSkVG^0KzUXQhbFG]oM891
+IDMaAKALT@^R^8SR<aM[EL0
+R2
 !s105 signalExtend_sv_unit
 S1
-R2
-w1555726366
-8//Mac/Home/Documents/riscv/signalExtend.sv
-F//Mac/Home/Documents/riscv/signalExtend.sv
+R3
+w1555934581
+8C:/Users/gisf/Desktop/riscv/signalExtend.sv
+FC:/Users/gisf/Desktop/riscv/signalExtend.sv
 L0 1
-R4
+R5
 r1
 !s85 0
 31
-R14
-!s107 //Mac/Home/Documents/riscv/signalExtend.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|//Mac/Home/Documents/riscv/signalExtend.sv|
+R22
+!s107 C:/Users/gisf/Desktop/riscv/signalExtend.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Desktop/riscv/signalExtend.sv|
 !i113 1
-R6
 R7
+R8
 nsignal@extend
 vsimulacao32
 R0
-R8
+R19
 !i10b 1
 !s100 A9:2o93XLhZGR0EbzZf8T3
-IXWO<;=YTUzH2RO>5Z97PM2
-R1
+I2MC`C5;>QLG7MkSQ<QobW0
+R2
 !s105 simulacao32_sv_unit
 S1
-R2
 R3
-8//Mac/Home/Documents/riscv/simulacao32.sv
-F//Mac/Home/Documents/riscv/simulacao32.sv
-L0 3
 R4
+8C:/Users/gisf/Desktop/riscv/simulacao32.sv
+FC:/Users/gisf/Desktop/riscv/simulacao32.sv
+L0 3
+R5
 r1
 !s85 0
 31
-R14
-!s107 //Mac/Home/Documents/riscv/simulacao32.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|//Mac/Home/Documents/riscv/simulacao32.sv|
+R22
+!s107 C:/Users/gisf/Desktop/riscv/simulacao32.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Desktop/riscv/simulacao32.sv|
 !i113 1
-R6
 R7
+R8
 vUC
 R0
-Z22 !s110 1555903503
+R19
 !i10b 1
-!s100 5m2MSK>QcWR`=<9imn`RO1
-I5EKj4UGjPYbdO^>YC^oZ`3
-R1
+!s100 77JcfiXV9QQNPQzB]6[iD1
+InnG:4n]3bkCViXe<f3i5Z2
+R2
 !s105 UC_sv_unit
 S1
-R2
-w1555903493
-8\\Mac\Home\Documents\riscv\UC.sv
-F\\Mac\Home\Documents\riscv\UC.sv
+R3
+w1555934591
+8C:/Users/gisf/Desktop/riscv/UC.sv
+FC:/Users/gisf/Desktop/riscv/UC.sv
 L0 1
-R4
+R5
 r1
 !s85 0
 31
-R14
-!s107 \\Mac\Home\Documents\riscv\UC.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|\\Mac\Home\Documents\riscv\UC.sv|
+R22
+!s107 C:/Users/gisf/Desktop/riscv/UC.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Desktop/riscv/UC.sv|
 !i113 1
-R6
 R7
+R8
 n@u@c
 Eula64
-R3
+R4
 Z23 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 R9
 R10
-R2
-Z24 8//Mac/Home/Documents/riscv/ula64.vhd
-Z25 F//Mac/Home/Documents/riscv/ula64.vhd
+R3
+Z24 8C:/Users/gisf/Desktop/riscv/ula64.vhd
+Z25 FC:/Users/gisf/Desktop/riscv/ula64.vhd
 l0
 L54
 VNKCl_dCU9VZRibAm_Jh<Y0
 !s100 gXP0QOjWED7GdgGCHP44]0
 R13
 32
-R22
+Z26 !s110 1555934597
 !i10b 1
-Z26 !s108 1555903503.000000
-Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//Mac/Home/Documents/riscv/ula64.vhd|
-Z28 !s107 //Mac/Home/Documents/riscv/ula64.vhd|
+R22
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/gisf/Desktop/riscv/ula64.vhd|
+Z28 !s107 C:/Users/gisf/Desktop/riscv/ula64.vhd|
 !i113 1
+R16
 R17
-R18
 Abehavioral
 R23
 R9
 R10
-DEx4 work 5 ula64 0 22 NKCl_dCU9VZRibAm_Jh<Y0
+Z29 DEx4 work 5 ula64 0 22 NKCl_dCU9VZRibAm_Jh<Y0
 l80
 L70
-V0bJGE`7Xojm<X>7FGncTL1
-!s100 DoJmkJ?1Y9Zk;7@A7oGLb2
+Z30 V0bJGE`7Xojm<X>7FGncTL1
+Z31 !s100 DoJmkJ?1Y9Zk;7@A7oGLb2
 R13
 32
-R22
-!i10b 1
 R26
+!i10b 1
+R22
 R27
 R28
 !i113 1
+R16
 R17
-R18
 vUP
 R0
-R22
+R1
 !i10b 1
 !s100 j`EZ`M>]i>O?S;4M=GfP`3
-I;jCHjO[I5:KTNReRlEGl_3
-R1
+I>hiJ5>l[nFYCRaeQM_KM41
+R2
 !s105 UP_sv_unit
 S1
-R2
-w1555865742
-8//Mac/Home/Documents/riscv/UP.sv
-F//Mac/Home/Documents/riscv/UP.sv
-L0 1
+R3
 R4
+8C:/Users/gisf/Desktop/riscv/UP.sv
+FC:/Users/gisf/Desktop/riscv/UP.sv
+L0 1
+R5
 r1
 !s85 0
 31
-R26
-!s107 //Mac/Home/Documents/riscv/UP.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|//Mac/Home/Documents/riscv/UP.sv|
+!s108 1555934594.000000
+!s107 C:/Users/gisf/Desktop/riscv/UP.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/gisf/Desktop/riscv/UP.sv|
 !i113 1
-R6
 R7
+R8
 n@u@p

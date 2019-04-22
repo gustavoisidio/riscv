@@ -83,30 +83,32 @@ always_comb begin
 			nextState = busca;	
 		end
 		busca: begin
-			LoadMDR = 0; // Registrador MDR 
-			DMemWR = 0; // Seletor de da Memoria de Dados
-			PCWrite = 1; // Incrementa PC
-			AluFct = 3'b001; // SETANDO ALU PARA SOMA
-			LoadIR = 0; // So no proximo ciclo
-			WriteRegBanco = 0; // NAO SETADO AINDA
-			AluSrcA = 3'd0; // EH ZERO MESMO
-			AluSrcB = 3'd1; // INCREMENTAR PC
+			LoadMDR = 0; 
+			DMemWR = 0; 
+			LoadIR = 0; 
+			WriteRegBanco = 0; 
 			LoadAluout = 0; 
 			LoadRegA = 0;
 			LoadRegB = 0;
+
+			PCWrite = 1; // Libera escrita em PC para incrementar #
+			AluFct = 3'b001; // SETANDO ALU PARA SOMA #
+			AluSrcA = 3'd0; // EH ZERO MESMO #
+			AluSrcB = 3'd1; // LIBERA 4 PRA INCREMENTAR PC #
 			nextState = salvaInstrucao;
 		end
 		salvaInstrucao: begin
-			LoadMDR = 0; // Registrador MDR 
-			DMemWR = 0; // Seletor de da Memoria de Dados
-			PCWrite = 0; // Incrementa PC
-			LoadIR = 1; // So no proximo ciclo
-			WriteRegBanco = 0; // NAO SETADO AINDA
-			AluSrcA = 3'd0; // NAO SETADO AINDA
-			AluSrcB = 3'd0; // NAO SETADO AINDA
+			LoadMDR = 0; 
+			DMemWR = 0; 
+			PCWrite = 0; 
+			WriteRegBanco = 0; 
+			AluSrcA = 3'd0; 
+			AluSrcB = 3'd0; 
 			LoadAluout = 0; 
 			LoadRegA = 0;
 			LoadRegB = 0;
+
+			LoadIR = 1; // So no proximo ciclo #
 			nextState = decodInstrucao;
 		end
 		decodInstrucao: begin
@@ -116,10 +118,12 @@ always_comb begin
 			LoadIR = 0; 
 			AluSrcA = 3'd0; 
 			AluSrcB = 3'd0; 
-			LoadAluout = 0; 
+			LoadAluout = 0;
+
 			WriteRegBanco = 0; // SETA LEITURA DO BANCO DE REGISTRADORES #
 			LoadRegA = 1; // CARREGO EM A #
 			LoadRegB = 1; // CARREGO EM B #
+
 			case(opcode)
 				7'b0110011: begin //R
 					case(funct3)
@@ -184,19 +188,20 @@ always_comb begin
 
 		end // decod
 				
-		sub: begin
+		add: begin
 			PCWrite = 0; 
 			LoadIR = 0;
-			AluSrcA = 3'd1; // PEGA SAIDA DO REG A #
-			AluSrcB = 3'd0; // PEGA SAIDA DO REG B #
 			WriteRegBanco = 0; 
 			LoadRegA = 0; 
-			LoadRegB = 0;  
-			AluFct = 3'b001; // SETANDO ALU PARA SOMA
-			LoadAluout = 1;
+			LoadRegB = 0; 
+
+			AluSrcA = 3'd1; // PEGA SAIDA DO REG A #
+			AluSrcB = 3'd0; // PEGA SAIDA DO REG B #
+			AluFct = 3'b001; // SETANDO ALU PARA SOMA #
+			LoadAluout = 1; // LIBERANDO SAIDA DA ALU #
 			nextState = loadRD;
 		end
-		loadRD: begin // Carrega saída da ALU em RD
+		loadRD: begin // Carrega saida da ALU em RD
 			PCWrite = 0; 
 			LoadIR = 0;
 			AluSrcA = 3'd0; 
@@ -204,11 +209,12 @@ always_comb begin
 			LoadRegA = 0; 
 			LoadRegB = 0;  
 			LoadAluout = 0; 
+
 			MemToReg = 3'd1; // Mux escolhe saida da ALU #
 			WriteRegBanco = 1;  // Escrever em RD #
 			nextState = busca;
 		end
-		add: begin
+		sub: begin
 			PCWrite = 0; 
 			LoadIR = 0;
 			AluSrcA = 3'd1; // PEGA SAIDA DO REG A #
