@@ -16,91 +16,9 @@
 # Compile of ula64.vhd was successful.
 # Compile of UP.sv was successful.
 # 14 compiles, 0 failed with no errors.
-vsim -gui work.simulacao32
-# vsim -gui work.simulacao32 
-# Start time: 15:13:33 on Apr 21,2019
-# Loading sv_std.std
-# Loading work.simulacao32
-# Loading work.UP
-# Loading work.register
-# Loading work.Memoria32
-# Loading work.ramOnChip32
-# ** Error: (vsim-3033) //Mac/Home/Documents/riscv/ramOnChip32.v(70): Instantiation of 'altsyncram' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/InstMem/memBlock0 File: //Mac/Home/Documents/riscv/ramOnChip32.v
-#         Searched libraries:
-#             //Mac/Home/Documents/riscv/work
-# ** Error: (vsim-3033) //Mac/Home/Documents/riscv/ramOnChip32.v(70): Instantiation of 'altsyncram' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/InstMem/memBlock1 File: //Mac/Home/Documents/riscv/ramOnChip32.v
-#         Searched libraries:
-#             //Mac/Home/Documents/riscv/work
-# ** Error: (vsim-3033) //Mac/Home/Documents/riscv/ramOnChip32.v(70): Instantiation of 'altsyncram' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/InstMem/memBlock2 File: //Mac/Home/Documents/riscv/ramOnChip32.v
-#         Searched libraries:
-#             //Mac/Home/Documents/riscv/work
-# ** Error: (vsim-3033) //Mac/Home/Documents/riscv/ramOnChip32.v(70): Instantiation of 'altsyncram' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/InstMem/memBlock3 File: //Mac/Home/Documents/riscv/ramOnChip32.v
-#         Searched libraries:
-#             //Mac/Home/Documents/riscv/work
-# Loading work.Memoria64
-# Loading work.ramOnChip64
-# ** Error: (vsim-3033) //Mac/Home/Documents/riscv/ramOnChip64.v(70): Instantiation of 'altsyncram' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/DataMem/memBlock0 File: //Mac/Home/Documents/riscv/ramOnChip64.v
-#         Searched libraries:
-#             //Mac/Home/Documents/riscv/work
-# ** Error: (vsim-3033) //Mac/Home/Documents/riscv/ramOnChip64.v(70): Instantiation of 'altsyncram' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/DataMem/memBlock1 File: //Mac/Home/Documents/riscv/ramOnChip64.v
-#         Searched libraries:
-#             //Mac/Home/Documents/riscv/work
-# ** Error: (vsim-3033) //Mac/Home/Documents/riscv/ramOnChip64.v(70): Instantiation of 'altsyncram' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/DataMem/memBlock2 File: //Mac/Home/Documents/riscv/ramOnChip64.v
-#         Searched libraries:
-#             //Mac/Home/Documents/riscv/work
-# ** Error: (vsim-3033) //Mac/Home/Documents/riscv/ramOnChip64.v(70): Instantiation of 'altsyncram' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/DataMem/memBlock3 File: //Mac/Home/Documents/riscv/ramOnChip64.v
-#         Searched libraries:
-#             //Mac/Home/Documents/riscv/work
-# ** Error: (vsim-3033) //Mac/Home/Documents/riscv/ramOnChip64.v(70): Instantiation of 'altsyncram' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/DataMem/memBlock4 File: //Mac/Home/Documents/riscv/ramOnChip64.v
-#         Searched libraries:
-#             //Mac/Home/Documents/riscv/work
-# ** Error: (vsim-3033) //Mac/Home/Documents/riscv/ramOnChip64.v(70): Instantiation of 'altsyncram' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/DataMem/memBlock5 File: //Mac/Home/Documents/riscv/ramOnChip64.v
-#         Searched libraries:
-#             //Mac/Home/Documents/riscv/work
-# ** Error: (vsim-3033) //Mac/Home/Documents/riscv/ramOnChip64.v(70): Instantiation of 'altsyncram' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/DataMem/memBlock6 File: //Mac/Home/Documents/riscv/ramOnChip64.v
-#         Searched libraries:
-#             //Mac/Home/Documents/riscv/work
-# ** Error: (vsim-3033) //Mac/Home/Documents/riscv/ramOnChip64.v(70): Instantiation of 'altsyncram' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/DataMem/memBlock7 File: //Mac/Home/Documents/riscv/ramOnChip64.v
-#         Searched libraries:
-#             //Mac/Home/Documents/riscv/work
-# Loading work.bancoReg
-# Loading work.signalExtend
-# Loading work.mux8to1
-# Loading work.UC
-# ** Error: (vsim-3033) //Mac/Home/Documents/riscv/ramOnChip32.v(70): Instantiation of 'altsyncram' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/meminst/memBlock0 File: //Mac/Home/Documents/riscv/ramOnChip32.v
-#         Searched libraries:
-#             //Mac/Home/Documents/riscv/work
-# ** Error: (vsim-3033) //Mac/Home/Documents/riscv/ramOnChip32.v(70): Instantiation of 'altsyncram' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/meminst/memBlock1 File: //Mac/Home/Documents/riscv/ramOnChip32.v
-#         Searched libraries:
-#             //Mac/Home/Documents/riscv/work
-# ** Error: (vsim-3033) //Mac/Home/Documents/riscv/ramOnChip32.v(70): Instantiation of 'altsyncram' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/meminst/memBlock2 File: //Mac/Home/Documents/riscv/ramOnChip32.v
-#         Searched libraries:
-#             //Mac/Home/Documents/riscv/work
-# ** Error: (vsim-3033) //Mac/Home/Documents/riscv/ramOnChip32.v(70): Instantiation of 'altsyncram' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/meminst/memBlock3 File: //Mac/Home/Documents/riscv/ramOnChip32.v
-#         Searched libraries:
-#             //Mac/Home/Documents/riscv/work
-# Error loading design
-# End time: 15:13:33 on Apr 21,2019, Elapsed time: 0:00:00
-# Errors: 16, Warnings: 0
 vsim -gui work.simulacao32 -Lf altera_mf_ver
 # vsim -gui work.simulacao32 -Lf altera_mf_ver 
-# Start time: 15:13:52 on Apr 21,2019
+# Start time: 00:14:58 on Apr 22,2019
 # Loading sv_std.std
 # Loading work.simulacao32
 # Loading work.UP
@@ -131,9 +49,9 @@ add wave -position end  sim:/simulacao32/up/uc/state
 add wave -position end  sim:/simulacao32/up/uc/nextState
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: gustavoisidio  Hostname: GUSTAVOISID657F  ProcessID: 3432
-#           Attempting to use alternate WLF file "./wlftnb4qm9".
+#           Attempting to use alternate WLF file "./wlft4iidfb".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftnb4qm9
+#           Using alternate file: ./wlft4iidfb
 add wave -position end sim:/simulacao32/up/*
 run -all
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
@@ -171,5 +89,335 @@ run -all
 # ** Note: $stop    : //Mac/Home/Documents/riscv/simulacao32.sv(47)
 #    Time: 190 ns  Iteration: 1  Instance: /simulacao32
 # Break in Module simulacao32 at //Mac/Home/Documents/riscv/simulacao32.sv line 47
-# End time: 15:16:31 on Apr 21,2019, Elapsed time: 0:02:39
+# Compile of UC.sv failed with 6 errors.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv failed with 6 errors.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# 14 compiles, 1 failed with 6 errors.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv was successful.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# 14 compiles, 0 failed with no errors.
+vsim -gui -Lf altera_mf_ver work.simulacao32
+# End time: 00:19:37 on Apr 22,2019, Elapsed time: 0:04:39
+# Errors: 0, Warnings: 3
+# vsim -gui -Lf altera_mf_ver work.simulacao32 
+# Start time: 00:19:37 on Apr 22,2019
+# Loading sv_std.std
+# Loading work.simulacao32
+# Loading work.UP
+# Loading work.register
+# Loading work.Memoria32
+# Loading work.ramOnChip32
+# Loading altera_mf_ver.altsyncram
+# Loading work.Memoria64
+# Loading work.ramOnChip64
+# Loading work.bancoReg
+# Loading work.signalExtend
+# Loading work.mux8to1
+# Loading work.UC
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.instr_reg_risc_v(behavioral_arch)
+# Loading ieee.std_logic_arith(body)
+# Loading work.ula64(behavioral)
+# ** Warning: (vsim-3839) //Mac/Home/Documents/riscv/UP.sv(149): Variable '/simulacao32/up/ET', driven via a port connection, is multiply driven. See //Mac/Home/Documents/riscv/UP.sv(55).
+#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/uc File: //Mac/Home/Documents/riscv/UC.sv
+add wave -position end  sim:/simulacao32/up/uc/funct7
+add wave -position end  sim:/simulacao32/up/uc/funct3
+add wave -position end  sim:/simulacao32/up/uc/state
+add wave -position end  sim:/simulacao32/up/uc/nextState
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gustavoisidio  Hostname: GUSTAVOISID657F  ProcessID: 3432
+#           Attempting to use alternate WLF file "./wlft8ri2dz".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft8ri2dz
+add wave -position end sim:/simulacao32/up/*
+run -all
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock4.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock5.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock6.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock7.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# ** Note: $stop    : //Mac/Home/Documents/riscv/simulacao32.sv(47)
+#    Time: 190 ns  Iteration: 1  Instance: /simulacao32
+# Break in Module simulacao32 at //Mac/Home/Documents/riscv/simulacao32.sv line 47
+run -all
+# ** Note: $stop    : //Mac/Home/Documents/riscv/simulacao32.sv(47)
+#    Time: 360 ns  Iteration: 1  Instance: /simulacao32
+# Break in Module simulacao32 at //Mac/Home/Documents/riscv/simulacao32.sv line 47
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv was successful.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# 14 compiles, 0 failed with no errors.
+vsim -gui -Lf altera_mf_ver work.simulacao32
+# End time: 00:23:17 on Apr 22,2019, Elapsed time: 0:03:40
+# Errors: 0, Warnings: 3
+# vsim -gui -Lf altera_mf_ver work.simulacao32 
+# Start time: 00:23:17 on Apr 22,2019
+# Loading sv_std.std
+# Loading work.simulacao32
+# Loading work.UP
+# Loading work.register
+# Loading work.Memoria32
+# Loading work.ramOnChip32
+# Loading altera_mf_ver.altsyncram
+# Loading work.Memoria64
+# Loading work.ramOnChip64
+# Loading work.bancoReg
+# Loading work.signalExtend
+# Loading work.mux8to1
+# Loading work.UC
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.instr_reg_risc_v(behavioral_arch)
+# Loading ieee.std_logic_arith(body)
+# Loading work.ula64(behavioral)
+# ** Warning: (vsim-3839) //Mac/Home/Documents/riscv/UP.sv(149): Variable '/simulacao32/up/ET', driven via a port connection, is multiply driven. See //Mac/Home/Documents/riscv/UP.sv(55).
+#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/uc File: //Mac/Home/Documents/riscv/UC.sv
+add wave -position end  sim:/simulacao32/up/uc/funct7
+add wave -position end  sim:/simulacao32/up/uc/funct3
+add wave -position end  sim:/simulacao32/up/uc/state
+add wave -position end  sim:/simulacao32/up/uc/nextState
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gustavoisidio  Hostname: GUSTAVOISID657F  ProcessID: 3432
+#           Attempting to use alternate WLF file "./wlftwnt95v".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftwnt95v
+add wave -position end sim:/simulacao32/up/*
+add wave -position 1 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 1 -format Literal -height 17 -radix unsigned -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 1 -format Logic -height 17 -radix unsigned -format Logic -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 1 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 1 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 1 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 1 -format Logic -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 1 -format Logic -height 17 -radix unsigned -format Logic -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 1 -format Logic -height 17 -radix unsigned -format Logic -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 1 -autoscale 1 -format Literal -height 17 -radix unsigned -format Logic -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 1 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 1 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 1 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 1 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 1 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 1 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 1 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 1 -autoscale 1 -format Literal -height 17 -radix unsigned -autoscale 1 -format Literal -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 1 -format Logic -height 17 -radix unsigned -format Logic -height 17 -radix unsigned
+# Missing signal name or pattern.
+add wave -position 1  -format Logic -height 17 -radix unsigned
+# Missing signal name or pattern.
+run -all
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock4.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock5.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock6.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock7.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# ** Note: $stop    : //Mac/Home/Documents/riscv/simulacao32.sv(47)
+#    Time: 190 ns  Iteration: 1  Instance: /simulacao32
+# Break in Module simulacao32 at //Mac/Home/Documents/riscv/simulacao32.sv line 47
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv was successful.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# 14 compiles, 0 failed with no errors.
+vsim -gui -Lf altera_mf_ver work.simulacao32
+# End time: 00:25:16 on Apr 22,2019, Elapsed time: 0:01:59
+# Errors: 20, Warnings: 3
+# vsim -gui -Lf altera_mf_ver work.simulacao32 
+# Start time: 00:25:16 on Apr 22,2019
+# Loading sv_std.std
+# Loading work.simulacao32
+# Loading work.UP
+# Loading work.register
+# Loading work.Memoria32
+# Loading work.ramOnChip32
+# Loading altera_mf_ver.altsyncram
+# Loading work.Memoria64
+# Loading work.ramOnChip64
+# Loading work.bancoReg
+# Loading work.signalExtend
+# Loading work.mux8to1
+# Loading work.UC
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.instr_reg_risc_v(behavioral_arch)
+# Loading ieee.std_logic_arith(body)
+# Loading work.ula64(behavioral)
+# ** Warning: (vsim-3839) //Mac/Home/Documents/riscv/UP.sv(149): Variable '/simulacao32/up/ET', driven via a port connection, is multiply driven. See //Mac/Home/Documents/riscv/UP.sv(55).
+#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/uc File: //Mac/Home/Documents/riscv/UC.sv
+add wave -position end  sim:/simulacao32/up/uc/funct7
+add wave -position end  sim:/simulacao32/up/uc/funct3
+add wave -position end  sim:/simulacao32/up/uc/state
+add wave -position end  sim:/simulacao32/up/uc/nextState
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gustavoisidio  Hostname: GUSTAVOISID657F  ProcessID: 3432
+#           Attempting to use alternate WLF file "./wlft5xbd7g".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft5xbd7g
+add wave -position end sim:/simulacao32/up/*
+run -all
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.InstMem.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock4.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock5.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock6.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.up.DataMem.memBlock7.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: simulacao32.meminst.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# ** Note: $stop    : //Mac/Home/Documents/riscv/simulacao32.sv(47)
+#    Time: 190 ns  Iteration: 1  Instance: /simulacao32
+# Break in Module simulacao32 at //Mac/Home/Documents/riscv/simulacao32.sv line 47
+# End time: 00:27:42 on Apr 22,2019, Elapsed time: 0:02:26
 # Errors: 0, Warnings: 3

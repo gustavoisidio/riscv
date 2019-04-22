@@ -113,7 +113,7 @@ always_comb begin
 			LoadMDR = 0; // Registrador MDR 
 			DMemWR = 0; // Seletor de da Memoria de Dados
 			PCWrite = 0; 
-			LoadIR = 1; 
+			LoadIR = 0; 
 			AluSrcA = 3'd0; 
 			AluSrcB = 3'd0; 
 			LoadAluout = 0; 
@@ -168,7 +168,7 @@ always_comb begin
 					end
 				7'b1100111: begin // SB
 					InstrType = 3'b010;
-					case(funct3)
+				sim:/simulacao32/#ALWAYS#41	case(funct3)
 						3'b001: begin
 							nextState = bne; // Chama bne
 						end
@@ -186,12 +186,12 @@ always_comb begin
 				
 		add: begin
 			PCWrite = 0; 
-			LoadIR = 1;
+			LoadIR = 0;
 			AluSrcA = 3'd1; // PEGA SAIDA DO REG A #
 			AluSrcB = 3'd0; // PEGA SAIDA DO REG B #
 			WriteRegBanco = 0; 
 			LoadRegA = 0; 
-			LoadRegB = 0;  
+			LoadRegB = 0;  sim:/simulacao32/#ALWAYS#41
 			AluFct = 3'b001; // SETANDO ALU PARA SOMA
 			LoadAluout = 1;
 			nextState = loadRD;
@@ -204,13 +204,13 @@ always_comb begin
 			LoadRegA = 0; 
 			LoadRegB = 0;  
 			LoadAluout = 0; 
-			MemToReg = 3'd1; // Mux escolhe saida da ALU
-			WriteRegBanco = 1;  // Escrever em RD 
+			MemToReg = 3'd1; // Mux escolhe saida da ALU #
+			WriteRegBanco = 1;  // Escrever em RD #
 			nextState = busca;
 		end
 		sub: begin
 			PCWrite = 0; 
-			LoadIR = 1;
+			LoadIR = 0;
 			AluSrcA = 3'd1; // PEGA SAIDA DO REG A #
 			AluSrcB = 3'd0; // PEGA SAIDA DO REG B #
 			WriteRegBanco = 0; 
