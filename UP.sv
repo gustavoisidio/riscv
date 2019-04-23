@@ -108,7 +108,7 @@ mux8to1 Mux1 ( .Out(outMux1),
                .Sel(AluSrcA),
                .In0(outPC), // Saida de PC
                .In1(regAOut), // Saida do Registrador A
-               .In2(),
+               .In2(64'd0),
                .In3(),
                .In4(),
                .In5(),
