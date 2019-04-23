@@ -371,33 +371,19 @@ always_comb begin
 			nextState = busca;
 		end
 		lui: begin
-			// lui rd, imm - Carrega o immediate exatamente nos bits [31:12] do registrador de destino,
-			// coloca zeros em [11:0] e faz extensão de sinal a partir do bit 31 em [63:32].
-            
+			LoadIR = 0; // Registrador de Instrucoes
+            PCWrite = 0; // PC
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            DMemWR = 0; // Seletor de da Memoria de Dados
+
             AluSrcA = 2; // Liberando 0 pra ALU #
             AluSrcB = 2; // Liberando saida do signalExtend #
             AluFct = 3'b001; // SETANDO ALU PARA SOMA #
+            LoadAluout = 1; // LIBERANDO SAIDA DA ALU #
             nextState = loadRD;
-		end
-
-		// beqOrbne_estado1: begin
-		// 	// FALTA SETAR OS OUTROS SINAIS
-
-		// 	// Concatena um zero à direita de imm #
-		// 	// Estende o sinal de imm #
-		// 	// Shift de 1 em imm #
-		// 	nextState = beqOrbne_estado2;
-		// end
-		// beqOrbne_estado2: begin
-		// 	// FALTA SETAR OS OUTROS SINAIS
-
-		// 	AluSrcA = 0; // Libera PC pra ALU #
-		// 	// AluSrcB = (3 ou 2); // Imm com ++ [0], sinal est. e shift<-2 pra ALU #
-		// 	AluFct =  3'b001; // Seta a função de somar (+) #
-		// 	PCWrite = 1; // Escreve o resultado (Aluresult) em PC #
-		// 	nextState = busca;
-		// end
-		lui: begin
 		end
 	endcase
 end

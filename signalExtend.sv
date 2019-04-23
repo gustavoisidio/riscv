@@ -19,7 +19,6 @@ always_comb begin
 
 			3'b000 : begin
 				if(immI[11] == 1'b1) begin
-					//outExtend  = {52'b1111111111111111111111111111111111111111111111111111,Instr31_0[31],Instr[7],Instr[30:25],Instr[11:8]}  // SB Extended
 					outExtend  = {52'b1111111111111111111111111111111111111111111111111111,immI};  // I Extended
 				end
 				else begin
