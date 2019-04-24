@@ -14,8 +14,9 @@ module UC (	input logic clock, reset, ET,
 								AluSrcA, // Mux1
 				  				AluFct, 
 				  				InstrType, // Seletor informando tipo da instrucao ao Signal Extend 
-                             	AluSrcB // Mux2
-           );
+                                 AluSrcB, // Mux2
+            output logic [3:0] InstrIType // Indicador do tipo da instrucao para extendToI 
+);
 
 // LoadIR = 0; // Registrador de Instrucoes
 // PCWrite = 0; // PC

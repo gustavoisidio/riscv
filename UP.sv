@@ -11,7 +11,11 @@ logic [63:0] outExtend; // Saida da extensao de sinal
 logic [63:0] outMux1, outMux2, outMux3; // Saida dos Mux
 logic [63:0] DataMemOut, outMDR; // Saida da Memoria de Dados e do Registrador MDR
 logic [2:0] AluSrcB, AluSrcA, AluFct, MemToReg, InstrType;
-logic ET; // Sinal do comparador de igualdade da ula 
+logic ET; // Sinal do comparador de igualdade da ula
+logic [3:0] InstrIType; // Indicador do tipo da instrucao para extendToI 
+logic [63:0]    extendToMem, // Saida em direcao a memoria
+                extendToBanco; // Saida em direcao ao banco de registradores
+
 
 // Instanciando PC
 register PC (   .clk(clock),
@@ -145,6 +149,17 @@ mux8to1 Mux3 ( .Out(outMux3),
 // Instanciando Registrador MDR
 register MDR (.clk(clock), .reset(reset), .regWrite(LoadMDR), .DadoIn(DataMemOut), .DadoOut(outMDR));
 
+// Instanciando Módulo de extensao de sinal para instrucoes do tipo I
+extendToI extendToI (   .clock(clock),
+                        .reset(reset),
+                        .InstrIType(InstrIType), // Indicador do tipo da instrucao
+                        .DataMemOut(DataMemOut), // Saida da memoria de dados
+                        .outMDR(outMDR), // Saida da memoria de dados depois de MDR
+                        .regBOut(regBOut), // rs2 Vindo do Reg B
+                        .extendToMem(extendToMem), // Saida em direcao a memoria
+                        .extendToBanco(extendToBanco) // Saida em direcao ao banco de registradores
+);
+
 // Instanciando a Unidade de Controle
 UC uc ( .clock(clock),
         .reset(reset),
@@ -157,13 +172,14 @@ UC uc ( .clock(clock),
         .LoadRegB(LoadRegB), // Seletor do Registrador B
         .InstrType(InstrType), // Seletor da Extensao de Sinal informando o tipo da instrucao
         .LoadMDR(LoadMDR), // Seletor do Registrador MDR
-	.LoadAluout(LoadAluout),
+	    .LoadAluout(LoadAluout),
         .MemToReg(MemToReg), // Seletor do Mux3
         .AluSrcA(AluSrcA), // Mux1
-	.AluFct(AluFct), // Seletor de Funcao da ALU
+	    .AluFct(AluFct), // Seletor de Funcao da ALU
         .AluSrcB(AluSrcB), // Mux2
         .DMemWR(DMemWR), // Seletor de da Memoria de Dados
-        .ET(ET) // Sinal do comparador de igualdade da ula 
+        .ET(ET), // Sinal do comparador de igualdade da ula 
+        .InstrIType(InstrIType) // Indicador do tipo da instrucao
 );
 
 endmodule:UP
