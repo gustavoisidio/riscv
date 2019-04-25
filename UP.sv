@@ -11,7 +11,7 @@ logic [63:0] outExtend; // Saida da extensao de sinal
 logic [63:0] outMux1, outMux2, outMux3; // Saida dos Mux
 logic [63:0] DataMemOut, outMDR; // Saida da Memoria de Dados e do Registrador MDR
 logic [2:0] AluSrcB, AluSrcA, AluFct, MemToReg, InstrType;
-logic ET; // Sinal do comparador de igualdade da ula
+logic ET, GT, LT; // Sinal do comparador de igualdade da ula
 logic [3:0] InstrIType; // Indicador do tipo da instrucao para extendToI 
 logic [63:0]    extendToMem, // Saida em direcao a memoria
                 extendToBanco; // Saida em direcao ao banco de registradores
@@ -60,7 +60,7 @@ ula64 ULA (     .A(outMux1),
                 .B(outMux2),
                 .Seletor(AluFct),
                 .S(AluOut),
-                .Overflow(), .Negativo(), .z(), .Igual(ET), .Maior(), .Menor()
+                .Overflow(), .Negativo(), .z(), .Igual(ET), .Maior(GT), .Menor(LT)
 );
 
 // Instanciando o Banco de Registradores
@@ -180,6 +180,8 @@ UC uc ( .clock(clock),
         .DMemWR(DMemWR), // Seletor de da Memoria de Dados
         .ET(ET), // Sinal do comparador de igualdade da ula 
         .InstrIType(InstrIType) // Indicador do tipo da instrucao
+        .GT(GT), // Sinal do comparador de MaiorQue da ula 
+        .LT(LT), // Sinal do comparador de MenorQue da ula 
 );
 
 endmodule:UP

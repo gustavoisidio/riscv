@@ -1,4 +1,4 @@
-module UC (	input logic clock, reset, ET,
+module UC (	input logic clock, reset, ET, GT, LT,
            	input logic [6:0] opcode, // Opcode (Instr6_0) saido do Registrador de Instrucoes
            	input logic [31:0] Instr31_0, // Instrucao inteira saida do Registrador de instrucoes
            	output logic LoadIR, // Registrador de Instrucoes
@@ -9,12 +9,11 @@ module UC (	input logic clock, reset, ET,
                         LoadMDR, // Registrador MDR 
 						LoadAluout, // Registrador da AluOut
 						DMemWR, // Seletor de da Memoria de Dados
-						// ET, // Sinal do comparador de igualdade da ula 
 	   		output logic [2:0] 	MemToReg, // Registrador do Mux3
 								AluSrcA, // Mux1
 				  				AluFct, 
 				  				InstrType, // Seletor informando tipo da instrucao ao Signal Extend 
-                                 AluSrcB, // Mux2
+                                AluSrcB, // Mux2
             output logic [3:0] InstrIType // Indicador do tipo da instrucao para extendToI 
 );
 
@@ -40,7 +39,6 @@ enum logic [6:0] {
 	salvaInstrucao = 7'd2,
 	decodInstrucao = 7'd11, // CORRIGIR A ORDEM DAS INSTRUCOES!!!
 
-	// Instrucoes NAO SETADAS AINDA
 	add = 7'd3,
 	sub = 7'd4,
 	addi = 7'd5,
@@ -55,10 +53,27 @@ enum logic [6:0] {
 	ld_estado3 = 7'd15,
 	sd_estado1 = 7'd16,
 	sd_estado2 = 7'd17,
-	// beqOrbne_estado1 = 7'd18,
-	// beqOrbne_estado2 = 7'd19,
-	ld_estado4 = 7'd20,
-	beqOrbne = 7'd21
+	ld_estado4 = 7'd18,
+    beqOrbne = 7'd19,
+    and = 7'd20,
+    slt = 7'd21,
+    slti = 7'd22,
+    setOnLessThan = 7'd23,
+    jal_estado1 = 7'd24,
+    jal_estado2 = 7'd25,
+    jal_estado3 = 7'd26,
+    jalr_estado1 = 7'd27,
+    jalr_estado2 = 7'd28,
+    jalr_estado3 = 7'd29,
+    bge = 7'd30,
+    blt = 7'd31,
+    sw = 7'd32,
+    sh = 7'd33,
+    sb = 7'd34,
+    lb = 7'd35,
+    lbu = 7'd36,
+    lhu = 7'd37,
+    lwu = 7'd38
 
 } state, nextState;
 
@@ -328,7 +343,79 @@ always_comb begin
 			AluFct = 3'b001; // SETANDO ALU PARA SOMA #
 			LoadAluout = 1; // LIBERANDO SAIDA DA ALU #
 			nextState = loadRD;
-		end
+        end
+        lb: begin
+            LoadIR = 0; // Registrador de Instrucoes
+            PCWrite = 0; // PC
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            LoadAluout = 0; // Registrador da AluOut
+            DMemWR = 0; // Seletor de da Memoria de Dados
+
+            nextState = ld_estado1;
+        end
+        lh: begin
+            LoadIR = 0; // Registrador de Instrucoes
+            PCWrite = 0; // PC
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            LoadAluout = 0; // Registrador da AluOut
+            DMemWR = 0; // Seletor de da Memoria de Dados
+
+            nextState = ld_estado1;
+        end
+        lw: begin
+            LoadIR = 0; // Registrador de Instrucoes
+            PCWrite = 0; // PC
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            LoadAluout = 0; // Registrador da AluOut
+            DMemWR = 0; // Seletor de da Memoria de Dados
+
+            nextState = ld_estado1;
+        end
+        lbu: begin 
+            LoadIR = 0; // Registrador de Instrucoes
+            PCWrite = 0; // PC
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            LoadAluout = 0; // Registrador da AluOut
+            DMemWR = 0; // Seletor de da Memoria de Dados
+
+            nextState = ld_estado1;
+        end
+        lhu: begin
+            LoadIR = 0; // Registrador de Instrucoes
+            PCWrite = 0; // PC
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            LoadAluout = 0; // Registrador da AluOut
+            DMemWR = 0; // Seletor de da Memoria de Dados
+
+            nextState = ld_estado1;
+        end
+        lwu: begin
+            LoadIR = 0; // Registrador de Instrucoes
+            PCWrite = 0; // PC
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            LoadAluout = 0; // Registrador da AluOut
+            DMemWR = 0; // Seletor de da Memoria de Dados
+
+            nextState = ld_estado1;
+        end
 		ld_estado1: begin
 			LoadIR = 0; // Registrador de Instrucoes
 			PCWrite = 0; // PC
@@ -380,9 +467,52 @@ always_comb begin
 			MemToReg = 0; // Se adianta e seleciona a saída da memória pro banco #
 			WriteRegBanco = 1;  // Escrever em RD #
 			nextState = busca;
-		end
+        end
+        sw: begin
+            LoadIR = 0; // Registrador de Instrucoes
+            PCWrite = 0; // PC
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            LoadAluout = 0; // Registrador da AluOut
+            DMemWR = 0; // Seletor de da Memoria de Dados
+
+            nextState = sd_estado1;
+        end
+        sh: begin
+            LoadIR = 0; // Registrador de Instrucoes
+            PCWrite = 0; // PC
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            LoadAluout = 0; // Registrador da AluOut
+            DMemWR = 0; // Seletor de da Memoria de Dados
+
+            nextState = sd_estado1;
+        end
+        sb: begin
+            LoadIR = 0; // Registrador de Instrucoes
+            PCWrite = 0; // PC
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            LoadAluout = 0; // Registrador da AluOut
+            DMemWR = 0; // Seletor de da Memoria de Dados
+
+            nextState = sd_estado1;
+        end
 		sd_estado1: begin
-			// FALTA SETAR OS OUTROS SINAIS
+            LoadIR = 0; // Registrador de Instrucoes
+            PCWrite = 0; // PC
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            DMemWR = 0; // Seletor de da Memoria de Dados
+
 
 			AluSrcA = 1; // Libera rs1 pra ALU #
 			AluSrcB = 2; // Libera imm estendido pra ALU #
@@ -391,7 +521,13 @@ always_comb begin
 			nextState = sd_estado2;
 		end
 		sd_estado2: begin
-			// FALTA SETAR OS OUTROS SINAIS
+            LoadIR = 0; // Registrador de Instrucoes
+            PCWrite = 0; // PC
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            LoadAluout = 0; // Registrador da AluOut
 
 			// Vamos escrever na memória agora #
 			//Escreve no endereço saído da ALU o conteúdo de rs2 #
@@ -439,7 +575,49 @@ always_comb begin
 			else begin
 				nextState = busca;
 			end
-		end
+        end
+        bge: begin
+            LoadIR = 0; // Registrador de Instrucoes
+            PCWrite = 0; // PC
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            LoadAluout = 0; // Registrador da AluOut
+            DMemWR = 0; // Seletor de da Memoria de Dados
+
+            AluSrcA = 1 // Libera conteúdo de A (rs1) para ALU #
+            AluSrcB = 0 // Libera conteúdo de B (rs2) para ALU #
+            AluFct = 111 // Para fazer comparacao #
+        
+                if (LT == 0) begin // (rs1 >= rs2)
+                    nextState = beqOrbne;
+                end
+                else begin
+                    nextState = busca;
+                end
+        end
+        blt: begin
+            LoadIR = 0; // Registrador de Instrucoes
+            PCWrite = 0; // PC
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            LoadAluout = 0; // Registrador da AluOut
+            DMemWR = 0; // Seletor de da Memoria de Dados
+
+            AluSrcA = 1 // Libera conteúdo de A (rs1) para ALU #
+            AluSrcB = 0 // Libera conteúdo de B (rs2) para ALU #
+            AluFct = 111 // Para fazer comparacao #
+        
+                if (LT == 1) begin // (rs1 < rs2)
+                    nextState = beqOrbne;
+                end
+                else begin 
+                    nextState = busca;
+                end
+        end
 		beqOrbne: begin
 			LoadIR = 0; // Registrador de Instrucoes
 			WriteRegBanco = 0; // Banco de Registradores
@@ -469,7 +647,162 @@ always_comb begin
             AluFct = 3'b001; // SETANDO ALU PARA SOMA #
             LoadAluout = 1; // LIBERANDO SAIDA DA ALU #
             nextState = loadRD;
-		end
+        end
+        and: begin
+            LoadIR = 0; // Registrador de Instrucoes
+            PCWrite = 0; // PC
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            DMemWR = 0; // Seletor de da Memoria de Dados
+
+            AluSrcA = 1; // Libera conteúdo de A (rs1) para ALU #
+            AluSrcB = 0; // Libera conteúdo de B (rs2) para ALU #
+            AluFct = 3'b011; // Seta and logico na ALU #
+            LoadAluout = 1; // Liberando saida da ALU #
+            nextState = loadRD;
+        end
+        slt: begin
+            LoadIR = 0; // Registrador de Instrucoes
+            PCWrite = 0; // PC
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            LoadAluout = 0; // Registrador da AluOut
+            DMemWR = 0; // Seletor de da Memoria de Dados
+
+        	AluSrcA = 1 // Libera conteúdo de A (rs1) para ALU #
+	        AluSrcB = 0 // Libera conteúdo de B (rs2) para ALU #
+            nextState = setOnLessThan;
+        end
+        slti: begin
+            LoadIR = 0; // Registrador de Instrucoes
+            PCWrite = 0; // PC
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            LoadAluout = 0; // Registrador da AluOut
+            DMemWR = 0; // Seletor de da Memoria de Dados
+
+            AluSrcA = 1 // Libera conteúdo de A (rs1) para ALU #
+            AluSrcB = 2 // Libera o immediato estendido para ALU #
+            nextState = setOnLessThan;
+        end
+        setOnLessThan: begin
+            LoadIR = 0; // Registrador de Instrucoes
+            PCWrite = 0; // PC
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            DMemWR = 0; // Seletor de da Memoria de Dados
+
+            AluFct = 111; // Para fazer comparacao #
+                if (LT == 1) begin // Carrega 1 em RD #
+                    AluSrcA = 2 // Libera 0 para ALU #
+                    AluSrcB = 4 // Libera 1 para ALU #
+                    AluFct =  3'b001 // Soma 1 + 0 #
+                    LoadAluout = 1; // Liberando 1 saido da ALU #
+                    nextState = LoadRD;
+                end
+                else begin // Carrega 0 em RD
+                    AluSrcA = 2 // Libera 0 para ALU #
+                    AluSrcB = 3 // Libera 0 para ALU #
+                    AluFct =  3'b001 // Soma 0 + 0 #
+                    LoadAluout = 1; // Liberando 0 saido da ALU #
+                    nextState = LoadRD;
+                end
+        end 
+        jalr_estado1: begin
+            LoadIR = 0; // Registrador de Instrucoes
+            PCWrite = 0; // PC
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            DMemWR = 0; // Seletor de da Memoria de Dados
+
+            AluSrcA = 0 // Libera conteúdo de PC para ALU #
+            AluSrcB = 3 // Libera 0 para ALU (falta adicionar entrada 0 no mux) #
+            AluFct =  3'b001 // Soma PC + 0 pra obter PC na AluOut #
+            LoadAluout = 1; // Liberando PC saido da ALU #
+            nextState = jalr_estado2;
+        end
+        jalr_estado2 begin // Carregando em RD
+            LoadIR = 0; // Registrador de Instrucoes
+            PCWrite = 0; // PC
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            LoadAluout = 0; // Registrador da AluOut
+            DMemWR = 0; // Seletor de da Memoria de Dados
+
+            MemToReg = 1 // Seleciona a saída da AluOut para o banco de reg #
+            WriteRegBanco = 1;  // Escrever PC em RD #
+            nextState = jalr_estado3;
+        end
+        jalr_estado3: begin // Alterando PC
+            LoadIR = 0; // Registrador de Instrucoes
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            LoadAluout = 0; // Registrador da AluOut
+            DMemWR = 0; // Seletor de da Memoria de Dados
+
+            AluSrcA = 1 // Libera conteúdo de A (rs1) para ALU #
+            AluSrcB = 2 // Libera o immediato estendido para ALU #
+            AluFct =  3'b001 // Soma rs1 com imm #
+            PCWrite = 1 // Escreve o resultado (Aluresult) em PC #
+            nextState = busca;
+        end
+        jal_estado1: begin
+            LoadIR = 0; // Registrador de Instrucoes
+            PCWrite = 0; // PC
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            DMemWR = 0; // Seletor de da Memoria de Dados
+
+            AluSrcA = 0 // Libera conteúdo de PC para ALU #
+            AluSrcB = 3 // Libera 0 para ALU #
+            AluFct =  3'b001 // Soma PC + 0 pra obter PC na AluOut #
+            LoadAluout = 1; // Liberando PC saido da ALU #
+            nextState = jal_estado2;
+        end
+        jal_estado2: begin // Carregando em RD #
+            LoadIR = 0; // Registrador de Instrucoes
+            PCWrite = 0; // PC
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            LoadAluout = 0; // Registrador da AluOut
+            DMemWR = 0; // Seletor de da Memoria de Dados
+
+            MemToReg = 1 // Seleciona a saída da AluOut para o banco de reg #
+            WriteRegBanco = 1;  // Escrever PC em RD #
+            nextState = jal_estado3;
+        end
+        jal_estado3: begin // Altera valor de PC
+            LoadIR = 0; // Registrador de Instrucoes
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            LoadAluout = 0; // Registrador da AluOut
+            DMemWR = 0; // Seletor de da Memoria de Dados
+
+            AluSrcA = 0 // Libera conteúdo de PC para ALU #
+            AluSrcB = 2 // Libera immediato estendido ALU #
+            AluFct =  3'b001 // Soma PC + imm #
+            PCWrite = 1 // Escreve o resultado (Aluresult) em PC #
+            nextState = busca;
+        end
 	endcase
 end
 
