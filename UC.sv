@@ -135,33 +135,101 @@ always_comb begin
 								7'b0000000: nextState = add; // Chama add
 								7'b0100000: nextState = sub; // Chama sub
 							endcase //funct7
-						end
-					endcase //funct3
+                        end
+                        3'b111: begin
+                            case(funct7)
+                                7'b0000000: nextState = and;
+                            endcase
+                        end
+                        3'b010: begin
+                            case(funct7)
+                                7'b0000000: nextState = slt;
+                            endcase
+                        end
+                    endcase //funct3
 				end
 				7'b0010011: begin //I
 					InstrType = 3'b000;
 					case(funct3)
 						3'b000: begin
 							nextState = addi; // Chama addi
-						end
+                        end
+                        3'b010: begin
+                            nextState = slti;
+                         end
+                        3'b101: begin
+                            case(funct6)
+                                6'b000000: begin
+                                    nextState = srli;
+                                end
+                                6'b010000: begin
+                                    nextState = srai;
+                                end
+                            endcase //funct6
+                        end
+                        3'b001: begin
+                            nextState = slli;
+                        end
 					endcase //funct3
 				end
 
 				7'b0000011: begin//I
 					InstrType = 3'b000;
 					case(funct3)
-						3'b011: begin
+                        3'b011: begin
+                            InstrIType = 4'b1010;
 							nextState = ld_estado1; // Chama ld
-						end
+                        end
+                        3'b010: begin
+                            InstrIType = 4'b0010;
+                            nextState = lw;
+                        end
+                        3'b001: begin
+                            InstrIType = 4'b0001;
+                            nextState = lh;
+                        end
+                        3'b100: begin
+                            InstrIType = 4'b0000;
+                            nextState = lb;
+                        end
+                        3'b100: begin
+                            InstrIType = 4'b0011;
+                            nextState = lbu;
+                        end
+                        3'b101: begin
+                            InstrIType = 4'b0100;
+                            nextState = lhu;
+                        end
+                        3'b110: begin
+                            InstrIType = 4'b0101;
+                            nextState = lwu;
+                        end
 					endcase //funct3
-				end
+                end
+                
+                7'b1110011: begin
+                    state <= breaker;
+                end
 
 				7'b0100011: begin//S
 					InstrType = 3'b001;
 					case(funct3)
-						3'b111: begin
+                        3'b111: begin
+                            InstrIType = 4'b0110;
 							nextState = sd_estado1; // Chama sd						
-						end
+                        end
+                        3'b010: begin
+                            InstrIType = 4'b0111;
+                            nextState = sw;
+                        end
+                        3'b001: begin
+                            InstrIType = 4'b1000;
+                            nextState = sh;
+                        end
+                        3'b000: begin
+                            InstrIType = 4'b1001;
+                            nextState = sb;
+                        end
 					endcase
 				end
 
@@ -178,14 +246,30 @@ always_comb begin
 					case(funct3)
 						3'b001: begin
 							nextState = bne; // Chama bne
-						end
+                        end
+                        3'b000: begin
+                            nextState = jalr;
+                        end
+                        3'b101: begin
+                            nextState = bge;
+                        end
+                        3'b100: begin
+                            nextState = blt;
+                        end
 					endcase
 				end
 
 				7'b0110111: begin //U
 					InstrType = 3'b100;
 					nextState = lui; // Chama lui
-				end
+                end
+                
+                7'b1101111: begin //UJ
+                    nextState = jal;
+                end
+                default: begin
+                    nextState = excecao_opcode;
+                end
 
 			endcase //opcode
 

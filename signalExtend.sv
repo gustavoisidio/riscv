@@ -41,12 +41,12 @@ always_comb begin
 					outExtend  = {50'b00000000000000000000000000000000000000000000000000,immSB,2'b00};  // SB Extended
 				end
 			end
-			3'b011 : begin
+			3'b011 : begin // JAL
 				if(immUJ[19] == 1'b1) begin
-					outExtend  = {44'b11111111111111111111111111111111111111111111,immUJ};  // UJ Extended
+					outExtend  = {42'b111111111111111111111111111111111111111111,immUJ, 2'b00};  // UJ Extended
 				end
 				else begin
-					outExtend  = {44'b00000000000000000000000000000000000000000000,immUJ};  // UJ Extended
+					outExtend  = {42'b000000000000000000000000000000000000000000,immUJ, 2'b00};  // UJ Extended
 				end
 			end
             3'b100 : begin             

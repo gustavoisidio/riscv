@@ -43,11 +43,26 @@ always_comb begin
         4'b0101 : begin // lwu
             extendToBanco = {32'd0, DataMemOut[31:0]};
         end
-        4'b0110 : begin 
-        
+        4'b0110 : begin // sd
+            extendToMem = regBOut;
         end
-        4'b0111 : begin
-        
+        4'b0111 : begin // sw
+            extendToMem = {DataMemOut[63:32],regBOut[31:0]};
+        end
+        4'b1000 : begin // sh
+            extendToMem = {DataMemOut[63:16],regBOut[15:0]};
+        end
+        4'b1001 : begin // sb
+            extendToMem = {DataMemOut[63:8],regBOut[7:0]};
+        end
+        4'b1010 : begin // ld
+            extendToBanco = DataMemOut[63:0]
+        end
+        4'b1011 : begin 
+            
+        end
+        4'b1100 : begin 
+            
         end
         default: begin
             extendToMem = regBOut;

@@ -113,7 +113,7 @@ mux8to1 Mux1 ( .Out(outMux1),
                .In0(outPC), // Saida de PC
                .In1(regAOut), // Saida do Registrador A
                .In2(64'd0),
-               .In3(),
+               .In3(64'd1),
                .In4(),
                .In5(),
                .In6(),
@@ -126,8 +126,8 @@ mux8to1 Mux2 ( .Out(outMux2),
                .In0(regBOut), // Saida do Registrador B
                .In1(64'd4), // 4, para PC + 4
                .In2(outExtend), // Extensao
-               .In3(), // Shift
-               .In4(),
+               .In3(64'd0), 
+               .In4(64'd1),
                .In5(),
                .In6(),
                .In7()
