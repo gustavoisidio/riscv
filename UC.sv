@@ -32,49 +32,62 @@ assign funct7 = Instr31_0[31:25];
 
 wire logic [2:0] funct3;
 assign funct3 = Instr31_0[14:12];
-				
-enum logic [6:0] {
-	rst = 7'd0,
-	busca = 7'd1,
-	salvaInstrucao = 7'd2,
-	decodInstrucao = 7'd11, // CORRIGIR A ORDEM DAS INSTRUCOES!!!
 
-	add = 7'd3,
-	sub = 7'd4,
-	addi = 7'd5,
-	ld = 7'd6,
-	sd = 7'd7,
-	beq = 7'd8,
-	bne = 7'd9,
-	lui = 7'd10,
-	loadRD = 7'd12,
-	ld_estado1 = 7'd13,
-	ld_estado2 = 7'd14,
-	ld_estado3 = 7'd15,
-	sd_estado1 = 7'd16,
-	sd_estado2 = 7'd17,
-	ld_estado4 = 7'd18,
-    beqOrbne = 7'd19,
-    and = 7'd20,
-    slt = 7'd21,
-    slti = 7'd22,
-    setOnLessThan = 7'd23,
-    jal_estado1 = 7'd24,
-    jal_estado2 = 7'd25,
-    jal_estado3 = 7'd26,
-    jalr_estado1 = 7'd27,
-    jalr_estado2 = 7'd28,
-    jalr_estado3 = 7'd29,
-    bge = 7'd30,
-    blt = 7'd31,
-    sw = 7'd32,
-    sh = 7'd33,
-    sb = 7'd34,
-    lb = 7'd35,
-    lbu = 7'd36,
-    lhu = 7'd37,
-    lwu = 7'd38
+wire logic [5:0] funct6;
+assign funct6 = Instr31_0[31:25];
 
+wire logic [5:0] shamt;
+assign shamt = Instr31_0[24:18];
+
+
+enum logic [7:0] {  rst,
+                    busca,
+                    salvaInstrucao,
+                    decodInstrucao,
+                    add,
+                    sub,
+                    addi,
+                    ld,
+                    sd,
+                    beq,
+                    bne,
+                    lui,
+                    loadRD,
+                    ld_estado1,
+                    ld_estado2,
+                    ld_estado3,
+                    sd_estado1,
+                    sd_estado2,
+                    ld_estado4,
+                    beqOrbne,
+                    and_estado,
+                    slt,
+                    slti,
+                    setOnLessThan,
+                    jal_estado1,
+                    jal_estado2,
+                    jal_estado3,
+                    jalr_estado1,
+                    jalr_estado2,
+                    jalr_estado3,
+                    bge,
+                    blt,
+                    sw,
+                    sh,
+                    sb,
+                    lb,
+                    lbu,
+                    lhu,
+                    lwu,
+                    lw,
+                    lh,
+                    breaker,
+                    noop,
+                    srli,
+                    srai,
+                    slli,
+                    loadShift,
+                    excecao_opcode
 } state, nextState;
 
 
@@ -153,7 +166,7 @@ always_comb begin
                         end
                         3'b111: begin
                             case(funct7)
-                                7'b0000000: nextState = and;
+                                7'b0000000: nextState = and_estado;
                             endcase
                         end
                         3'b010: begin
@@ -175,14 +188,17 @@ always_comb begin
                         3'b101: begin
                             case(funct6)
                                 6'b000000: begin
+                                    InstrIType = 4'b1011;
                                     nextState = srli;
                                 end
                                 6'b010000: begin
+                                    InstrIType = 4'b1101;
                                     nextState = srai;
                                 end
                             endcase //funct6
                         end
                         3'b001: begin
+                            InstrIType = 4'b1011;
                             nextState = slli;
                         end
 					endcase //funct3
@@ -223,7 +239,7 @@ always_comb begin
                 end
                 
                 7'b1110011: begin
-                    state <= breaker;
+                    nextState = breaker;
                 end
 
 				7'b0100011: begin//S
@@ -263,7 +279,7 @@ always_comb begin
 							nextState = bne; // Chama bne
                         end
                         3'b000: begin
-                            nextState = jalr;
+                            nextState = jalr_estado1;
                         end
                         3'b101: begin
                             nextState = bge;
@@ -280,7 +296,7 @@ always_comb begin
                 end
                 
                 7'b1101111: begin //UJ
-                    nextState = jal;
+                    nextState = jal_estado1;
                 end
                 default: begin
                     nextState = excecao_opcode;
@@ -513,7 +529,6 @@ always_comb begin
             LoadMDR = 0; // Registrador MDR 
             DMemWR = 0; // Seletor de da Memoria de Dados
 
-
 			AluSrcA = 1; // Libera rs1 pra ALU #
 			AluSrcB = 2; // Libera imm estendido pra ALU #
 			AluFct =  3'b001; // Seta a função de somar (+) #
@@ -586,9 +601,9 @@ always_comb begin
             LoadAluout = 0; // Registrador da AluOut
             DMemWR = 0; // Seletor de da Memoria de Dados
 
-            AluSrcA = 1 // Libera conteúdo de A (rs1) para ALU #
-            AluSrcB = 0 // Libera conteúdo de B (rs2) para ALU #
-            AluFct = 111 // Para fazer comparacao #
+            AluSrcA = 1; // Libera conteúdo de A (rs1) para ALU #
+            AluSrcB = 0; // Libera conteúdo de B (rs2) para ALU #
+            AluFct = 111; // Para fazer comparacao #
         
                 if (LT == 0) begin // (rs1 >= rs2)
                     nextState = beqOrbne;
@@ -607,9 +622,9 @@ always_comb begin
             LoadAluout = 0; // Registrador da AluOut
             DMemWR = 0; // Seletor de da Memoria de Dados
 
-            AluSrcA = 1 // Libera conteúdo de A (rs1) para ALU #
-            AluSrcB = 0 // Libera conteúdo de B (rs2) para ALU #
-            AluFct = 111 // Para fazer comparacao #
+            AluSrcA = 1; // Libera conteúdo de A (rs1) para ALU #
+            AluSrcB = 0; // Libera conteúdo de B (rs2) para ALU #
+            AluFct = 111; // Para fazer comparacao #
         
                 if (LT == 1) begin // (rs1 < rs2)
                     nextState = beqOrbne;
@@ -648,7 +663,7 @@ always_comb begin
             LoadAluout = 1; // LIBERANDO SAIDA DA ALU #
             nextState = loadRD;
         end
-        and: begin
+        and_estado: begin
             LoadIR = 0; // Registrador de Instrucoes
             PCWrite = 0; // PC
             WriteRegBanco = 0; // Banco de Registradores
@@ -673,8 +688,8 @@ always_comb begin
             LoadAluout = 0; // Registrador da AluOut
             DMemWR = 0; // Seletor de da Memoria de Dados
 
-        	AluSrcA = 1 // Libera conteúdo de A (rs1) para ALU #
-	        AluSrcB = 0 // Libera conteúdo de B (rs2) para ALU #
+        	AluSrcA = 1; // Libera conteúdo de A (rs1) para ALU #
+	        AluSrcB = 0; // Libera conteúdo de B (rs2) para ALU #
             nextState = setOnLessThan;
         end
         slti: begin
@@ -687,8 +702,8 @@ always_comb begin
             LoadAluout = 0; // Registrador da AluOut
             DMemWR = 0; // Seletor de da Memoria de Dados
 
-            AluSrcA = 1 // Libera conteúdo de A (rs1) para ALU #
-            AluSrcB = 2 // Libera o immediato estendido para ALU #
+            AluSrcA = 1; // Libera conteúdo de A (rs1) para ALU #
+            AluSrcB = 2; // Libera o immediato estendido para ALU #
             nextState = setOnLessThan;
         end
         setOnLessThan: begin
@@ -702,18 +717,18 @@ always_comb begin
 
             AluFct = 111; // Para fazer comparacao #
                 if (LT == 1) begin // Carrega 1 em RD #
-                    AluSrcA = 2 // Libera 0 para ALU #
-                    AluSrcB = 4 // Libera 1 para ALU #
-                    AluFct =  3'b001 // Soma 1 + 0 #
+                    AluSrcA = 2; // Libera 0 para ALU #
+                    AluSrcB = 4; // Libera 1 para ALU #
+                    AluFct =  3'b001; // Soma 1 + 0 #
                     LoadAluout = 1; // Liberando 1 saido da ALU #
-                    nextState = LoadRD;
+                    nextState = loadRD;
                 end
                 else begin // Carrega 0 em RD
-                    AluSrcA = 2 // Libera 0 para ALU #
-                    AluSrcB = 3 // Libera 0 para ALU #
-                    AluFct =  3'b001 // Soma 0 + 0 #
+                    AluSrcA = 2; // Libera 0 para ALU #
+                    AluSrcB = 3; // Libera 0 para ALU #
+                    AluFct =  3'b001; // Soma 0 + 0 #
                     LoadAluout = 1; // Liberando 0 saido da ALU #
-                    nextState = LoadRD;
+                    nextState = loadRD;
                 end
         end 
         jalr_estado1: begin
@@ -725,13 +740,13 @@ always_comb begin
             LoadMDR = 0; // Registrador MDR 
             DMemWR = 0; // Seletor de da Memoria de Dados
 
-            AluSrcA = 0 // Libera conteúdo de PC para ALU #
-            AluSrcB = 3 // Libera 0 para ALU (falta adicionar entrada 0 no mux) #
-            AluFct =  3'b001 // Soma PC + 0 pra obter PC na AluOut #
+            AluSrcA = 0; // Libera conteúdo de PC para ALU #
+            AluSrcB = 3; // Libera 0 para ALU (falta adicionar entrada 0 no mux) #
+            AluFct =  3'b001; // Soma PC + 0 pra obter PC na AluOut #
             LoadAluout = 1; // Liberando PC saido da ALU #
             nextState = jalr_estado2;
         end
-        jalr_estado2 begin // Carregando em RD
+        jalr_estado2: begin // Carregando em RD
             LoadIR = 0; // Registrador de Instrucoes
             PCWrite = 0; // PC
             WriteRegBanco = 0; // Banco de Registradores
@@ -741,7 +756,7 @@ always_comb begin
             LoadAluout = 0; // Registrador da AluOut
             DMemWR = 0; // Seletor de da Memoria de Dados
 
-            MemToReg = 1 // Seleciona a saída da AluOut para o banco de reg #
+            MemToReg = 1; // Seleciona a saída da AluOut para o banco de reg #
             WriteRegBanco = 1;  // Escrever PC em RD #
             nextState = jalr_estado3;
         end
@@ -754,10 +769,10 @@ always_comb begin
             LoadAluout = 0; // Registrador da AluOut
             DMemWR = 0; // Seletor de da Memoria de Dados
 
-            AluSrcA = 1 // Libera conteúdo de A (rs1) para ALU #
-            AluSrcB = 2 // Libera o immediato estendido para ALU #
-            AluFct =  3'b001 // Soma rs1 com imm #
-            PCWrite = 1 // Escreve o resultado (Aluresult) em PC #
+            AluSrcA = 1; // Libera conteúdo de A (rs1) para ALU #
+            AluSrcB = 2; // Libera o immediato estendido para ALU #
+            AluFct =  3'b001; // Soma rs1 com imm #
+            PCWrite = 1; // Escreve o resultado (Aluresult) em PC #
             nextState = busca;
         end
         jal_estado1: begin
@@ -769,9 +784,9 @@ always_comb begin
             LoadMDR = 0; // Registrador MDR 
             DMemWR = 0; // Seletor de da Memoria de Dados
 
-            AluSrcA = 0 // Libera conteúdo de PC para ALU #
-            AluSrcB = 3 // Libera 0 para ALU #
-            AluFct =  3'b001 // Soma PC + 0 pra obter PC na AluOut #
+            AluSrcA = 0; // Libera conteúdo de PC para ALU #
+            AluSrcB = 3; // Libera 0 para ALU #
+            AluFct =  3'b001; // Soma PC + 0 pra obter PC na AluOut #
             LoadAluout = 1; // Liberando PC saido da ALU #
             nextState = jal_estado2;
         end
@@ -784,7 +799,7 @@ always_comb begin
             LoadAluout = 0; // Registrador da AluOut
             DMemWR = 0; // Seletor de da Memoria de Dados
 
-            MemToReg = 1 // Seleciona a saída da AluOut para o banco de reg #
+            MemToReg = 1; // Seleciona a saída da AluOut para o banco de reg #
             WriteRegBanco = 1;  // Escrever PC em RD #
             nextState = jal_estado3;
         end
@@ -797,17 +812,47 @@ always_comb begin
             LoadAluout = 0; // Registrador da AluOut
             DMemWR = 0; // Seletor de da Memoria de Dados
 
-            AluSrcA = 0 // Libera conteúdo de PC para ALU #
-            AluSrcB = 2 // Libera immediato estendido ALU #
-            AluFct =  3'b001 // Soma PC + imm #
-            PCWrite = 1 // Escreve o resultado (Aluresult) em PC #
+            AluSrcA = 0; // Libera conteúdo de PC para ALU #
+            AluSrcB = 2; // Libera immediato estendido ALU #
+            AluFct =  3'b001; // Soma PC + imm #
+            PCWrite = 1; // Escreve o resultado (Aluresult) em PC #
             nextState = busca;
+        end
+        srli: begin
+            nextState = loadShift;
+        end
+        srai: begin
+            nextState = loadShift;
+        end
+        slli: begin
+            nextState = loadShift;
+        end
+        loadShift: begin
+            LoadIR = 0; // Registrador de Instrucoes
+            PCWrite = 0; // PC
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            LoadAluout = 0; // Registrador da AluOut
+            DMemWR = 0; // Seletor de da Memoria de Dados
+
+            MemToReg = 3'd2; // Mux escolhe saida do ExtendToI #
+			WriteRegBanco = 1;  // Escrever em RD #
+			nextState = busca;
+        end
+        breaker: begin
+            nextState = breaker;
+        end
+        noop: begin
+            nextState = busca;
+        end
+        excecao_opcode: begin
         end
 	endcase
 end
 
 
-endmodule:UC
+endmodule
 
 
 

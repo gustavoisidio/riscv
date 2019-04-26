@@ -12,57 +12,11 @@
 # Compile of register.sv was successful.
 # Compile of signalExtend.sv was successful.
 # Compile of simulacao32.sv was successful.
-# Compile of UC.sv was successful.
+# Compile of UC.sv failed with 92 errors.
 # Compile of ula64.vhd was successful.
 # Compile of UP.sv failed with 1 errors.
-# 14 compiles, 1 failed with 1 error.
-# Compile of bancoReg.sv was successful.
-# Compile of Deslocamento.sv was successful.
-# Compile of Instr_Reg_RISC_V.vhd was successful.
-# Compile of Memoria32.sv was successful.
-# Compile of Memoria64.sv was successful.
-# Compile of mux8to1.v was successful.
-# Compile of ramOnChip32.v was successful.
-# Compile of ramOnChip64.v was successful.
-# Compile of register.sv was successful.
-# Compile of signalExtend.sv was successful.
-# Compile of simulacao32.sv was successful.
-# Compile of UC.sv was successful.
-# Compile of ula64.vhd was successful.
-# Compile of UP.sv was successful.
-# 14 compiles, 0 failed with no errors.
-# Compile of bancoReg.sv was successful.
-# Compile of Deslocamento.sv was successful.
-# Compile of Instr_Reg_RISC_V.vhd was successful.
-# Compile of Memoria32.sv was successful.
-# Compile of Memoria64.sv was successful.
-# Compile of mux8to1.v was successful.
-# Compile of ramOnChip32.v was successful.
-# Compile of ramOnChip64.v was successful.
-# Compile of register.sv was successful.
-# Compile of signalExtend.sv was successful.
-# Compile of simulacao32.sv was successful.
-# Compile of UC.sv was successful.
-# Compile of ula64.vhd was successful.
-# Compile of UP.sv was successful.
-# Compile of ExtendToI.sv failed with 2 errors.
-# 15 compiles, 1 failed with 2 errors.
-# Compile of bancoReg.sv was successful.
-# Compile of Deslocamento.sv was successful.
-# Compile of Instr_Reg_RISC_V.vhd was successful.
-# Compile of Memoria32.sv was successful.
-# Compile of Memoria64.sv was successful.
-# Compile of mux8to1.v was successful.
-# Compile of ramOnChip32.v was successful.
-# Compile of ramOnChip64.v was successful.
-# Compile of register.sv was successful.
-# Compile of signalExtend.sv was successful.
-# Compile of simulacao32.sv was successful.
-# Compile of UC.sv was successful.
-# Compile of ula64.vhd was successful.
-# Compile of UP.sv was successful.
 # Compile of ExtendToI.sv failed with 1 errors.
-# 15 compiles, 1 failed with 1 error.
+# 15 compiles, 3 failed with 94 errors.
 # Compile of bancoReg.sv was successful.
 # Compile of Deslocamento.sv was successful.
 # Compile of Instr_Reg_RISC_V.vhd was successful.
@@ -74,43 +28,203 @@
 # Compile of register.sv was successful.
 # Compile of signalExtend.sv was successful.
 # Compile of simulacao32.sv was successful.
-# Compile of UC.sv was successful.
-# Compile of ula64.vhd was successful.
-# Compile of UP.sv was successful.
-# Compile of ExtendToI.sv failed with 1 errors.
-# 15 compiles, 1 failed with 1 error.
-# Compile of bancoReg.sv was successful.
-# Compile of Deslocamento.sv was successful.
-# Compile of Instr_Reg_RISC_V.vhd was successful.
-# Compile of Memoria32.sv was successful.
-# Compile of Memoria64.sv was successful.
-# Compile of mux8to1.v was successful.
-# Compile of ramOnChip32.v was successful.
-# Compile of ramOnChip64.v was successful.
-# Compile of register.sv was successful.
-# Compile of signalExtend.sv was successful.
-# Compile of simulacao32.sv was successful.
-# Compile of UC.sv was successful.
-# Compile of ula64.vhd was successful.
-# Compile of UP.sv was successful.
-# Compile of ExtendToI.sv failed with 1 errors.
-# 15 compiles, 1 failed with 1 error.
-# Compile of bancoReg.sv was successful.
-# Compile of Deslocamento.sv was successful.
-# Compile of Instr_Reg_RISC_V.vhd was successful.
-# Compile of Memoria32.sv was successful.
-# Compile of Memoria64.sv was successful.
-# Compile of mux8to1.v was successful.
-# Compile of ramOnChip32.v was successful.
-# Compile of ramOnChip64.v was successful.
-# Compile of register.sv was successful.
-# Compile of signalExtend.sv was successful.
-# Compile of simulacao32.sv was successful.
-# Compile of UC.sv was successful.
+# Compile of UC.sv failed with 92 errors.
 # Compile of ula64.vhd was successful.
 # Compile of UP.sv was successful.
 # Compile of ExtendToI.sv was successful.
-# 15 compiles, 0 failed with no errors.
+# 15 compiles, 1 failed with 92 errors.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv failed with 92 errors.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# Compile of ExtendToI.sv was successful.
+# 15 compiles, 1 failed with 92 errors.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv failed with 95 errors.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# Compile of ExtendToI.sv was successful.
+# 15 compiles, 1 failed with 95 errors.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv failed with 102 errors.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# Compile of ExtendToI.sv was successful.
+# 15 compiles, 1 failed with 102 errors.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv failed with 100 errors.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# Compile of ExtendToI.sv was successful.
+# 15 compiles, 1 failed with 100 errors.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv failed with 100 errors.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# Compile of ExtendToI.sv was successful.
+# 15 compiles, 1 failed with 100 errors.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv failed with 19 errors.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# Compile of ExtendToI.sv was successful.
+# 15 compiles, 1 failed with 19 errors.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv failed with 8 errors.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# Compile of ExtendToI.sv was successful.
+# 15 compiles, 1 failed with 8 errors.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv failed with 6 errors.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# Compile of ExtendToI.sv was successful.
+# 15 compiles, 1 failed with 6 errors.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv failed with 5 errors.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# Compile of ExtendToI.sv was successful.
+# 15 compiles, 1 failed with 5 errors.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv failed with 1 errors.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# Compile of ExtendToI.sv was successful.
+# 15 compiles, 1 failed with 1 error.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv failed with 1 errors.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# Compile of ExtendToI.sv was successful.
+# 15 compiles, 1 failed with 1 error.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv failed with 1 errors.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# Compile of ExtendToI.sv was successful.
+# 15 compiles, 1 failed with 1 error.
 # Compile of bancoReg.sv was successful.
 # Compile of Deslocamento.sv was successful.
 # Compile of Instr_Reg_RISC_V.vhd was successful.
@@ -129,7 +243,7 @@
 # 15 compiles, 0 failed with no errors.
 vsim -gui work.simulacao32 -Lf altera_mf_ver
 # vsim -gui work.simulacao32 -Lf altera_mf_ver 
-# Start time: 16:13:47 on Apr 24,2019
+# Start time: 20:06:02 on Apr 25,2019
 # Loading sv_std.std
 # Loading work.simulacao32
 # Loading work.UP
@@ -153,14 +267,15 @@ vsim -gui work.simulacao32 -Lf altera_mf_ver
 # Loading work.instr_reg_risc_v(behavioral_arch)
 # Loading ieee.std_logic_arith(body)
 # Loading work.ula64(behavioral)
-add wave -position end sim:/simulacao32/up/uc/*
+add wave -position end  sim:/simulacao32/up/uc/state
+add wave -position end  sim:/simulacao32/up/uc/nextState
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: gustavoisidio  Hostname: GUSTAVOISID657F  ProcessID: 3432
-#           Attempting to use alternate WLF file "./wlftv03nt0".
+#           Attempting to use alternate WLF file "./wlft6636yw".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftv03nt0
-add wave -position 2 sim:/simulacao32/up/bancoRegistradores/*
-add wave -position 2  sim:/simulacao32/up/bancoRegistradores/regs
+#           Using alternate file: ./wlft6636yw
+add wave -position end  sim:/simulacao32/up/bancoRegistradores/regs
+add wave -position end sim:/simulacao32/up/*
 run -all
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: simulacao32.up.InstMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
@@ -194,5 +309,85 @@ run -all
 # Time: 0  Instance: simulacao32.meminst.memBlock2.altsyncram_component.m_default.altsyncram_inst
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: simulacao32.meminst.memBlock3.altsyncram_component.m_default.altsyncram_inst
-# End time: 16:19:36 on Apr 24,2019, Elapsed time: 0:05:49
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv was successful.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# Compile of ExtendToI.sv failed with 4 errors.
+# 15 compiles, 1 failed with 4 errors.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv was successful.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# Compile of ExtendToI.sv was successful.
+# 15 compiles, 0 failed with no errors.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv was successful.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# Compile of ExtendToI.sv was successful.
+# 15 compiles, 0 failed with no errors.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv failed with 2 errors.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# Compile of ExtendToI.sv was successful.
+# 15 compiles, 1 failed with 2 errors.
+# Compile of bancoReg.sv was successful.
+# Compile of Deslocamento.sv was successful.
+# Compile of Instr_Reg_RISC_V.vhd was successful.
+# Compile of Memoria32.sv was successful.
+# Compile of Memoria64.sv was successful.
+# Compile of mux8to1.v was successful.
+# Compile of ramOnChip32.v was successful.
+# Compile of ramOnChip64.v was successful.
+# Compile of register.sv was successful.
+# Compile of signalExtend.sv was successful.
+# Compile of simulacao32.sv was successful.
+# Compile of UC.sv was successful.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# Compile of ExtendToI.sv was successful.
+# 15 compiles, 0 failed with no errors.
+# End time: 00:13:23 on Apr 26,2019, Elapsed time: 4:07:21
 # Errors: 0, Warnings: 2

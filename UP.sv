@@ -157,7 +157,9 @@ extendToI extendToI (   .clock(clock),
                         .outMDR(outMDR), // Saida da memoria de dados depois de MDR
                         .regBOut(regBOut), // rs2 Vindo do Reg B
                         .extendToMem(extendToMem), // Saida em direcao a memoria
-                        .extendToBanco(extendToBanco) // Saida em direcao ao banco de registradores
+                        .extendToBanco(extendToBanco), // Saida em direcao ao banco de registradores
+                        .regAOut(regAOut), // rs1
+                        .Instr31_0(Instr31_0)
 );
 
 // Instanciando a Unidade de Controle
@@ -179,9 +181,10 @@ UC uc ( .clock(clock),
         .AluSrcB(AluSrcB), // Mux2
         .DMemWR(DMemWR), // Seletor de da Memoria de Dados
         .ET(ET), // Sinal do comparador de igualdade da ula 
-        .InstrIType(InstrIType) // Indicador do tipo da instrucao
+        .InstrIType(InstrIType), // Indicador do tipo da instrucao
         .GT(GT), // Sinal do comparador de MaiorQue da ula 
-        .LT(LT), // Sinal do comparador de MenorQue da ula 
+        .LT(LT) // Sinal do comparador de MenorQue da ula 
+
 );
 
 endmodule:UP

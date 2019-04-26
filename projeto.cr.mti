@@ -91,13 +91,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 2
 Top level modules:
 	ramOnChip64
 
-} {} {}} //Mac/Home/Documents/riscv/ramOnChip32.v {1 {vlog -work work -stats=none //Mac/Home/Documents/riscv/ramOnChip32.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module ramOnChip32
-
-Top level modules:
-	ramOnChip32
-
 } {} {}} //Mac/Home/Documents/riscv/Instr_Reg_RISC_V.vhd {1 {vcom -work work -2002 -explicit -stats=none //Mac/Home/Documents/riscv/Instr_Reg_RISC_V.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.6d Compiler 2018.02 Feb 24 2018
 -- Loading package STANDARD
@@ -105,5 +98,12 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.6d Compiler 2018.02 Feb 2
 -- Loading package std_logic_1164
 -- Compiling entity Instr_Reg_RISC_V
 -- Compiling architecture behavioral_arch of Instr_Reg_RISC_V
+
+} {} {}} //Mac/Home/Documents/riscv/ramOnChip32.v {1 {vlog -work work -stats=none //Mac/Home/Documents/riscv/ramOnChip32.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module ramOnChip32
+
+Top level modules:
+	ramOnChip32
 
 } {} {}}

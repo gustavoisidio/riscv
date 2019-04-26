@@ -1,11 +1,16 @@
 module extendToI (	input logic clock, reset,
                     input logic [3:0] InstrIType, // Indicador do tipo da instrucao
+                    input logic [31:0] Instr31_0,
                     input logic [63:0]  DataMemOut, // Saida da memoria de dados
                                         outMDR, // Saida da memoria de dados depois de MDR
                                         regBOut, // rs2 Vindo do Reg B
+                                        regAOut, // rs1 Vindo do Reg A
                     output logic [63:0] extendToMem,
                                         extendToBanco
 );
+
+wire logic [5:0] shamt;
+assign shamt = Instr31_0[24:18];
 
 always_comb begin 
 
@@ -56,16 +61,25 @@ always_comb begin
             extendToMem = {DataMemOut[63:8],regBOut[7:0]};
         end
         4'b1010 : begin // ld
-            extendToBanco = DataMemOut[63:0]
+            extendToBanco = DataMemOut[63:0];
         end
-        4'b1011 : begin 
+        4'b1011: begin // slli
+            extendToMem = regAOut << shamt;
+        end
+        4'b1100 : begin // srli
+            extendToMem = regAOut >> shamt;
+        end
+        4'b1101 : begin // srai
+            extendToMem = regAOut >>> shamt;
+        end
+        4'b1110 : begin 
             
         end
-        4'b1100 : begin 
+        4'b1111 : begin 
             
         end
         default: begin
-            extendToMem = regBOut;
+            
         end
     endcase
 end
