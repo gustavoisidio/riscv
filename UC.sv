@@ -90,7 +90,8 @@ enum logic [7:0] {  rst,
                     srai,
                     slli,
                     loadShift,
-                    excecao_opcode
+                    excecao_opcode,
+                    excecao_overflow
 } state, nextState;
 
 

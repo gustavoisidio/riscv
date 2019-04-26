@@ -6,7 +6,7 @@ cModel Technology
 d\\Mac\Home\Desktop
 vbancoReg
 Z0 DXx6 sv_std 3 std 0 22 ;edk3;YfCLjCm[Hd=`UGQ2
-Z1 !s110 1556248393
+Z1 !s110 1556309982
 !i10b 1
 !s100 a:<nhKC@mWB[nDSoijJPm3
 IS`z??m7J]YQLB28Td1_Cl1
@@ -22,7 +22,7 @@ Z5 OV;L;10.6d;65
 r1
 !s85 0
 31
-Z6 !s108 1556248392.000000
+Z6 !s108 1556309982.000000
 !s107 //Mac/Home/Documents/riscv/bancoReg.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|//Mac/Home/Documents/riscv/bancoReg.sv|
 !i113 1
@@ -56,7 +56,7 @@ R8
 n@deslocamento
 vextendToI
 R0
-Z9 !s110 1556248395
+Z9 !s110 1556309984
 !i10b 1
 !s100 VWGH4:4VbJk8>jHP6P6am2
 I4J559JIj0f1lK0Xm@8a672
@@ -72,7 +72,7 @@ R5
 r1
 !s85 0
 31
-Z10 !s108 1556248394.000000
+!s108 1556309984.000000
 !s107 //Mac/Home/Documents/riscv/ExtendToI.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|//Mac/Home/Documents/riscv/ExtendToI.sv|
 !i113 1
@@ -81,46 +81,46 @@ R8
 nextend@to@i
 Einstr_reg_risc_v
 R4
-Z11 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z12 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z10 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z11 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 R3
-Z13 8//Mac/Home/Documents/riscv/Instr_Reg_RISC_V.vhd
-Z14 F//Mac/Home/Documents/riscv/Instr_Reg_RISC_V.vhd
+Z12 8//Mac/Home/Documents/riscv/Instr_Reg_RISC_V.vhd
+Z13 F//Mac/Home/Documents/riscv/Instr_Reg_RISC_V.vhd
 l0
 L49
 V7TD3cNADG8G:ODlTSzz?c1
 !s100 HF;HEc4<o>]o3`Jjc=WPJ2
-Z15 OV;C;10.6d;65
+Z14 OV;C;10.6d;65
 32
 R1
 !i10b 1
-Z16 !s108 1556248393.000000
-Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//Mac/Home/Documents/riscv/Instr_Reg_RISC_V.vhd|
-Z18 !s107 //Mac/Home/Documents/riscv/Instr_Reg_RISC_V.vhd|
+R6
+Z15 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//Mac/Home/Documents/riscv/Instr_Reg_RISC_V.vhd|
+Z16 !s107 //Mac/Home/Documents/riscv/Instr_Reg_RISC_V.vhd|
 !i113 1
-Z19 o-work work -2002 -explicit
-Z20 tExplicit 1 CvgOpt 0
+Z17 o-work work -2002 -explicit
+Z18 tExplicit 1 CvgOpt 0
 Abehavioral_arch
+R10
 R11
-R12
 DEx4 work 16 instr_reg_risc_v 0 22 7TD3cNADG8G:ODlTSzz?c1
 l68
 L65
 Vo8SZoo^`iHF7`CU3CnhD`1
 !s100 e?bWG@:SnkVC476;`5UQ[1
-R15
+R14
 32
 R1
 !i10b 1
+R6
+R15
 R16
+!i113 1
 R17
 R18
-!i113 1
-R19
-R20
 vMemoria32
 R0
-R1
+Z19 !s110 1556309983
 !i10b 1
 !s100 Q2gmKA>Pd1H;3=f[e^lb[3
 IRRf?O9VMJFN8?I;iGkF;h1
@@ -131,12 +131,12 @@ R3
 R4
 8//Mac/Home/Documents/riscv/Memoria32.sv
 F//Mac/Home/Documents/riscv/Memoria32.sv
-Z21 L0 26
+Z20 L0 26
 R5
 r1
 !s85 0
 31
-R16
+R6
 !s107 //Mac/Home/Documents/riscv/Memoria32.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|//Mac/Home/Documents/riscv/Memoria32.sv|
 !i113 1
@@ -145,7 +145,7 @@ R8
 n@memoria32
 vMemoria64
 R0
-R1
+R19
 !i10b 1
 !s100 1fz3Mgbi`W1QjWk]9CgUO3
 IG:=?ilmNYdbfWj48>oJzH2
@@ -156,12 +156,12 @@ R3
 R4
 8//Mac/Home/Documents/riscv/Memoria64.sv
 F//Mac/Home/Documents/riscv/Memoria64.sv
-R21
+R20
 R5
 r1
 !s85 0
 31
-R16
+R6
 !s107 //Mac/Home/Documents/riscv/Memoria64.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|//Mac/Home/Documents/riscv/Memoria64.sv|
 !i113 1
@@ -169,7 +169,7 @@ R7
 R8
 n@memoria64
 vmux8to1
-Z22 !s110 1556248394
+R19
 !i10b 1
 !s100 hJYk;5fT7B_Ha@Aod89CH1
 IRC4Bm[neQ6gR;fW6Zn3WU3
@@ -183,14 +183,14 @@ R5
 r1
 !s85 0
 31
-R16
+R6
 !s107 //Mac/Home/Documents/riscv/mux8to1.v|
 !s90 -reportprogress|300|-work|work|-stats=none|//Mac/Home/Documents/riscv/mux8to1.v|
 !i113 1
-Z23 o-work work
+Z21 o-work work
 R8
 vramOnChip32
-R22
+R19
 !i10b 1
 !s100 ?cVfgbFYaCB@4255f4cUf3
 Ij7oiU]PiQ2`iIQ1cLIZdd0
@@ -199,20 +199,20 @@ R3
 R4
 8//Mac/Home/Documents/riscv/ramOnChip32.v
 F//Mac/Home/Documents/riscv/ramOnChip32.v
-Z24 L0 40
+Z22 L0 40
 R5
 r1
 !s85 0
 31
-R16
+Z23 !s108 1556309983.000000
 !s107 //Mac/Home/Documents/riscv/ramOnChip32.v|
 !s90 -reportprogress|300|-work|work|-stats=none|//Mac/Home/Documents/riscv/ramOnChip32.v|
 !i113 1
-R23
+R21
 R8
 nram@on@chip32
 vramOnChip64
-R22
+R19
 !i10b 1
 !s100 cocMaFKEzGMH4F3EWeV]X1
 I[@E<jcV9JSFJ4ENNG9oN71
@@ -221,21 +221,21 @@ R3
 R4
 8//Mac/Home/Documents/riscv/ramOnChip64.v
 F//Mac/Home/Documents/riscv/ramOnChip64.v
-R24
+R22
 R5
 r1
 !s85 0
 31
-R16
+R23
 !s107 //Mac/Home/Documents/riscv/ramOnChip64.v|
 !s90 -reportprogress|300|-work|work|-stats=none|//Mac/Home/Documents/riscv/ramOnChip64.v|
 !i113 1
-R23
+R21
 R8
 nram@on@chip64
 vregister
 R0
-R22
+R19
 !i10b 1
 !s100 Gjjc1O?eX;I>UcKl1X;1V3
 I>ZDfX17d_Dh94daCcO>;J0
@@ -251,7 +251,7 @@ R5
 r1
 !s85 0
 31
-R16
+R23
 !s107 //Mac/Home/Documents/riscv/register.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|//Mac/Home/Documents/riscv/register.sv|
 !i113 1
@@ -259,7 +259,7 @@ R7
 R8
 vsignalExtend
 R0
-R22
+R19
 !i10b 1
 !s100 FgA[N^6PV?]kSkcDk?2DB3
 I35PWOZjKci7b7g<AU@?7Q2
@@ -275,7 +275,7 @@ R5
 r1
 !s85 0
 31
-R10
+R23
 !s107 //Mac/Home/Documents/riscv/signalExtend.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|//Mac/Home/Documents/riscv/signalExtend.sv|
 !i113 1
@@ -284,7 +284,7 @@ R8
 nsignal@extend
 vsimulacao32
 R0
-R22
+R19
 !i10b 1
 !s100 FL8ka;`J]C9jKn3AVf44<3
 In?a4M6az6?nkYlY]VWh3<0
@@ -300,7 +300,7 @@ R5
 r1
 !s85 0
 31
-R10
+R23
 !s107 //Mac/Home/Documents/riscv/simulacao32.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|//Mac/Home/Documents/riscv/simulacao32.sv|
 !i113 1
@@ -308,15 +308,15 @@ R7
 R8
 vUC
 R0
-R9
+R19
 !i10b 1
-!s100 ^d9IQEG3@KP1[B]NmZmi82
-IWVI5`^3WY<B52HE[mM8Hf1
+!s100 EU1[[ef_iez2ak>9]TBiE0
+ICBcEm;5BJoee9=NY_BYi`1
 R2
 !s105 UC_sv_unit
 S1
 R3
-w1556248387
+w1556309958
 8//Mac/Home/Documents/riscv/UC.sv
 F//Mac/Home/Documents/riscv/UC.sv
 L0 1
@@ -324,7 +324,7 @@ R5
 r1
 !s85 0
 31
-R10
+R23
 !s107 //Mac/Home/Documents/riscv/UC.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|//Mac/Home/Documents/riscv/UC.sv|
 !i113 1
@@ -333,56 +333,56 @@ R8
 n@u@c
 Eula64
 R4
-Z25 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z24 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+R10
 R11
-R12
 R3
-Z26 8//Mac/Home/Documents/riscv/ula64.vhd
-Z27 F//Mac/Home/Documents/riscv/ula64.vhd
+Z25 8//Mac/Home/Documents/riscv/ula64.vhd
+Z26 F//Mac/Home/Documents/riscv/ula64.vhd
 l0
 L54
 VNKCl_dCU9VZRibAm_Jh<Y0
 !s100 gXP0QOjWED7GdgGCHP44]0
-R15
+R14
 32
 R9
 !i10b 1
-R10
-Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//Mac/Home/Documents/riscv/ula64.vhd|
-Z29 !s107 //Mac/Home/Documents/riscv/ula64.vhd|
+R23
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//Mac/Home/Documents/riscv/ula64.vhd|
+Z28 !s107 //Mac/Home/Documents/riscv/ula64.vhd|
 !i113 1
-R19
-R20
+R17
+R18
 Abehavioral
-R25
+R24
+R10
 R11
-R12
 DEx4 work 5 ula64 0 22 NKCl_dCU9VZRibAm_Jh<Y0
 l80
 L70
 V0bJGE`7Xojm<X>7FGncTL1
 !s100 DoJmkJ?1Y9Zk;7@A7oGLb2
-R15
+R14
 32
 R9
 !i10b 1
-R10
+R23
+R27
 R28
-R29
 !i113 1
-R19
-R20
+R17
+R18
 vUP
 R0
 R9
 !i10b 1
-!s100 4WG;Z>[cnQNfUZHQTlkSn2
-I<_E00]eJS]gA<^lEo=NTW0
+!s100 EX]8Y_1TNKTL@KKkF8_Qk2
+I<8IYPLC8E7j7eCF77;?Xc1
 R2
 !s105 UP_sv_unit
 S1
 R3
-w1556245173
+w1556309977
 8//Mac/Home/Documents/riscv/UP.sv
 F//Mac/Home/Documents/riscv/UP.sv
 L0 1
@@ -390,7 +390,7 @@ R5
 r1
 !s85 0
 31
-R10
+R23
 !s107 //Mac/Home/Documents/riscv/UP.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|//Mac/Home/Documents/riscv/UP.sv|
 !i113 1

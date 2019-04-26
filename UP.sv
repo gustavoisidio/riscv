@@ -21,12 +21,12 @@ logic [63:0]    extendToMem, // Saida em direcao a memoria
 register PC (   .clk(clock),
                 .reset(reset),
                 .regWrite(PCWrite),
-                .DadoIn(AluOut),
+                .DadoIn(outMux5),
                 .DadoOut(outPC)
 );
 
 // Instanciando Memoria de Instrucoes
-Memoria32 InstMem (     .raddress(outPC[31:0]),
+Memoria32 InstMem (     .raddress(outMux6),
                         .waddress(),
                         .Clk(clock),
                         .Datain(),
@@ -159,6 +159,32 @@ mux8to1 Mux4 ( .Out(outMux4),
                .In7()
 );
 
+// Instanciando Mux 5
+mux8to1 Mux5 ( .Out(outMux5),
+               .Sel(loadToPC),  
+               .In0(AluOut), 
+               .In1(InstMemOut), 
+               .In2(), 
+               .In3(), 
+               .In4(),
+               .In5(),
+               .In6(),
+               .In7()
+);
+
+// Instanciando Mux 
+mux8to1 Mux6 ( .Out(outMux6),
+               .Sel(loadToMem32),  
+               .In0(outPC[31:0]), 
+               .In1(32'd254), 
+               .In2(32'd255), 
+               .In3(), 
+               .In4(),
+               .In5(),
+               .In6(),
+               .In7()
+);
+
 // Instanciando Registrador MDR
 register MDR (  .clk(clock),
                 .reset(reset),
@@ -209,7 +235,7 @@ UC uc ( .clock(clock),
         .ET(ET), // Sinal do comparador de igualdade da ula 
         .InstrIType(InstrIType), // Indicador do tipo da instrucao
         .GT(GT), // Sinal do comparador de MaiorQue da ula 
-        .LT(LT) // Sinal do comparador de MenorQue da ula
+        .LT(LT), // Sinal do comparador de MenorQue da ula
         .writeEPC(writeEPC) // Sinal de controle do EPC
 );
 
