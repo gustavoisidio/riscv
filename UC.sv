@@ -8,12 +8,14 @@ module UC (	input logic clock, reset, ET, GT, LT,
                         LoadRegB, // Registrador B
                         LoadMDR, // Registrador MDR 
 						LoadAluout, // Registrador da AluOut
-						DMemWR, // Seletor de da Memoria de Dados
+                        DMemWR, // Seletor de da Memoria de Dados
+                        writeEPC, // Seletor do MDR
 	   		output logic [2:0] 	MemToReg, // Registrador do Mux3
 								AluSrcA, // Mux1
 				  				AluFct, 
 				  				InstrType, // Seletor informando tipo da instrucao ao Signal Extend 
                                 AluSrcB, // Mux2
+                                regToBan, // Mux4
             output logic [3:0] InstrIType // Indicador do tipo da instrucao para extendToI 
 );
 
@@ -25,6 +27,7 @@ module UC (	input logic clock, reset, ET, GT, LT,
 // LoadMDR = 0; // Registrador MDR 
 // LoadAluout = 0; // Registrador da AluOut
 // DMemWR = 0; // Seletor de da Memoria de Dados
+// writeEPC = 0; // Seletor do EPC
 
 
 wire logic [6:0] funct7;
@@ -102,7 +105,8 @@ end
 
 always_comb begin
 	case (state)
-		rst: begin
+        rst: begin
+            writeEPC = 0;
 			LoadMDR = 0; // Registrador MDR 
 			DMemWR = 0; // Seletor de da Memoria de Dados
 			PCWrite = 0; // Incrementa PC
@@ -113,7 +117,8 @@ always_comb begin
 			LoadRegB = 0;
 			nextState = busca;	
 		end
-		busca: begin
+        busca: begin
+            writeEPC = 0;
 			LoadMDR = 0; 
 			DMemWR = 0; 
 			LoadIR = 0; 
@@ -128,7 +133,8 @@ always_comb begin
 			AluSrcB = 3'd1; // LIBERA 4 PRA INCREMENTAR PC #
 			nextState = salvaInstrucao;
 		end
-		salvaInstrucao: begin
+        salvaInstrucao: begin
+            writeEPC = 0;
 			LoadMDR = 0; 
 			DMemWR = 0; 
 			PCWrite = 0; 
@@ -142,7 +148,8 @@ always_comb begin
 			LoadIR = 1; // So no proximo ciclo #
 			nextState = decodInstrucao;
 		end
-		decodInstrucao: begin
+        decodInstrucao: begin
+            writeEPC = 0;
 			LoadMDR = 0; // Registrador MDR 
 			DMemWR = 0; // Seletor de da Memoria de Dados
 			PCWrite = 0; 
@@ -306,7 +313,8 @@ always_comb begin
 
 		end // decod
 				
-		add: begin
+        add: begin
+            writeEPC = 0;
 			PCWrite = 0; 
 			LoadIR = 0;
 			WriteRegBanco = 0; 
@@ -319,7 +327,8 @@ always_comb begin
 			LoadAluout = 1; // LIBERANDO SAIDA DA ALU #
 			nextState = loadRD;
 		end
-		loadRD: begin // Carrega saida da ALU em RD
+        loadRD: begin // Carrega saida da ALU em RD
+            writeEPC = 0;
 			PCWrite = 0; 
 			LoadIR = 0;
 			AluSrcA = 3'd0; 
@@ -328,11 +337,13 @@ always_comb begin
 			LoadRegB = 0;  
 			LoadAluout = 0; 
 
-			MemToReg = 3'd1; // Mux escolhe saida da ALU #
+            MemToReg = 3'd1; // Mux escolhe saida da ALU #
+            regToBan = 0; // Selecionando Instr11_7 #
 			WriteRegBanco = 1;  // Escrever em RD #
 			nextState = busca;
 		end
-		sub: begin
+        sub: begin
+            writeEPC = 0;
 			PCWrite = 0; 
 			LoadIR = 0;
 			AluSrcA = 3'd1; // PEGA SAIDA DO REG A #
@@ -344,7 +355,8 @@ always_comb begin
 			LoadAluout = 1;
 			nextState = loadRD;
 		end
-		addi: begin
+        addi: begin
+            writeEPC = 0;
 			LoadIR = 0; // Registrador de Instrucoes
 			PCWrite = 0; // PC
 			WriteRegBanco = 0; // Banco de Registradores
@@ -361,6 +373,7 @@ always_comb begin
 			nextState = loadRD;
         end
         lb: begin
+            writeEPC = 0;
             LoadIR = 0; // Registrador de Instrucoes
             PCWrite = 0; // PC
             WriteRegBanco = 0; // Banco de Registradores
@@ -373,6 +386,7 @@ always_comb begin
             nextState = ld_estado1;
         end
         lh: begin
+            writeEPC = 0;
             LoadIR = 0; // Registrador de Instrucoes
             PCWrite = 0; // PC
             WriteRegBanco = 0; // Banco de Registradores
@@ -385,6 +399,7 @@ always_comb begin
             nextState = ld_estado1;
         end
         lw: begin
+            writeEPC = 0;
             LoadIR = 0; // Registrador de Instrucoes
             PCWrite = 0; // PC
             WriteRegBanco = 0; // Banco de Registradores
@@ -396,7 +411,8 @@ always_comb begin
 
             nextState = ld_estado1;
         end
-        lbu: begin 
+        lbu: begin
+            writeEPC = 0;
             LoadIR = 0; // Registrador de Instrucoes
             PCWrite = 0; // PC
             WriteRegBanco = 0; // Banco de Registradores
@@ -409,6 +425,7 @@ always_comb begin
             nextState = ld_estado1;
         end
         lhu: begin
+            writeEPC = 0;
             LoadIR = 0; // Registrador de Instrucoes
             PCWrite = 0; // PC
             WriteRegBanco = 0; // Banco de Registradores
@@ -421,6 +438,7 @@ always_comb begin
             nextState = ld_estado1;
         end
         lwu: begin
+            writeEPC = 0;
             LoadIR = 0; // Registrador de Instrucoes
             PCWrite = 0; // PC
             WriteRegBanco = 0; // Banco de Registradores
@@ -432,7 +450,8 @@ always_comb begin
 
             nextState = ld_estado1;
         end
-		ld_estado1: begin
+        ld_estado1: begin
+            writeEPC = 0;
 			LoadIR = 0; // Registrador de Instrucoes
 			PCWrite = 0; // PC
 			WriteRegBanco = 0; // Banco de Registradores
@@ -448,7 +467,8 @@ always_comb begin
 			LoadAluout = 1; // Libera a saída da ALU #
 			nextState = ld_estado2;
 		end
-		ld_estado2: begin // Vamos buscar na memória agora
+        ld_estado2: begin // Vamos buscar na memória agora
+            writeEPC = 0;
 			LoadIR = 0; // Registrador de Instrucoes
 			PCWrite = 0; // PC
 			LoadRegA = 0; // Registrador A
@@ -459,7 +479,8 @@ always_comb begin
 			DMemWR = 0; // Mem 64 lê (endereço) a saída da ALU #
 			nextState = ld_estado3;
 		end
-		ld_estado3: begin // Vamos buscar na memória agora
+        ld_estado3: begin // Vamos buscar na memória agora
+            writeEPC = 0;
 			LoadIR = 0; // Registrador de Instrucoes
 			PCWrite = 0; // PC
 			LoadRegA = 0; // Registrador A
@@ -470,7 +491,8 @@ always_comb begin
 			LoadMDR = 1; // MDR salva leitura da memória #
 			nextState = ld_estado4;
 		end
-		ld_estado4: begin
+        ld_estado4: begin
+            writeEPC = 0;
 			LoadIR = 0; // Registrador de Instrucoes
 			PCWrite = 0; // PC
 			WriteRegBanco = 0; // Banco de Registradores
@@ -480,11 +502,13 @@ always_comb begin
 			LoadAluout = 0; // Registrador da AluOut
 			DMemWR = 0; // Seletor de da Memoria de Dados
 
-			MemToReg = 0; // Se adianta e seleciona a saída da memória pro banco #
+            MemToReg = 0; // Se adianta e seleciona a saída da memória pro banco #
+            regToBan = 0; // Selecionando Instr11_7 #
 			WriteRegBanco = 1;  // Escrever em RD #
 			nextState = busca;
         end
         sw: begin
+            writeEPC = 0;
             LoadIR = 0; // Registrador de Instrucoes
             PCWrite = 0; // PC
             WriteRegBanco = 0; // Banco de Registradores
@@ -497,6 +521,7 @@ always_comb begin
             nextState = sd_estado1;
         end
         sh: begin
+            writeEPC = 0;
             LoadIR = 0; // Registrador de Instrucoes
             PCWrite = 0; // PC
             WriteRegBanco = 0; // Banco de Registradores
@@ -509,6 +534,7 @@ always_comb begin
             nextState = sd_estado1;
         end
         sb: begin
+            writeEPC = 0;
             LoadIR = 0; // Registrador de Instrucoes
             PCWrite = 0; // PC
             WriteRegBanco = 0; // Banco de Registradores
@@ -520,7 +546,8 @@ always_comb begin
 
             nextState = sd_estado1;
         end
-		sd_estado1: begin
+        sd_estado1: begin
+            writeEPC = 0;
             LoadIR = 0; // Registrador de Instrucoes
             PCWrite = 0; // PC
             WriteRegBanco = 0; // Banco de Registradores
@@ -535,7 +562,8 @@ always_comb begin
 			LoadAluout = 1; // Libera a saída da ALU #
 			nextState = sd_estado2;
 		end
-		sd_estado2: begin
+        sd_estado2: begin
+            writeEPC = 0;
             LoadIR = 0; // Registrador de Instrucoes
             PCWrite = 0; // PC
             WriteRegBanco = 0; // Banco de Registradores
@@ -549,7 +577,8 @@ always_comb begin
 			DMemWR = 1; // Mem 64 escreve DataIn no End de saída da ALU # 
 			nextState = busca;
 		end
-		beq: begin
+        beq: begin
+            writeEPC = 0;
 			LoadIR = 0; // Registrador de Instrucoes
 			PCWrite = 0; // PC
 			WriteRegBanco = 0; // Banco de Registradores
@@ -570,7 +599,8 @@ always_comb begin
 				nextState = busca;
 			end
 		end
-		bne: begin
+        bne: begin
+            writeEPC = 0;
 			LoadIR = 0; // Registrador de Instrucoes
 			PCWrite = 0; // PC
 			WriteRegBanco = 0; // Banco de Registradores
@@ -592,6 +622,7 @@ always_comb begin
 			end
         end
         bge: begin
+            writeEPC = 0;
             LoadIR = 0; // Registrador de Instrucoes
             PCWrite = 0; // PC
             WriteRegBanco = 0; // Banco de Registradores
@@ -613,6 +644,7 @@ always_comb begin
                 end
         end
         blt: begin
+            writeEPC = 0;
             LoadIR = 0; // Registrador de Instrucoes
             PCWrite = 0; // PC
             WriteRegBanco = 0; // Banco de Registradores
@@ -633,7 +665,8 @@ always_comb begin
                     nextState = busca;
                 end
         end
-		beqOrbne: begin
+        beqOrbne: begin
+            writeEPC = 0;
 			LoadIR = 0; // Registrador de Instrucoes
 			WriteRegBanco = 0; // Banco de Registradores
 			LoadRegA = 0; // Registrador A
@@ -648,7 +681,8 @@ always_comb begin
 			PCWrite = 1; // Escreve o resultado (Aluresult) em PC
 			nextState = busca;
 		end
-		lui: begin
+        lui: begin
+            writeEPC = 0;
 			LoadIR = 0; // Registrador de Instrucoes
             PCWrite = 0; // PC
             WriteRegBanco = 0; // Banco de Registradores
@@ -664,6 +698,7 @@ always_comb begin
             nextState = loadRD;
         end
         and_estado: begin
+            writeEPC = 0;
             LoadIR = 0; // Registrador de Instrucoes
             PCWrite = 0; // PC
             WriteRegBanco = 0; // Banco de Registradores
@@ -679,6 +714,7 @@ always_comb begin
             nextState = loadRD;
         end
         slt: begin
+            writeEPC = 0;
             LoadIR = 0; // Registrador de Instrucoes
             PCWrite = 0; // PC
             WriteRegBanco = 0; // Banco de Registradores
@@ -693,6 +729,7 @@ always_comb begin
             nextState = setOnLessThan;
         end
         slti: begin
+            writeEPC = 0;
             LoadIR = 0; // Registrador de Instrucoes
             PCWrite = 0; // PC
             WriteRegBanco = 0; // Banco de Registradores
@@ -707,6 +744,7 @@ always_comb begin
             nextState = setOnLessThan;
         end
         setOnLessThan: begin
+            writeEPC = 0;
             LoadIR = 0; // Registrador de Instrucoes
             PCWrite = 0; // PC
             WriteRegBanco = 0; // Banco de Registradores
@@ -732,6 +770,7 @@ always_comb begin
                 end
         end 
         jalr_estado1: begin
+            writeEPC = 0;
             LoadIR = 0; // Registrador de Instrucoes
             PCWrite = 0; // PC
             WriteRegBanco = 0; // Banco de Registradores
@@ -747,6 +786,7 @@ always_comb begin
             nextState = jalr_estado2;
         end
         jalr_estado2: begin // Carregando em RD
+            writeEPC = 0;
             LoadIR = 0; // Registrador de Instrucoes
             PCWrite = 0; // PC
             WriteRegBanco = 0; // Banco de Registradores
@@ -757,10 +797,12 @@ always_comb begin
             DMemWR = 0; // Seletor de da Memoria de Dados
 
             MemToReg = 1; // Seleciona a saída da AluOut para o banco de reg #
+            regToBan = 0; // Selecionando Instr11_7 #
             WriteRegBanco = 1;  // Escrever PC em RD #
             nextState = jalr_estado3;
         end
         jalr_estado3: begin // Alterando PC
+            writeEPC = 0;
             LoadIR = 0; // Registrador de Instrucoes
             WriteRegBanco = 0; // Banco de Registradores
             LoadRegA = 0; // Registrador A
@@ -776,6 +818,7 @@ always_comb begin
             nextState = busca;
         end
         jal_estado1: begin
+            writeEPC = 0;
             LoadIR = 0; // Registrador de Instrucoes
             PCWrite = 0; // PC
             WriteRegBanco = 0; // Banco de Registradores
@@ -791,6 +834,7 @@ always_comb begin
             nextState = jal_estado2;
         end
         jal_estado2: begin // Carregando em RD #
+            writeEPC = 0;
             LoadIR = 0; // Registrador de Instrucoes
             PCWrite = 0; // PC
             LoadRegA = 0; // Registrador A
@@ -800,10 +844,12 @@ always_comb begin
             DMemWR = 0; // Seletor de da Memoria de Dados
 
             MemToReg = 1; // Seleciona a saída da AluOut para o banco de reg #
+            regToBan = 0; // Selecionando Instr11_7 #
             WriteRegBanco = 1;  // Escrever PC em RD #
             nextState = jal_estado3;
         end
         jal_estado3: begin // Altera valor de PC
+            writeEPC = 0;
             LoadIR = 0; // Registrador de Instrucoes
             WriteRegBanco = 0; // Banco de Registradores
             LoadRegA = 0; // Registrador A
@@ -828,6 +874,7 @@ always_comb begin
             nextState = loadShift;
         end
         loadShift: begin
+            writeEPC = 0;
             LoadIR = 0; // Registrador de Instrucoes
             PCWrite = 0; // PC
             LoadRegA = 0; // Registrador A
@@ -837,6 +884,7 @@ always_comb begin
             DMemWR = 0; // Seletor de da Memoria de Dados
 
             MemToReg = 3'd2; // Mux escolhe saida do ExtendToI #
+            regToBan = 0; // Selecionando Instr11_7 #
 			WriteRegBanco = 1;  // Escrever em RD #
 			nextState = busca;
         end
@@ -847,6 +895,14 @@ always_comb begin
             nextState = busca;
         end
         excecao_opcode: begin
+            // Salva PCe EPC
+            // PC = PC - 4
+            // Reg 30 = 0
+        end
+        excecao_overflow: begin
+            // Salva PCe EPC
+            // PC = PC - 4
+            // Reg 30 = 1
         end
 	endcase
 end
