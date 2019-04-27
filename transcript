@@ -130,3 +130,5 @@ run -all
 # Time: 0  Instance: simulacao32.meminst.memBlock2.altsyncram_component.m_default.altsyncram_inst
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: simulacao32.meminst.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# End time: 17:29:33 on Apr 26,2019, Elapsed time: 0:05:17
+# Errors: 0, Warnings: 17
