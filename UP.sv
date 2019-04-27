@@ -1,16 +1,27 @@
 module UP(input logic clock, reset);
 
 logic [63:0] AluOut, outPC, outRegAlu;
-logic [31:0] InstMemOut, Instr31_0; // 1 - Saida da Memoria de Instrucoes, 2 - Saida do registrador de Instrucoes para extensao de sinal e/ou shift
+logic [31:0] InstMemOut, Instr31_0; // 1 - Saida da Memoria de Instrucoes, 2 - Saida do registrador de Instrucoes para extensao de sinal / extensao para PC              
 logic [64-1:0] bancoRegistradoresOut1, bancoRegistradoresOut2; // Saidas do Banco de Registradores
 logic LoadIR, PCWrite, WriteRegBanco, LoadRegA, DMemWR, LoadAluout, writeEPC; // Sinais de controle / Saida da Unidade de Controle
 logic [4:0] Instr19_15, Instr24_20, Instr11_7; // Segmentacao da Instrucao / Saida do Registrador de Instrucoes
 logic [6:0] Instr6_0;
 logic [63:0] regAOut, regBOut; // Saida dos registradores A e B
 logic [63:0] outExtend; // Saida da extensao de sinal
-logic [63:0] outMux1, outMux2, outMux3, outMux4; // Saida dos Mux
+logic [63:0] outMux1, outMux2, outMux3, outMux5; // Saida dos Mux
+logic [31:0] outMux6; // Saida dos Mux
+logic [4:0] outMux4; // Saida dos Mux
 logic [63:0] DataMemOut, outMDR, outEPC; // Saida da Memoria de Dados, do Registrador MDR e do EPC
-logic [2:0] AluSrcB, AluSrcA, AluFct, MemToReg, InstrType, regToBan;
+logic [63:0] outExtendToPC; 
+logic [2:0] AluSrcB, // Mu2
+            AluSrcA, // Mu1 
+            AluFct, // Funcao da ALU
+            MemToReg, // Mu3
+            InstrType, // ExtendToI
+            regToBan, // Mu4
+            loadToMem32, // Mux6
+            loadToPC; // Mux5
+
 logic ET, GT, LT; // Sinal do comparador de igualdade da ula
 logic [3:0] InstrIType; // Indicador do tipo da instrucao para extendToI 
 logic [63:0]    extendToMem, // Saida em direcao a memoria
@@ -147,7 +158,7 @@ mux8to1 Mux3 ( .Out(outMux3),
 );
 
 // Instanciando Mux 4
-mux8to1 Mux4 ( .Out(outMux4),
+mux5 Mux4 ( .Out(outMux4),
                .Sel(regToBan),  
                .In0(Instr11_7), // Endereço de RD
                .In1(5'd30), // Para setar Registrador 30
@@ -163,7 +174,7 @@ mux8to1 Mux4 ( .Out(outMux4),
 mux8to1 Mux5 ( .Out(outMux5),
                .Sel(loadToPC),  
                .In0(AluOut), 
-               .In1(InstMemOut), 
+               .In1(outExtendToPC), 
                .In2(), 
                .In3(), 
                .In4(),
@@ -172,8 +183,8 @@ mux8to1 Mux5 ( .Out(outMux5),
                .In7()
 );
 
-// Instanciando Mux 
-mux8to1 Mux6 ( .Out(outMux6),
+// Instanciando Mux6
+mux32 Mux6 ( .Out(outMux6),
                .Sel(loadToMem32),  
                .In0(outPC[31:0]), 
                .In1(32'd254), 
@@ -214,6 +225,12 @@ extendToI extendToI (   .clock(clock),
                         .Instr31_0(Instr31_0)
 );
 
+extendToPC extendToPC(  .clock(clock),
+                        .reset(reset),
+                        .InstMemOut(InstMemOut),
+                        .outExtendToPC(outExtendToPC)
+);
+
 // Instanciando a Unidade de Controle
 UC uc ( .clock(clock),
         .reset(reset),
@@ -236,7 +253,10 @@ UC uc ( .clock(clock),
         .InstrIType(InstrIType), // Indicador do tipo da instrucao
         .GT(GT), // Sinal do comparador de MaiorQue da ula 
         .LT(LT), // Sinal do comparador de MenorQue da ula
-        .writeEPC(writeEPC) // Sinal de controle do EPC
+        .writeEPC(writeEPC), // Sinal de controle do EPC
+        .regToBan(regToBan), // Mux4
+        .loadToMem32(loadToMem32), // Mux6
+        .loadToPC(loadToPC) // Mux5
 );
 
 endmodule:UP

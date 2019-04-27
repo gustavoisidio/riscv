@@ -1,24 +1,10 @@
 # Reading C:/intelFPGA_pro/19.1/modelsim_ase/tcl/vsim/pref.tcl
-# OpenFile //Mac/Home/Documents/riscv/projeto.mpf
+# OpenFile //Mac/Home/Downloads/riscv/projeto.mpf
 # Loading project projeto
 # Compile of bancoReg.sv was successful.
 # Compile of Deslocamento.sv was successful.
-# Compile of Instr_Reg_RISC_V.vhd was successful.
-# Compile of Memoria32.sv was successful.
-# Compile of Memoria64.sv was successful.
-# Compile of mux8to1.v was successful.
-# Compile of ramOnChip32.v was successful.
-# Compile of ramOnChip64.v was successful.
-# Compile of register.sv was successful.
-# Compile of signalExtend.sv was successful.
-# Compile of simulacao32.sv was successful.
-# Compile of UC.sv failed with 1 errors.
-# Compile of ula64.vhd was successful.
-# Compile of UP.sv failed with 1 errors.
 # Compile of ExtendToI.sv was successful.
-# 15 compiles, 2 failed with 2 errors.
-# Compile of bancoReg.sv was successful.
-# Compile of Deslocamento.sv was successful.
+# Compile of extendToPC.sv was successful.
 # Compile of Instr_Reg_RISC_V.vhd was successful.
 # Compile of Memoria32.sv was successful.
 # Compile of Memoria64.sv was successful.
@@ -31,11 +17,12 @@
 # Compile of UC.sv was successful.
 # Compile of ula64.vhd was successful.
 # Compile of UP.sv was successful.
-# Compile of ExtendToI.sv was successful.
-# 15 compiles, 0 failed with no errors.
+# Compile of mux5.v was successful.
+# Compile of mux32.v was successful.
+# 18 compiles, 0 failed with no errors.
 vsim -gui work.simulacao32 -Lf altera_mf_ver
 # vsim -gui work.simulacao32 -Lf altera_mf_ver 
-# Start time: 17:24:16 on Apr 26,2019
+# Start time: 16:17:48 on Apr 27,2019
 # Loading sv_std.std
 # Loading work.simulacao32
 # Loading work.UP
@@ -48,7 +35,10 @@ vsim -gui work.simulacao32 -Lf altera_mf_ver
 # Loading work.bancoReg
 # Loading work.signalExtend
 # Loading work.mux8to1
+# Loading work.mux5
+# Loading work.mux32
 # Loading work.extendToI
+# Loading work.extendToPC
 # Loading work.UC
 # Loading altera_mf_ver.altsyncram_body
 # Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
@@ -59,53 +49,44 @@ vsim -gui work.simulacao32 -Lf altera_mf_ver
 # Loading work.instr_reg_risc_v(behavioral_arch)
 # Loading ieee.std_logic_arith(body)
 # Loading work.ula64(behavioral)
-# ** Warning: (vsim-3015) //Mac/Home/Documents/riscv/UP.sv(21): [PCDPC] - Port size (64) does not match connection size (1) for port 'DadoIn'. The port definition is at: //Mac/Home/Documents/riscv/register.sv(5).
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/PC File: //Mac/Home/Documents/riscv/register.sv
-# ** Warning: (vsim-3015) //Mac/Home/Documents/riscv/UP.sv(29): [PCDPC] - Port size (32) does not match connection size (1) for port 'raddress'. The port definition is at: //Mac/Home/Documents/riscv/Memoria32.sv(27).
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/InstMem File: //Mac/Home/Documents/riscv/Memoria32.sv
-# ** Warning: (vsim-3015) //Mac/Home/Documents/riscv/UP.sv(67): [PCDPC] - Port size (5) does not match connection size (64) for port 'regwriteaddress'. The port definition is at: //Mac/Home/Documents/riscv/bancoReg.sv(7).
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/bancoRegistradores File: //Mac/Home/Documents/riscv/bancoReg.sv
-# ** Warning: (vsim-3015) //Mac/Home/Documents/riscv/UP.sv(150): [PCDPC] - Port size (64) does not match connection size (5) for port 'In0'. The port definition is at: //Mac/Home/Documents/riscv/mux8to1.v(3).
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/Mux4 File: //Mac/Home/Documents/riscv/mux8to1.v
-# ** Warning: (vsim-3015) //Mac/Home/Documents/riscv/UP.sv(150): [PCDPC] - Port size (64) does not match connection size (5) for port 'In1'. The port definition is at: //Mac/Home/Documents/riscv/mux8to1.v(4).
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/Mux4 File: //Mac/Home/Documents/riscv/mux8to1.v
-# ** Warning: (vsim-3015) //Mac/Home/Documents/riscv/UP.sv(163): [PCDPC] - Port size (64) does not match connection size (1) for port 'Out'. The port definition is at: //Mac/Home/Documents/riscv/mux8to1.v(1).
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/Mux5 File: //Mac/Home/Documents/riscv/mux8to1.v
-# ** Warning: (vsim-3015) //Mac/Home/Documents/riscv/UP.sv(163): [PCDPC] - Port size (3) does not match connection size (1) for port 'Sel'. The port definition is at: //Mac/Home/Documents/riscv/mux8to1.v(2).
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/Mux5 File: //Mac/Home/Documents/riscv/mux8to1.v
-# ** Warning: (vsim-3015) //Mac/Home/Documents/riscv/UP.sv(163): [PCDPC] - Port size (64) does not match connection size (32) for port 'In1'. The port definition is at: //Mac/Home/Documents/riscv/mux8to1.v(4).
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/Mux5 File: //Mac/Home/Documents/riscv/mux8to1.v
-# ** Warning: (vsim-3015) //Mac/Home/Documents/riscv/UP.sv(176): [PCDPC] - Port size (64) does not match connection size (1) for port 'Out'. The port definition is at: //Mac/Home/Documents/riscv/mux8to1.v(1).
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/Mux6 File: //Mac/Home/Documents/riscv/mux8to1.v
-# ** Warning: (vsim-3015) //Mac/Home/Documents/riscv/UP.sv(176): [PCDPC] - Port size (3) does not match connection size (1) for port 'Sel'. The port definition is at: //Mac/Home/Documents/riscv/mux8to1.v(2).
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/Mux6 File: //Mac/Home/Documents/riscv/mux8to1.v
-# ** Warning: (vsim-3015) //Mac/Home/Documents/riscv/UP.sv(176): [PCDPC] - Port size (64) does not match connection size (32) for port 'In0'. The port definition is at: //Mac/Home/Documents/riscv/mux8to1.v(3).
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/Mux6 File: //Mac/Home/Documents/riscv/mux8to1.v
-# ** Warning: (vsim-3015) //Mac/Home/Documents/riscv/UP.sv(176): [PCDPC] - Port size (64) does not match connection size (32) for port 'In1'. The port definition is at: //Mac/Home/Documents/riscv/mux8to1.v(4).
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/Mux6 File: //Mac/Home/Documents/riscv/mux8to1.v
-# ** Warning: (vsim-3015) //Mac/Home/Documents/riscv/UP.sv(176): [PCDPC] - Port size (64) does not match connection size (32) for port 'In2'. The port definition is at: //Mac/Home/Documents/riscv/mux8to1.v(5).
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/Mux6 File: //Mac/Home/Documents/riscv/mux8to1.v
-# ** Warning: (vsim-3017) //Mac/Home/Documents/riscv/UP.sv(218): [TFMPC] - Too few port connections. Expected 23, found 22.
-#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/uc File: //Mac/Home/Documents/riscv/UC.sv
-# ** Warning: (vsim-3722) //Mac/Home/Documents/riscv/UP.sv(218): [TFMPC] - Missing connection for port 'regToBan'.
 add wave -position end  sim:/simulacao32/up/uc/state
 add wave -position end  sim:/simulacao32/up/uc/nextState
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: gustavoisidio  Hostname: GUSTAVOISID657F  ProcessID: 3432
-#           Attempting to use alternate WLF file "./wlft8xdiq8".
+#           Attempting to use alternate WLF file "./wlftkedz8r".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft8xdiq8
+#           Using alternate file: ./wlftkedz8r
+add wave -position end  sim:/simulacao32/up/uc/funct7
+add wave -position end  sim:/simulacao32/up/uc/funct3
+add wave -position end  sim:/simulacao32/up/uc/funct6
+add wave -position end  sim:/simulacao32/up/uc/opcode
 add wave -position end  sim:/simulacao32/up/bancoRegistradores/regs
 add wave -position end sim:/simulacao32/up/*
 run -all
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: simulacao32.up.InstMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# ** Warning: (vsim-3534) [FOFIR] - Failed to open file "instructions.mif" for reading.
+# No such file or directory. (errno = ENOENT)    : $MODEL_TECH/../altera/verilog/src/altera_mf.v(264)
+#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/InstMem/memBlock0/altsyncram_component/m_default/altsyncram_inst
+# ERROR: cannot read instructions.mif.
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: simulacao32.up.InstMem.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# ** Warning: (vsim-3534) [FOFIR] - Failed to open file "instructions.mif" for reading.
+# No such file or directory. (errno = ENOENT)    : $MODEL_TECH/../altera/verilog/src/altera_mf.v(264)
+#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/InstMem/memBlock1/altsyncram_component/m_default/altsyncram_inst
+# ERROR: cannot read instructions.mif.
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: simulacao32.up.InstMem.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# ** Warning: (vsim-3534) [FOFIR] - Failed to open file "instructions.mif" for reading.
+# No such file or directory. (errno = ENOENT)    : $MODEL_TECH/../altera/verilog/src/altera_mf.v(264)
+#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/InstMem/memBlock2/altsyncram_component/m_default/altsyncram_inst
+# ERROR: cannot read instructions.mif.
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: simulacao32.up.InstMem.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# ** Warning: (vsim-3534) [FOFIR] - Failed to open file "instructions.mif" for reading.
+# No such file or directory. (errno = ENOENT)    : $MODEL_TECH/../altera/verilog/src/altera_mf.v(264)
+#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/up/InstMem/memBlock3/altsyncram_component/m_default/altsyncram_inst
+# ERROR: cannot read instructions.mif.
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: simulacao32.up.DataMem.memBlock0.altsyncram_component.m_default.altsyncram_inst
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
@@ -124,11 +105,27 @@ run -all
 # Time: 0  Instance: simulacao32.up.DataMem.memBlock7.altsyncram_component.m_default.altsyncram_inst
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: simulacao32.meminst.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# ** Warning: (vsim-3534) [FOFIR] - Failed to open file "instructions.mif" for reading.
+# No such file or directory. (errno = ENOENT)    : $MODEL_TECH/../altera/verilog/src/altera_mf.v(264)
+#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/meminst/memBlock0/altsyncram_component/m_default/altsyncram_inst
+# ERROR: cannot read instructions.mif.
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: simulacao32.meminst.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# ** Warning: (vsim-3534) [FOFIR] - Failed to open file "instructions.mif" for reading.
+# No such file or directory. (errno = ENOENT)    : $MODEL_TECH/../altera/verilog/src/altera_mf.v(264)
+#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/meminst/memBlock1/altsyncram_component/m_default/altsyncram_inst
+# ERROR: cannot read instructions.mif.
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: simulacao32.meminst.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# ** Warning: (vsim-3534) [FOFIR] - Failed to open file "instructions.mif" for reading.
+# No such file or directory. (errno = ENOENT)    : $MODEL_TECH/../altera/verilog/src/altera_mf.v(264)
+#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/meminst/memBlock2/altsyncram_component/m_default/altsyncram_inst
+# ERROR: cannot read instructions.mif.
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: simulacao32.meminst.memBlock3.altsyncram_component.m_default.altsyncram_inst
-# End time: 17:29:33 on Apr 26,2019, Elapsed time: 0:05:17
-# Errors: 0, Warnings: 17
+# ** Warning: (vsim-3534) [FOFIR] - Failed to open file "instructions.mif" for reading.
+# No such file or directory. (errno = ENOENT)    : $MODEL_TECH/../altera/verilog/src/altera_mf.v(264)
+#    Time: 0 ps  Iteration: 0  Instance: /simulacao32/meminst/memBlock3/altsyncram_component/m_default/altsyncram_inst
+# ERROR: cannot read instructions.mif.
+# End time: 19:57:45 on Apr 27,2019, Elapsed time: 3:39:57
+# Errors: 0, Warnings: 10

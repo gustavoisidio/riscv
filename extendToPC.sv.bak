@@ -1,0 +1,10 @@
+module extendToPC (	input logic clock, reset,
+                    input logic [31:0] InstMemOut,
+                    output logic [31:0] outExtendToPC  
+);
+
+outExtendToPC = {24'd0, InstMemOut[31:24]};
+
+endmodule
+
+

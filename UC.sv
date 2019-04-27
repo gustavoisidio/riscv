@@ -10,12 +10,14 @@ module UC (	input logic clock, reset, ET, GT, LT,
 						LoadAluout, // Registrador da AluOut
                         DMemWR, // Seletor de da Memoria de Dados
                         writeEPC, // Seletor do MDR
-	   		output logic [2:0] 	MemToReg, // Registrador do Mux3
+	   		output logic [2:0] 	MemToReg, // Mux3
 								AluSrcA, // Mux1
 				  				AluFct, 
 				  				InstrType, // Seletor informando tipo da instrucao ao Signal Extend 
                                 AluSrcB, // Mux2
-                                regToBan, // Mux4
+                                regToBan, // Mux4 default = 0, Instr11_7
+                                loadToPC, // Mux5 default: 0, Aluout
+                                loadToMem32, // Mux6 default: 0, PC
             output logic [3:0] InstrIType // Indicador do tipo da instrucao para extendToI 
 );
 
@@ -28,6 +30,9 @@ module UC (	input logic clock, reset, ET, GT, LT,
 // LoadAluout = 0; // Registrador da AluOut
 // DMemWR = 0; // Seletor de da Memoria de Dados
 // writeEPC = 0; // Seletor do EPC
+// regToBan = 0; // Mux4 default = 0, Instr11_7
+// loadToPC = 0; // Mux5 default: 0, Aluout
+// loadToMem32 = 0; // Mux6 default: 0, PC
 
 
 wire logic [6:0] funct7;
@@ -112,7 +117,11 @@ always_comb begin
 			DMemWR = 0; // Seletor de da Memoria de Dados
 			PCWrite = 0; // Incrementa PC
 			LoadIR = 0; // So no proximo ciclo
-			WriteRegBanco = 0; // NAO SETADO AINDA
+            WriteRegBanco = 0; // NAO SETADO AINDA
+            loadToPC = 0; // Mux5 default: Aluout
+            loadToMem32 = 0; // Mux6 default: PC
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+
 			LoadAluout = 0; 
 			LoadRegA = 0;
 			LoadRegB = 0;
@@ -126,11 +135,14 @@ always_comb begin
 			WriteRegBanco = 0; 
 			LoadAluout = 0; 
 			LoadRegA = 0;
-			LoadRegB = 0;
+            LoadRegB = 0;
+            loadToPC = 0; // Mux5 default: Aluout
+            loadToMem32 = 0; // Mux6 default: PC
+            regToBan = 0; // Mux4 default = 0, Instr11_7
 
 			PCWrite = 1; // Libera escrita em PC para incrementar #
 			AluFct = 3'b001; // SETANDO ALU PARA SOMA #
-			AluSrcA = 3'd0; // EH ZERO MESMO #
+			AluSrcA = 3'd0; // SELECIONA PC #
 			AluSrcB = 3'd1; // LIBERA 4 PRA INCREMENTAR PC #
 			nextState = salvaInstrucao;
 		end
@@ -144,7 +156,10 @@ always_comb begin
 			AluSrcB = 3'd0; 
 			LoadAluout = 0; 
 			LoadRegA = 0;
-			LoadRegB = 0;
+            LoadRegB = 0;
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
 			LoadIR = 1; // So no proximo ciclo #
 			nextState = decodInstrucao;
@@ -157,7 +172,10 @@ always_comb begin
 			LoadIR = 0; 
 			AluSrcA = 3'd0; 
 			AluSrcB = 3'd0; 
-			LoadAluout = 0;
+            LoadAluout = 0;
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
 			WriteRegBanco = 0; // SETA LEITURA DO BANCO DE REGISTRADORES #
 			LoadRegA = 1; // CARREGO EM A #
@@ -320,7 +338,10 @@ always_comb begin
 			LoadIR = 0;
 			WriteRegBanco = 0; 
 			LoadRegA = 0; 
-			LoadRegB = 0; 
+            LoadRegB = 0;
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
 			AluSrcA = 3'd1; // PEGA SAIDA DO REG A #
 			AluSrcB = 3'd0; // PEGA SAIDA DO REG B #
@@ -336,7 +357,10 @@ always_comb begin
 			AluSrcB = 3'd0; 
 			LoadRegA = 0; 
 			LoadRegB = 0;  
-			LoadAluout = 0; 
+            LoadAluout = 0;
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
             MemToReg = 3'd1; // Mux escolhe saida da ALU #
             regToBan = 0; // Selecionando Instr11_7 #
@@ -344,6 +368,9 @@ always_comb begin
 			nextState = busca;
 		end
         sub: begin
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
             writeEPC = 0;
 			PCWrite = 0; 
 			LoadIR = 0;
@@ -366,6 +393,9 @@ always_comb begin
 			LoadMDR = 0; // Registrador MDR 
 			LoadAluout = 0; // Registrador da AluOut
 			DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
 			AluSrcA = 3'd1; // Libera rs1 pra ALU #
 			AluSrcB = 3'd2; // Libera imm extendido pra ALU #
@@ -383,6 +413,9 @@ always_comb begin
             LoadMDR = 0; // Registrador MDR 
             LoadAluout = 0; // Registrador da AluOut
             DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
             nextState = ld_estado1;
         end
@@ -396,6 +429,9 @@ always_comb begin
             LoadMDR = 0; // Registrador MDR 
             LoadAluout = 0; // Registrador da AluOut
             DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
             nextState = ld_estado1;
         end
@@ -409,6 +445,9 @@ always_comb begin
             LoadMDR = 0; // Registrador MDR 
             LoadAluout = 0; // Registrador da AluOut
             DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
             nextState = ld_estado1;
         end
@@ -422,6 +461,9 @@ always_comb begin
             LoadMDR = 0; // Registrador MDR 
             LoadAluout = 0; // Registrador da AluOut
             DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
             nextState = ld_estado1;
         end
@@ -435,6 +477,9 @@ always_comb begin
             LoadMDR = 0; // Registrador MDR 
             LoadAluout = 0; // Registrador da AluOut
             DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
             nextState = ld_estado1;
         end
@@ -448,6 +493,9 @@ always_comb begin
             LoadMDR = 0; // Registrador MDR 
             LoadAluout = 0; // Registrador da AluOut
             DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
             nextState = ld_estado1;
         end
@@ -461,6 +509,9 @@ always_comb begin
 			LoadMDR = 0; // Registrador MDR 
 			LoadAluout = 0; // Registrador da AluOut
 			DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
 			AluSrcA = 1; // Libera rs1 pra ALU #
 			AluSrcB = 2; // Libera imm estendido pra ALU #
@@ -476,6 +527,9 @@ always_comb begin
 			LoadRegB = 0; // Registrador B
 			LoadMDR = 0; // Registrador MDR 
 			LoadAluout = 0; // Registrador da AluOut
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
 			DMemWR = 0; // Mem 64 lê (endereço) a saída da ALU #
 			nextState = ld_estado3;
@@ -488,6 +542,9 @@ always_comb begin
 			LoadRegB = 0; // Registrador B
 			LoadMDR = 0; // Registrador MDR 
 			LoadAluout = 0; // Registrador da AluOut
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
 			LoadMDR = 1; // MDR salva leitura da memória #
 			nextState = ld_estado4;
@@ -502,6 +559,9 @@ always_comb begin
 			LoadMDR = 0; // Registrador MDR 
 			LoadAluout = 0; // Registrador da AluOut
 			DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
             MemToReg = 0; // Se adianta e seleciona a saída da memória pro banco #
             regToBan = 0; // Selecionando Instr11_7 #
@@ -518,6 +578,9 @@ always_comb begin
             LoadMDR = 0; // Registrador MDR 
             LoadAluout = 0; // Registrador da AluOut
             DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
             nextState = sd_estado1;
         end
@@ -531,6 +594,9 @@ always_comb begin
             LoadMDR = 0; // Registrador MDR 
             LoadAluout = 0; // Registrador da AluOut
             DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
             nextState = sd_estado1;
         end
@@ -544,6 +610,9 @@ always_comb begin
             LoadMDR = 0; // Registrador MDR 
             LoadAluout = 0; // Registrador da AluOut
             DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
             nextState = sd_estado1;
         end
@@ -556,6 +625,9 @@ always_comb begin
             LoadRegB = 0; // Registrador B
             LoadMDR = 0; // Registrador MDR 
             DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
 			AluSrcA = 1; // Libera rs1 pra ALU #
 			AluSrcB = 2; // Libera imm estendido pra ALU #
@@ -572,6 +644,9 @@ always_comb begin
             LoadRegB = 0; // Registrador B
             LoadMDR = 0; // Registrador MDR 
             LoadAluout = 0; // Registrador da AluOut
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
 			// Vamos escrever na memória agora #
 			//Escreve no endereço saído da ALU o conteúdo de rs2 #
@@ -588,6 +663,9 @@ always_comb begin
 			LoadMDR = 0; // Registrador MDR 
 			LoadAluout = 0; // Registrador da AluOut
 			DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
 			AluSrcA = 1; // Libera conteúdo de A (rs1) para ALU #
 			AluSrcB = 0; // Libera conteúdo de B (rs2) para ALU #
@@ -610,6 +688,9 @@ always_comb begin
 			LoadMDR = 0; // Registrador MDR 
 			LoadAluout = 0; // Registrador da AluOut
 			DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
 			AluSrcA = 1; // Libera conteúdo de A (rs1) para ALU #
 			AluSrcB = 0; // Libera conteúdo de B (rs2) para ALU #
@@ -632,6 +713,9 @@ always_comb begin
             LoadMDR = 0; // Registrador MDR 
             LoadAluout = 0; // Registrador da AluOut
             DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
             AluSrcA = 1; // Libera conteúdo de A (rs1) para ALU #
             AluSrcB = 0; // Libera conteúdo de B (rs2) para ALU #
@@ -654,6 +738,9 @@ always_comb begin
             LoadMDR = 0; // Registrador MDR 
             LoadAluout = 0; // Registrador da AluOut
             DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
             AluSrcA = 1; // Libera conteúdo de A (rs1) para ALU #
             AluSrcB = 0; // Libera conteúdo de B (rs2) para ALU #
@@ -675,6 +762,9 @@ always_comb begin
 			LoadMDR = 0; // Registrador MDR 
 			LoadAluout = 0; // Registrador da AluOut
 			DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
 			AluSrcA = 0; // Libera PC pra ALU
 			AluSrcB = 2; // Imm com ++ [0], sinal est. e shift<-2 pra ALU
@@ -691,6 +781,9 @@ always_comb begin
             LoadRegB = 0; // Registrador B
             LoadMDR = 0; // Registrador MDR 
             DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
             AluSrcA = 2; // Liberando 0 pra ALU #
             AluSrcB = 2; // Liberando saida do signalExtend #
@@ -707,6 +800,9 @@ always_comb begin
             LoadRegB = 0; // Registrador B
             LoadMDR = 0; // Registrador MDR 
             DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
             AluSrcA = 1; // Libera conteúdo de A (rs1) para ALU #
             AluSrcB = 0; // Libera conteúdo de B (rs2) para ALU #
@@ -724,6 +820,9 @@ always_comb begin
             LoadMDR = 0; // Registrador MDR 
             LoadAluout = 0; // Registrador da AluOut
             DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
         	AluSrcA = 1; // Libera conteúdo de A (rs1) para ALU #
 	        AluSrcB = 0; // Libera conteúdo de B (rs2) para ALU #
@@ -739,6 +838,9 @@ always_comb begin
             LoadMDR = 0; // Registrador MDR 
             LoadAluout = 0; // Registrador da AluOut
             DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
             AluSrcA = 1; // Libera conteúdo de A (rs1) para ALU #
             AluSrcB = 2; // Libera o immediato estendido para ALU #
@@ -753,6 +855,9 @@ always_comb begin
             LoadRegB = 0; // Registrador B
             LoadMDR = 0; // Registrador MDR 
             DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
             AluFct = 111; // Para fazer comparacao #
                 if (LT == 1) begin // Carrega 1 em RD #
@@ -779,6 +884,9 @@ always_comb begin
             LoadRegB = 0; // Registrador B
             LoadMDR = 0; // Registrador MDR 
             DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
             AluSrcA = 0; // Libera conteúdo de PC para ALU #
             AluSrcB = 3; // Libera 0 para ALU (falta adicionar entrada 0 no mux) #
@@ -796,6 +904,9 @@ always_comb begin
             LoadMDR = 0; // Registrador MDR 
             LoadAluout = 0; // Registrador da AluOut
             DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
             MemToReg = 1; // Seleciona a saída da AluOut para o banco de reg #
             regToBan = 0; // Selecionando Instr11_7 #
@@ -811,6 +922,9 @@ always_comb begin
             LoadMDR = 0; // Registrador MDR 
             LoadAluout = 0; // Registrador da AluOut
             DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
             AluSrcA = 1; // Libera conteúdo de A (rs1) para ALU #
             AluSrcB = 2; // Libera o immediato estendido para ALU #
@@ -827,6 +941,9 @@ always_comb begin
             LoadRegB = 0; // Registrador B
             LoadMDR = 0; // Registrador MDR 
             DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
             AluSrcA = 0; // Libera conteúdo de PC para ALU #
             AluSrcB = 3; // Libera 0 para ALU #
@@ -843,6 +960,9 @@ always_comb begin
             LoadMDR = 0; // Registrador MDR 
             LoadAluout = 0; // Registrador da AluOut
             DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
             MemToReg = 1; // Seleciona a saída da AluOut para o banco de reg #
             regToBan = 0; // Selecionando Instr11_7 #
@@ -858,6 +978,9 @@ always_comb begin
             LoadMDR = 0; // Registrador MDR 
             LoadAluout = 0; // Registrador da AluOut
             DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
 
             AluSrcA = 0; // Libera conteúdo de PC para ALU #
             AluSrcB = 2; // Libera immediato estendido ALU #
@@ -883,6 +1006,9 @@ always_comb begin
             LoadMDR = 0; // Registrador MDR 
             LoadAluout = 0; // Registrador da AluOut
             DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PCs
 
             MemToReg = 3'd2; // Mux escolhe saida do ExtendToI #
             regToBan = 0; // Selecionando Instr11_7 #
