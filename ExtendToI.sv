@@ -10,7 +10,7 @@ module extendToI (	input logic clock, reset,
 );
 
 wire logic [5:0] shamt;
-assign shamt = Instr31_0[24:18];
+assign shamt = Instr31_0[25:20];
 
 always_comb begin 
 
@@ -64,13 +64,13 @@ always_comb begin
             extendToBanco = DataMemOut[63:0];
         end
         4'b1011: begin // slli
-            extendToMem = regAOut << shamt;
+            extendToBanco = regAOut << shamt;
         end
         4'b1100 : begin // srli
-            extendToMem = regAOut >> shamt;
+            extendToBanco = regAOut >> shamt;
         end
         4'b1101 : begin // srai
-            extendToMem = regAOut >>> shamt;
+            extendToBanco = regAOut >>> shamt;
         end
         4'b1110 : begin 
             

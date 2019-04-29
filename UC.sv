@@ -42,7 +42,7 @@ wire logic [2:0] funct3;
 assign funct3 = Instr31_0[14:12];
 
 wire logic [5:0] funct6;
-assign funct6 = Instr31_0[31:25];
+assign funct6 = Instr31_0[31:26];
 
 wire logic [5:0] shamt;
 assign shamt = Instr31_0[24:18];
@@ -205,7 +205,7 @@ always_comb begin
                 
 				7'b0010011: begin //I
 					InstrType = 3'b000;
-                    if Instr31_0[31:25] == {25'd0, opcode} begin
+                    if (Instr31_0[31:25] == {25'd0, opcode}) begin
                         nextState = noop;
                     end
                     else begin
@@ -1016,7 +1016,7 @@ always_comb begin
             loadToPC = 0; // Mux5 default: 0, Aluout
             loadToMem32 = 0; // Mux6 default: 0, PCs
 
-            MemToReg = 3'd2; // Mux escolhe saida do ExtendToI #
+            MemToReg = 2; // Mux escolhe saida do ExtendToI #
             regToBan = 0; // Selecionando Instr11_7 #
 			WriteRegBanco = 1;  // Escrever em RD #
 			nextState = busca;
