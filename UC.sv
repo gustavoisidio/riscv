@@ -96,6 +96,7 @@ enum logic [7:0] {  rst,
                     slli,
                     loadShift,
                     excecao_opcode,
+                    excecao_opcode2,
                     excecao_overflow
 } state, nextState;
 
@@ -1028,14 +1029,29 @@ always_comb begin
             nextState = busca;
         end
         excecao_opcode: begin
-            // Salva PCe EPC
-            // PC = PC - 4
-            // Reg 30 = 0
+            // Reg 30 = 0 #
+            regToBan = 1; // Seleciona o registrador 30 #
+            MemToReg = 3; // Para escrever 0 no registrador 30 #
+            WriteRegBanco = 1;  // Escrever no registrador 30 #
+            // Salva PC - 4 em EPC #
+            AluSrcA = 0; // Seleciona saida de PC #
+            AluSrcB = 1; // Seleciona 4 #
+            AluFct = 3'b010; // Seta alu para subtracao (PC-4) #
+            writeEPC = 1; // Escreve saida da Alu em EPC (EPC = PC-4) #
+            nextState = excecao_opcode2   ;
+        end
+        excecao_opcode2: begin
+            // PC = Mem32[254] #
+            loadToMem32 = 1; // Carrega 254 da Mem32 #
+            loadToPC = 1; // Seleciona saida de extendToPC #
+            PCWrite = 1; // Escreve em PC #
+            nextState = busca;
         end
         excecao_overflow: begin
-            // Salva PCe EPC
-            // PC = PC - 4
             // Reg 30 = 1
+            // Salva (PC - 4) em EPC
+            // PC = Mem32[254]
+            
         end
 	endcase
 end
