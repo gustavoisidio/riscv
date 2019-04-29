@@ -202,32 +202,38 @@ always_comb begin
                         end
                     endcase //funct3
 				end
+                
 				7'b0010011: begin //I
 					InstrType = 3'b000;
-					case(funct3)
-						3'b000: begin
-							nextState = addi; // Chama addi
-                        end
-                        3'b010: begin
-                            nextState = slti;
-                         end
-                        3'b101: begin
-                            case(funct6)
-                                6'b000000: begin
-                                    InstrIType = 4'b1011;
-                                    nextState = srli;
-                                end
-                                6'b010000: begin
-                                    InstrIType = 4'b1101;
-                                    nextState = srai;
-                                end
-                            endcase //funct6
-                        end
-                        3'b001: begin
-                            InstrIType = 4'b1011;
-                            nextState = slli;
-                        end
-					endcase //funct3
+                    if Instr31_0[31:25] == {25'd0, opcode} begin
+                        nextState = noop;
+                    end
+                    else begin
+                        case(funct3)
+                            3'b000: begin
+                                nextState = addi; // Chama addi
+                            end
+                            3'b010: begin
+                                nextState = slti;
+                            end
+                            3'b101: begin
+                                case(funct6)
+                                    6'b000000: begin
+                                        InstrIType = 4'b1011;
+                                        nextState = srli;
+                                    end
+                                    6'b010000: begin
+                                        InstrIType = 4'b1101;
+                                        nextState = srai;
+                                    end
+                                endcase //funct6
+                            end
+                            3'b001: begin
+                                InstrIType = 4'b1011;
+                                nextState = slli;
+                            end
+                        endcase //funct3
+                    end // else
 				end
 
 				7'b0000011: begin//I
