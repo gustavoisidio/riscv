@@ -1038,7 +1038,7 @@ always_comb begin
             AluSrcB = 1; // Seleciona 4 #
             AluFct = 3'b010; // Seta alu para subtracao (PC-4) #
             writeEPC = 1; // Escreve saida da Alu em EPC (EPC = PC-4) #
-            nextState = excecao_opcode2   ;
+            nextState = excecao_opcode2;
         end
         excecao_opcode2: begin
             // PC = Mem32[254] #
