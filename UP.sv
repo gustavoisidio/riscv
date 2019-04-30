@@ -22,7 +22,7 @@ logic [2:0] AluSrcB, // Mu2
             loadToMem32, // Mux6
             loadToPC; // Mux5
 
-logic ET, GT, LT; // Sinal do comparador de igualdade da ula
+logic ET, GT, LT, OV; // flags da ula
 logic [3:0] InstrIType; // Indicador do tipo da instrucao para extendToI 
 logic [63:0]    extendToMem, // Saida em direcao a memoria
                 extendToBanco; // Saida em direcao ao banco de registradores
@@ -71,7 +71,7 @@ ula64 ULA (     .A(outMux1),
                 .B(outMux2),
                 .Seletor(AluFct),
                 .S(AluOut),
-                .Overflow(), .Negativo(), .z(), .Igual(ET), .Maior(GT), .Menor(LT)
+                .Overflow(OV), .Negativo(), .z(), .Igual(ET), .Maior(GT), .Menor(LT)
 );
 
 // Instanciando o Banco de Registradores
@@ -243,10 +243,10 @@ UC uc ( .clock(clock),
         .LoadRegB(LoadRegB), // Seletor do Registrador B
         .InstrType(InstrType), // Seletor da Extensao de Sinal informando o tipo da instrucao
         .LoadMDR(LoadMDR), // Seletor do Registrador MDR
-	    .LoadAluout(LoadAluout),
+	.LoadAluout(LoadAluout),
         .MemToReg(MemToReg), // Seletor do Mux3
         .AluSrcA(AluSrcA), // Mux1
-	    .AluFct(AluFct), // Seletor de Funcao da ALU
+	.AluFct(AluFct), // Seletor de Funcao da ALU
         .AluSrcB(AluSrcB), // Mux2
         .DMemWR(DMemWR), // Seletor de da Memoria de Dados
         .ET(ET), // Sinal do comparador de igualdade da ula 
@@ -256,7 +256,8 @@ UC uc ( .clock(clock),
         .writeEPC(writeEPC), // Sinal de controle do EPC
         .regToBan(regToBan), // Mux4
         .loadToMem32(loadToMem32), // Mux6
-        .loadToPC(loadToPC) // Mux5
+        .loadToPC(loadToPC), // Mux5
+        .OV(OV) // Sinal de overflow da ula
 );
 
 endmodule:UP

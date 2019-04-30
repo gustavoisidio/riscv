@@ -1,4 +1,4 @@
-module UC (	input logic clock, reset, ET, GT, LT,
+module UC (	input logic clock, reset, ET, GT, LT, OV,
            	input logic [6:0] opcode, // Opcode (Instr6_0) saido do Registrador de Instrucoes
            	input logic [31:0] Instr31_0, // Instrucao inteira saida do Registrador de instrucoes
            	output logic LoadIR, // Registrador de Instrucoes
@@ -97,7 +97,10 @@ enum logic [7:0] {  rst,
                     loadShift,
                     excecao_opcode,
                     excecao_opcode2,
-                    excecao_overflow
+                    excecao_overflow,
+                    excecao_overflow2,
+                    sd_estado3,
+                    sb_espera
 } state, nextState;
 
 
@@ -206,7 +209,7 @@ always_comb begin
                 
 				7'b0010011: begin //I
 					InstrType = 3'b000;
-                    if (Instr31_0[31:25] == {25'd0, opcode}) begin
+                    if (Instr31_0[31:0] == {25'd0, opcode}) begin
                         nextState = noop;
                     end
                     else begin
@@ -252,7 +255,7 @@ always_comb begin
                             InstrIType = 4'b0001;
                             nextState = lh;
                         end
-                        3'b100: begin
+                        3'b000: begin
                             InstrIType = 4'b0000;
                             nextState = lb;
                         end
@@ -329,6 +332,7 @@ always_comb begin
                 end
                 
                 7'b1101111: begin //UJ
+                    InstrType = 3'b011; 
                     nextState = jal_estado1;
                 end
                 default: begin
@@ -354,7 +358,13 @@ always_comb begin
 			AluSrcB = 3'd0; // PEGA SAIDA DO REG B #
 			AluFct = 3'b001; // SETANDO ALU PARA SOMA #
 			LoadAluout = 1; // LIBERANDO SAIDA DA ALU #
-			nextState = loadRD;
+            
+            if (OV == 1) begin // DEU OVERFLOW 
+                nextState = excecao_overflow; 
+            end
+            else begin // NAO DEU OVERFLOW
+			    nextState = loadRD;
+            end
 		end
         loadRD: begin // Carrega saida da ALU em RD
             writeEPC = 0;
@@ -381,14 +391,21 @@ always_comb begin
             writeEPC = 0;
 			PCWrite = 0; 
 			LoadIR = 0;
-			AluSrcA = 3'd1; // PEGA SAIDA DO REG A #
-			AluSrcB = 3'd0; // PEGA SAIDA DO REG B #
 			WriteRegBanco = 0; 
 			LoadRegA = 0; 
-			LoadRegB = 0;  
-			AluFct = 3'b010; // SETANDO ALU PARA SUBTRACAO
-			LoadAluout = 1;
-			nextState = loadRD;
+			LoadRegB = 0;		    
+
+            AluFct = 3'b010; // SETANDO ALU PARA SUBTRACAO #
+            AluSrcA = 3'd1; // PEGA SAIDA DO REG A #
+			AluSrcB = 3'd0; // PEGA SAIDA DO REG B #
+            LoadAluout = 1; // #
+
+			if (OV == 1) begin // DEU OVERFLOW 
+                nextState = excecao_overflow; 
+            end
+            else begin // NAO DEU OVERFLOW
+			    nextState = loadRD;
+            end
 		end
         addi: begin
             writeEPC = 0;
@@ -408,7 +425,13 @@ always_comb begin
 			AluSrcB = 3'd2; // Libera imm extendido pra ALU #
 			AluFct = 3'b001; // SETANDO ALU PARA SOMA #
 			LoadAluout = 1; // LIBERANDO SAIDA DA ALU #
-			nextState = loadRD;
+			
+            if (OV == 1) begin // DEU OVERFLOW 
+                nextState = excecao_overflow; 
+            end
+            else begin // NAO DEU OVERFLOW
+			    nextState = loadRD;
+            end
         end
         lb: begin
             writeEPC = 0;
@@ -621,6 +644,9 @@ always_comb begin
             loadToPC = 0; // Mux5 default: 0, Aluout
             loadToMem32 = 0; // Mux6 default: 0, PC
 
+            nextState = sb_espera;
+        end
+        sb_espera: begin
             nextState = sd_estado1;
         end
         sd_estado1: begin
@@ -660,6 +686,22 @@ always_comb begin
 			DMemWR = 1; // Mem 64 escreve DataIn no End de saída da ALU # 
 			nextState = busca;
 		end
+        //sd_estado3: begin
+        //    LoadIR = 0; // Registrador de Instrucoes
+        //    PCWrite = 0; // PC
+        //    WriteRegBanco = 0; // Banco de Registradores
+        //    LoadRegA = 0; // Registrador A
+        //    LoadRegB = 0; // Registrador B
+        //    LoadMDR = 0; // Registrador MDR 
+        //    LoadAluout = 0; // Registrador da AluOut
+        //    DMemWR = 0; // Seletor de da Memoria de Dados
+        //    writeEPC = 0; // Seletor do EPC
+        //    regToBan = 0; // Mux4 default = 0, Instr11_7
+        //    loadToPC = 0; // Mux5 default: 0, Aluout
+        //    loadToMem32 = 0; // Mux6 default: 0, PC
+        //    
+        //    nextState = busca;
+        // end
         beq: begin
             writeEPC = 0;
 			LoadIR = 0; // Registrador de Instrucoes
@@ -1029,11 +1071,18 @@ always_comb begin
             nextState = busca;
         end
         excecao_opcode: begin
-            // Reg 30 = 0 #
-            regToBan = 1; // Seleciona o registrador 30 #
-            MemToReg = 3; // Para escrever 0 no registrador 30 #
-            WriteRegBanco = 1;  // Escrever no registrador 30 #
-            // Salva PC - 4 em EPC #
+            LoadIR = 0; // Registrador de Instrucoes
+            PCWrite = 0; // PC
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            LoadAluout = 0; // Registrador da AluOut
+            DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
+
             AluSrcA = 0; // Seleciona saida de PC #
             AluSrcB = 1; // Seleciona 4 #
             AluFct = 3'b010; // Seta alu para subtracao (PC-4) #
@@ -1041,6 +1090,17 @@ always_comb begin
             nextState = excecao_opcode2;
         end
         excecao_opcode2: begin
+            LoadIR = 0; // Registrador de Instrucoes
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            LoadAluout = 0; // Registrador da AluOut
+            DMemWR = 0; // Seletor de da Memoria de Dados
+            writeEPC = 0; // Seletor do EPC
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToMem32 = 0; // Mux6 default: 0, PC
+
             // PC = Mem32[254] #
             loadToMem32 = 1; // Carrega 254 da Mem32 #
             loadToPC = 1; // Seleciona saida de extendToPC #
@@ -1048,10 +1108,42 @@ always_comb begin
             nextState = busca;
         end
         excecao_overflow: begin
-            // Reg 30 = 1
+            LoadIR = 0; // Registrador de Instrucoes
+            PCWrite = 0; // PC
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            LoadAluout = 0; // Registrador da AluOut
+            DMemWR = 0; // Seletor de da Memoria de Dados
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToPC = 0; // Mux5 default: 0, Aluout
+            loadToMem32 = 0; // Mux6 default: 0, PC
+
             // Salva (PC - 4) em EPC
-            // PC = Mem32[254]
-            
+            AluSrcA = 0; // Seleciona saida de PC #
+            AluSrcB = 1; // Seleciona 4 #
+            AluFct = 3'b010; // Seta alu para subtracao (PC-4) #
+            writeEPC = 1; // Escreve saida da Alu em EPC (EPC = PC-4) #
+            nextState = excecao_overflow2;
+        end
+        excecao_overflow2: begin
+            LoadIR = 0; // Registrador de Instrucoes
+            WriteRegBanco = 0; // Banco de Registradores
+            LoadRegA = 0; // Registrador A
+            LoadRegB = 0; // Registrador B
+            LoadMDR = 0; // Registrador MDR 
+            LoadAluout = 0; // Registrador da AluOut
+            DMemWR = 0; // Seletor de da Memoria de Dados
+            writeEPC = 0; // Seletor do EPC
+            regToBan = 0; // Mux4 default = 0, Instr11_7
+            loadToMem32 = 0; // Mux6 default: 0, PC
+
+            // PC = Mem32[255]
+            loadToMem32 = 2; // Carrega 255 da Mem32 #
+            loadToPC = 1; // Seleciona saida de extendToPC #
+            PCWrite = 1; // Escreve em PC #
+            nextState = busca;            
         end
 	endcase
 end
