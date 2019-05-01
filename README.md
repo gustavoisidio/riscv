@@ -1,6 +1,6 @@
 # Processador RISC-V Multiciclo
 
-![[RISC-V](https://http://riscv.org/)](media/image5.png)
+![[RISC-V](https://http://riscv.org/)](media/image8.png)
 
 1.  Unidade de Processamento 
 2.  Descrição dos módulos criados
