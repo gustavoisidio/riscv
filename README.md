@@ -8,8 +8,7 @@ height="3.4625in"}
 
 **Descrição dos Módulos**
 
-![](media/image2.png){width="4.282436570428697in"
-height="2.035416666666667in"}
+![](media/image2.png)
 
 **SignalExtend**
 
