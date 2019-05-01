@@ -5,7 +5,7 @@ module extendToPC (	input logic clock, reset,
 
 // [31:24] Sao os 8 bits mais significativos
 
-assign outExtendToPC = {56'd0, InstMemOut[31:24]};
+assign outExtendToPC = {56'd0, InstMemOut[7:0]};
 
 endmodule
 

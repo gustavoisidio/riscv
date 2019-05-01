@@ -40,19 +40,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 2
 Top level modules:
 	register
 
-} {} {}} //Mac/Home/Downloads/riscv/signalExtend.sv {1 {vlog -work work -sv -stats=none //Mac/Home/Downloads/riscv/signalExtend.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module signalExtend
-
-Top level modules:
-	signalExtend
-
 } {} {}} //Mac/Home/Downloads/riscv/extendToPC.sv {1 {vlog -work work -sv -stats=none //Mac/Home/Downloads/riscv/extendToPC.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
 -- Compiling module extendToPC
 
 Top level modules:
 	extendToPC
+
+} {} {}} //Mac/Home/Downloads/riscv/signalExtend.sv {1 {vlog -work work -sv -stats=none //Mac/Home/Downloads/riscv/signalExtend.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module signalExtend
+
+Top level modules:
+	signalExtend
 
 } {} {}} //Mac/Home/Downloads/riscv/Memoria32.sv {1 {vlog -work work -sv -stats=none //Mac/Home/Downloads/riscv/Memoria32.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
@@ -83,19 +83,19 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.6d Compiler 2018.02 Feb 2
 -- Compiling entity Instr_Reg_RISC_V
 -- Compiling architecture behavioral_arch of Instr_Reg_RISC_V
 
-} {} {}} //Mac/Home/Downloads/riscv/mux5.v {1 {vlog -work work -stats=none //Mac/Home/Downloads/riscv/mux5.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module mux5
-
-Top level modules:
-	mux5
-
 } {} {}} //Mac/Home/Downloads/riscv/Memoria64.sv {1 {vlog -work work -sv -stats=none //Mac/Home/Downloads/riscv/Memoria64.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
 -- Compiling module Memoria64
 
 Top level modules:
 	Memoria64
+
+} {} {}} //Mac/Home/Downloads/riscv/mux5.v {1 {vlog -work work -stats=none //Mac/Home/Downloads/riscv/mux5.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module mux5
+
+Top level modules:
+	mux5
 
 } {} {}} //Mac/Home/Downloads/riscv/ula64.vhd {1 {vcom -work work -2002 -explicit -stats=none //Mac/Home/Downloads/riscv/ula64.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.6d Compiler 2018.02 Feb 24 2018

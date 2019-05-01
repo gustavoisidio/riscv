@@ -1086,6 +1086,7 @@ always_comb begin
             AluSrcB = 1; // Seleciona 4 #
             AluFct = 3'b010; // Seta alu para subtracao (PC-4) #
             writeEPC = 1; // Escreve saida da Alu em EPC (EPC = PC-4) #
+            loadToMem32 = 1; // Adianta e carrega 254 da Mem32 #
             nextState = excecao_opcode2;
         end
         excecao_opcode2: begin
@@ -1101,7 +1102,6 @@ always_comb begin
             loadToMem32 = 0; // Mux6 default: 0, PC
 
             // PC = Mem32[254] #
-            loadToMem32 = 1; // Carrega 254 da Mem32 #
             loadToPC = 1; // Seleciona saida de extendToPC #
             PCWrite = 1; // Escreve em PC #
             nextState = busca;
@@ -1124,6 +1124,7 @@ always_comb begin
             AluSrcB = 1; // Seleciona 4 #
             AluFct = 3'b010; // Seta alu para subtracao (PC-4) #
             writeEPC = 1; // Escreve saida da Alu em EPC (EPC = PC-4) #
+            loadToMem32 = 2; // Adianta e carrega 255 da Mem32 #
             nextState = excecao_overflow2;
         end
         excecao_overflow2: begin
@@ -1139,7 +1140,6 @@ always_comb begin
             loadToMem32 = 0; // Mux6 default: 0, PC
 
             // PC = Mem32[255]
-            loadToMem32 = 2; // Carrega 255 da Mem32 #
             loadToPC = 1; // Seleciona saida de extendToPC #
             PCWrite = 1; // Escreve em PC #
             nextState = busca;            
