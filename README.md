@@ -1,13 +1,20 @@
 # Processador RISC-V Multiciclo
-*	Unidade de Processamento 
-*  Descrição dos módulos criados 
+*   Unidade de Processamento 
+*   Descrição dos módulos criados 
 		- SignalExtend
 		- ExtendToI 
 		- Muxes 
 		- ExtendToPC 
-3. Descrição dos Estados 
+*   Descrição dos Estados 
 		- Estados Iniciais
 		- Estados de Instruções
+
+1. Step 1
+2. Step 2
+3. Step 3
+    1. Step 3.1
+    2. Step 3.2
+    3. Step 3.3
 
 ## Unidade de Processamento
 ![](media/image5.png)
@@ -57,93 +64,93 @@ Ativa a escrita no registrador de instruções para salvar a instrução vinda d
 Verifica o opcode e funcs para determinar qual o estado a tratar cada instrução além de identificar cada uma delas alterando o valor de InstrType e InstrIType. Além disso, libera a leitura do banco de registradores por meio do seu seletor e carrega o rs1 e rs2 respectivamente nos registradores A e B.
 
 ### Estados de Instruções
-**add**
+* **add**
 Soma rs1 com rs2 e salva o resultado dessa soma em rd. Para isso, seleciona a saída dos muxes referentes às entradas dos registradores A e B, ativa a soma na Alu e libera a escrita no registrador da Alu. Caso não ocorra overflow, após isso, vai para loadRd, onde a saída da alu será carregada no rd. Em caso de overflow, vai tratar a exceção de overflow em outro estado.
-**sub**
+* **sub**
 Realiza subtração entre rs1 e rs2. Após isso, salva o resultado dessa subtração em rd. Para isso, seleciona a saída dos muxes referentes às entradas dos registradores A e B, ativa a subtração na Alu e libera a escrita no seu registrador. Caso não ocorra overflow, após isso, vai para loadRd, onde a saída da alu será carregada no rd. Em caso de overflow, vai tratar a exceção de overflow em outro estado.
-**loadRD**
+* **loadRD**
 Através do seletor do mux, escolhe a saída da ALU, garante que o endereço de rd será Instr11_7 e libera a escrita no banco de registradores, ou melhor, em rd.
-**addi**
+* **addi**
 Soma o valor do registrador rs1 com a constante imm e salva no registrador de destino, rd. Para isso, seleciona as saídas dos muxes referentes a rs1 e o imediato extendido para a alu. Ativa a soma na alu e libera a escrita em seu registrador. Caso não ocorra overflow, após isso, vai para loadRd, onde a saída da alu será carregada no rd. Em caso de overflow, vai tratar a exceção de overflow em outro estado.
-**lb**
+* **lb**
 Como ExTendToI já possui seu imediato tratado, vai para o primeiro estado de ld.
-**lh**
+* **lh**
 Como ExTendToI já possui seu imediato tratado, vai para o primeiro estado de ld.
-**lw**
+* **lw**
 Como ExTendToI já possui seu imediato tratado, vai para o primeiro estado de ld.
-**lbu**
+* **lbu**
 Como ExTendToI já possui seu imediato tratado, vai para o primeiro estado de ld.
-**lhu**
+* **lhu**
 Como ExTendToI já possui seu imediato tratado, vai para o primeiro estado de ld.
-**lwu**
+* **lwu**
 Como ExTendToI já possui seu imediato tratado, vai para o primeiro estado de ld.
-**ld_estado1**
+* **ld_estado1**
 O ld lê uma Double Word (64 bits) da memória de dados e escreve no registrador de destino. Soma o que está em rs1 com o imediato para obter o endereço a ser buscado na memória. O que estiver nesse endereço, será salvo em rd. No seu primeiro estado, libera rs1 e o imediato estendido para ALu através dos muxes 1 e 2, ativa a soma na alu e libera a escrita em seu registrador. Após isso, segue para a segunda fase do ld.
-**ld_estado2**
+* **ld_estado2**
 Através do seletor da memória de dados, lê o conteúdo da memória no endereço saído da alu e segue pra terceira fase do ld.
-**ld_estado3**
+* **ld_estado3**
 Libera a escrita no registrador MDR e segue para a quarta fase de ld.
-**ld_estado4**
+* **ld_estado4**
 Seleciona a saída da memória em direção ao banco, garante que ser escrito é o Instr11_7 e libera a escrita no banco, ou melhor, em rd.
-**sw**
+* **sw**
 Como ExTendToI já possui seu imediato tratado, vai para o primeiro estado de sd.
-**sh**
+* **sh**
 Como ExTendToI já possui seu imediato tratado, vai para o primeiro estado de sd.
-**sb**
+* **sb**
 Como a leitura memória precisa de mais um ciclo, vai para sb_espera.
-**sb_espera**
+* **sb_espera**
 Como ExTendToI já possui seu imediato tratado, vai para o primeiro estado de sd.
-**sd_estado1**
+* **sd_estado1**
 Por meio do mux, libera rs1 e imm estendido para ALU, ativa a função de soma e libera a escrita no registrador da ALU.
-**sd_estado2**
+* **sd_estado2**
 Escreve o DataIn no endereço de saída da ALU.
-**beq**
+* **beq**
 Libera o conteúdo de rs1 e rs2 para ALU e ativa a função de comparação. Caso sejam iguais, vai para beqOrbne. Caso contrário, segue para busca.
-**bne**
+* **bne**
 Libera o conteúdo de rs1 e rs2 para ALU e ativa a função de comparação. Caso não sejam iguais, vai para beqOrbne. Caso contrário, segue para busca.
-**bge**
+* **bge**
 Libera o conteúdo de rs1 e rs2 para ALU e ativa a função de comparação. Caso rs1 seja maior ou igual a rs2, vai para beqOrbne. Caso contrário, segue para busca.
-**blt**
+* **blt**
 Libera o conteúdo de rs1 e rs2 para ALU e ativa a função de comparação. Caso rs1 seja menor que rs2, vai para beqOrbne. Caso contrário, segue para busca.
-**beqOrbne**
+* **beqOrbne**
 Libera a saída de PC e o imm pronto para ALU, ativa a função soma e escreve o resultado da soma em PC.
-**lui**
+* **lui**
 Libera 0 e a saída do signalExtend para a ALU, ativa a função de soma e libera a escrita no registrador da ALU.
-**and_estado**
+* **and_estado**
 Libera o conteúdo de rs1 e rs2 para a ALU, ativa a função de and lógico na ALU e libera a escrita no registrador da ALU.
-**slt**
+* **slt**
 Libera o conteúdo de rs1 e rs2 para ALU e segue para setOnLessThan.
-**slti**
+* **slti**
 Libera o conteúdo de rs1 e rs2 para ALU e segue para setOnLessThan.
-**setOnLessThan**
+* **setOnLessThan**
 Ativa a função de comparação na ALU. Caso rs1 seja menor que rs2, libera 0 e 1 para alu, ativa a função de soma e libera a escrita de 1+0 no registrador da ALU. Caso contrário, libera 0 e 0 para ALU, ativa a função de soma e libera a escrita da soma de 0 + 0 no registrador da ALU.
-**jalr_estado1**
+* **jalr_estado1**
 Libera conteúdo de PC e 0 para ALU, ativa a função de soma e libera a escrita de PC+0 no registrador da ALU.
-**jalr_estado2**
+* **jalr_estado2**
 Seleciona a saída da alu para o banco de registradores, garante que o endereço a escrever será o de rd e libera a escrita nele.
-**jalr_estado3**
+* **jalr_estado3**
 Libera o conteúdo de rs1 e o imm estendido para ALU, ativa a função de soma e libera a escrita dessa soma em PC.
-**jal_estado1**
+* **jal_estado1**
 Libera o conteúdo de PC e 0 para ALU, ativa a função de soma e libera a escrita da soma PC + 0 no registrador da ALU.
-**jal_estado2**
+* **jal_estado2**
 Seleciona a saída do registrador da ALU para o banco de registradores, garante que o endereço de escrita será o de rd e libera a escrita no banco, escrevendo em rd.
-**jal_estado3**
+* **jal_estado3**
 Libera o conteúdo de PC e o imm estendido para ALU, ativa a função de soma na ALU e libera a escrita de PC + imm no registrador da ALU
-**srli**
+* **srli**
 Como ExtendToI já tem feito o tratamento necessário, já tem feito o shift, segue para loadShift.
-**srai**
+* **srai**
 Como ExtendToI já tem feito o tratamento necessário, já tem feito o shift, segue para loadShift.
-**slli**
+* **slli**
 Como ExtendToI já tem feito o tratamento necessário, já tem feito o shift, segue para loadShift.
-**loadShift**
+* **loadShift**
 Escolhe a saída de ExtendToI em direção ao banco de registradores, garante que o endereço de escrita será o do rd e libera a escrita.
-**breaker**
+* **breaker**
 Para a execução completamente, sempre chamando a ele mesmo.
-**excecao_opcode**
+* **excecao_opcode**
 Seleciona a saída de PC e 4, ativa a função de subtração e escreve a saída da ALU em EPC.
-**excecao_opcode2**
+* **excecao_opcode2**
 Carrega 254 na memória de instruções, seleciona a saída de extendToPC e escreve em PC.
-**excecao_overflow**
+* **excecao_overflow**
 Seleciona a saída de PC e 4, seta alu para subtração e escreve a saída da ALU em EPC.
-**excecao_overflow2**
+* **excecao_overflow2**
 Carrega 255 na memória de instruções, seleciona a saída de extendToPC e escreve em PC.
