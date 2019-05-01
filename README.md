@@ -52,11 +52,11 @@ ExtendToPC recebe duas entradas de um bit que são o clock e o reset, além da s
 A unidade de controle possui cerca de 52 estados. No entanto, alguns desses, atuam apenas apenas como bypass para outros estados, como boa parte dos stores e loads que aproveitam as ações de sd e ld. Há também uma grande recorrência do ato de salvar no rd e, portanto, existe um estado dedicado somente a esta ação. Para os branches, como a ação que ocorre em caso de desvio é a mesma para todos, eles acabam por partilhar um mesmo estado.
 
 ### Estados Iniciais
-**busca**
+* **busca**
 Libera a escrita em PC para que seja possível incrementá-lo, prepara a ALU para a soma e seleciona PC através do seletor do Mux1 e 4 no Mux2.
-**salvaInstrucao**
+* **salvaInstrucao**
 Ativa a escrita no registrador de instruções para salvar a instrução vinda da memória de instruções.
-**decodInstrucao**
+* **decodInstrucao**
 Verifica o opcode e funcs para determinar qual o estado a tratar cada instrução além de identificar cada uma delas alterando o valor de InstrType e InstrIType. Além disso, libera a leitura do banco de registradores por meio do seu seletor e carrega o rs1 e rs2 respectivamente nos registradores A e B.
 
 ### Estados de Instruções
