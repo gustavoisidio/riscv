@@ -3,8 +3,7 @@ Processador Risc-V Multiciclo
 
 
 **Unidade de
-processamento**![](media/image5.png){width="6.1662423447069115in"
-height="3.4625in"}
+processamento**![](media/image5.png)
 
 **Descrição dos Módulos**
 
@@ -45,7 +44,7 @@ dado de 64 bits com o imediato extendido.
 
 **ExtendToI**
 
-![](media/image4.png){width="4.193160542432196in" height="2.64375in"}
+![](media/image4.png)
 
 A instrução ld usa o rs1 e imm extendido para calcular um endereço de
 memória e armazena no rd o conteúdo inteiro da memória de dados que
@@ -72,8 +71,7 @@ extendToMem, à memória de dados.
 
 **Muxes**
 
-![](media/image3.png){width="2.310416666666667in"
-height="1.8328444881889763in"}
+![](media/image3.png)
 
 Foi criado um mux de 8 entradas e uma saída, ambas de 64 bits. Porém, a
 partir desse, foram criados outros dois para dados de 32 bits e 5 bits.
@@ -86,8 +84,7 @@ Para o caso de exceções de opcode ou overflow, surge a necessidade de
 estender o valor de 32 bits saído da memória de instruções para o
 registrador PC que é de 64 bits.
 
-![](media/image1.png){width="3.78125in"
-height="0.32033792650918635in"}
+![](media/image1.png)
 
 ExtendToPC recebe duas entradas de um bit que são o clock e o reset,
 além da saída de 32 bits vinda da memória de instruções e retorna um
@@ -95,8 +92,7 @@ dado de 64 bits, outExtendToPC que segue em direção a PC.
 
 **Descrição dos Estados**
 
-![](media/image7.png){width="3.78125in"
-height="0.32033792650918635in"}
+![](media/image7.png)
 
 A unidade de controle possui cerca de 52 estados. No entanto, alguns
 desses, atuam apenas apenas como bypass para outros estados, como boa
