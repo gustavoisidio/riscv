@@ -1,5 +1,5 @@
 # Processador RISC-V Multiciclo
-1.   Unidade de Processamento 
+1.  Unidade de Processamento 
 2.  Descrição dos módulos criados 
 		* SignalExtend
 		* ExtendToI 
