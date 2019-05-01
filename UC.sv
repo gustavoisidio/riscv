@@ -99,7 +99,6 @@ enum logic [7:0] {  rst,
                     excecao_opcode2,
                     excecao_overflow,
                     excecao_overflow2,
-                    sd_estado3,
                     sb_espera
 } state, nextState;
 
