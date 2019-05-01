@@ -1,13 +1,13 @@
 # Processador RISC-V Multiciclo
-1.	Unidade de Processamento 
-2.  Descrição dos módulos criados 
-		2.1. SignalExtend
-		2.2. ExtendToI 
-		2.3. Muxes 
-		2.4. ExtendToPC 
+*	Unidade de Processamento 
+*  Descrição dos módulos criados 
+		- SignalExtend
+		- ExtendToI 
+		- Muxes 
+		- ExtendToPC 
 3. Descrição dos Estados 
-		3.1. Estados Iniciais
-		3.2. Estados de Instruções
+		- Estados Iniciais
+		- Estados de Instruções
 
 ## Unidade de Processamento
 ![](media/image5.png)
